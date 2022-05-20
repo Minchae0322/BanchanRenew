@@ -14,7 +14,5 @@ class Dish(
     @ColumnInfo(name = "cookingTime") var cookingTime: String?,
     @ColumnInfo(name = "calorie") var calorie: String?,
     @ColumnInfo(name = "dishImage") var dishImage: Int,
-
-
     )    {
 }
