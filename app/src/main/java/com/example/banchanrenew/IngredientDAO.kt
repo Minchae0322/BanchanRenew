@@ -7,6 +7,14 @@ import androidx.room.Query
 
 @Dao
 interface IngredientDAO {
+    @Query("SELECT * From Ingredient WHERE dataType = :dataType")
+    fun getListOfDataType(dataType: String): ArrayList<Ingredient>
+
+
+
+
+
+    //test
     @Insert fun insertIngredient(ingredient: Ingredient)
 
     @Insert fun insertGramOfUnit(gramOfUnit: GramOfUnit)
