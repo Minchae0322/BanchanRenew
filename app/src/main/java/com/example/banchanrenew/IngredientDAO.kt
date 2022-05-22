@@ -7,10 +7,6 @@ import androidx.room.Query
 
 @Dao
 interface IngredientDAO {
-    @Query("SELECT * From Ingredient WHERE dataType = :dataType")
-    fun getListOfDataType(dataType: String): ArrayList<Ingredient>
-
-
 
 
 
