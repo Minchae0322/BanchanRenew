@@ -7,8 +7,8 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 
 //재료 추기하기의 육류/가공품, 채소, 어류 리사이클러뷰 재료들이 리사이클러뷰의 뷰홀더에 들어감.
-class AddIngredientsAdapter(private val list: ArrayList<Ingredient>):
-    RecyclerView.Adapter<AddIngredientsAdapter.ViewHolder>() {
+class AddIngredientsRecyclerViewAdapter(private val list: ArrayList<Ingredient>):
+    RecyclerView.Adapter<AddIngredientsRecyclerViewAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val pagerImageView: ImageView = itemView.findViewById(R.id.pager_imageView)
