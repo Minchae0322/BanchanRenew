@@ -16,4 +16,5 @@ class Ingredient (
     @ColumnInfo(name = "name") var name: String,
     @ColumnInfo(name = "unit") var unit: String,
     @ColumnInfo(name = "image") var image: Int,
-    @ColumnInfo(name = "dataType") var dataType: String)
+    @ColumnInfo(name = "dataType") var dataType: String) {
+}

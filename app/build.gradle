@@ -7,6 +7,14 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdk 32
 
+    buildFeatures { // 뷰 바인딩 활성화
+        viewBinding {
+            enabled true
+        }
+    }
+
+
+
     defaultConfig {
         applicationId "com.example.banchanrenew"
         minSdk 27
