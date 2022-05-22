@@ -8,7 +8,8 @@ import androidx.room.Query
 @Dao
 interface IngredientDAO {
 
-
+    @Query("SELECT * FROM Ingredient")
+    fun find(): ArrayList<Ingredient>
 
     //test
     @Insert fun insertIngredient(ingredient: Ingredient)
