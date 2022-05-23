@@ -5,6 +5,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.banchanrenew.relation.GramOfUnitCons
 import com.example.banchanrenew.relation.Ingredient
+import com.example.banchanrenew.relation.IngredientsCons
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -18,7 +19,7 @@ import org.junit.Before
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
-class ExampleInstrumentedTest {
+class Test2 {
     var appContext = InstrumentationRegistry.getInstrumentation().targetContext
     lateinit var testDao : IngredientDAO
 
@@ -33,9 +34,7 @@ class ExampleInstrumentedTest {
         testDao.delete()
         testDao.delete2()
         testDao.insertGramOfUnitList(GramOfUnitCons().getData())
-        testDao.insertIngredient(Ingredient(1,"돼지고기","근", R.drawable.pork,"meat", 0))
-        testDao.insertIngredient(Ingredient(2,"소고기","근",R.drawable.beef,"meat", 0))
-        testDao.insertIngredient(Ingredient(3,"양고기","근",R.drawable.lamb,"meat", 0))
+        testDao.insertIngredientList(IngredientsCons().getData())
     }
 
     @Test

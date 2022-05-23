@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey
     foreignKeys = [
         ForeignKey(entity = GramOfUnit::class, parentColumns = ["unit"], childColumns = ["unit"])
     ])
-class Ingredient (
+data class Ingredient (
     @PrimaryKey val id: Int,
     @ColumnInfo(name = "name") var name: String,
     @ColumnInfo(name = "unit") var unit: String,

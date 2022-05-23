@@ -15,13 +15,21 @@ interface IngredientDAO {
     //test
     @Insert fun insertIngredient(ingredient: Ingredient)
 
+    @Insert fun insertIngredientList(list: List<Ingredient>)
+
     @Insert fun insertGramOfUnit(gramOfUnit: GramOfUnit)
 
-    @Query("SELECT id From Ingredient WHERE id = :id")
-    fun find1Ingredient(id: Int): Int
+    @Query("SELECT unit From Ingredient WHERE id = :id")
+    fun selectUnitFromIngredient(id: Int): String
 
-    @Query("SELECT gramOfUnit From Ingredient natural join GramOfUnit WHERE id = :id")
-    fun findJoinIngredient(id: Int): Int
+    @Insert fun insertGramOfUnitList(list: List<GramOfUnit>)
+
+    @Query("SELECT id From Ingredient WHERE id = :id")
+    fun selectIdFromIngredientWhereId(id: Int): Int
+
+    @Query("SELECT name From Ingredient WHERE id = :id")
+    fun selectNameFromIngredientWhereId(id: Int): String
+
 
     @Query("DELETE FROM Ingredient")
     fun delete()
