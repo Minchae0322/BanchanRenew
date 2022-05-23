@@ -40,12 +40,12 @@ class Test2 {
     @Test
     fun useAppContext() {
         // Context of the app under test.
+        assertEquals(0, testDao.selectIdFromIngredientWhereId(0))
+        assertEquals("돼지고기", testDao.selectNameFromIngredientWhereId(0))
+        assertEquals("근", testDao.selectUnitFromIngredient(0))
         assertEquals(1, testDao.selectIdFromIngredientWhereId(1))
-        assertEquals("돼지고기", testDao.selectNameFromIngredientWhereId(1))
+        assertEquals("소고기", testDao.selectNameFromIngredientWhereId(1))
         assertEquals("근", testDao.selectUnitFromIngredient(1))
-        assertEquals(2, testDao.selectIdFromIngredientWhereId(2))
-        assertEquals("소고기", testDao.selectNameFromIngredientWhereId(2))
-        assertEquals("근", testDao.selectUnitFromIngredient(2))
         assertEquals("com.example.banchanrenew", appContext.packageName)
 
     }

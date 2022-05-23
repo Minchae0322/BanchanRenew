@@ -45,7 +45,7 @@ class IngredientsCons {
                 Ingredient(ingredientId++,"갈비","g",R.drawable.galbi,"meat", 0),
                 Ingredient(ingredientId++,"바지락","바지락1봉지",R.drawable.fish_bajilak,"meat", 0),
                 Ingredient(ingredientId++,"통북어","통북어1개",R.drawable.fish_tongbuke,"meat", 0),
-                Ingredient(ingredientId++,"유부","유부1개",R.drawable.ubu,"meat", 0),
+                Ingredient(ingredientId++,"유부","유부1장",R.drawable.ubu,"meat", 0),
                 Ingredient(ingredientId++,"해파리","g",R.drawable.fish_hepari,"meat", 0),
                 Ingredient(ingredientId++,"게맛살","게맛살1팩",R.drawable.gaematsal,"meat", 0),
                 Ingredient(ingredientId++,"아귀","아귀1마리",R.drawable.fish_agui,"meat", 0),
