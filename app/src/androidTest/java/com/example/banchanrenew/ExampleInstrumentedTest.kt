@@ -1,9 +1,10 @@
 package com.example.banchanrenew
 
-import android.content.Context
 import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.banchanrenew.relation.GramOfUnit
+import com.example.banchanrenew.relation.Ingredient
 
 import org.junit.Test
 import org.junit.runner.RunWith

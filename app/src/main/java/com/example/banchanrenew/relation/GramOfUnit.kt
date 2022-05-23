@@ -1,4 +1,4 @@
-package com.example.banchanrenew
+package com.example.banchanrenew.relation
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

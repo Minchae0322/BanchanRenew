@@ -1,10 +1,9 @@
 package com.example.banchanrenew
 
 import androidx.room.Database
-import androidx.room.DatabaseConfiguration
-import androidx.room.InvalidationTracker
 import androidx.room.RoomDatabase
-import androidx.sqlite.db.SupportSQLiteOpenHelper
+import com.example.banchanrenew.relation.GramOfUnit
+import com.example.banchanrenew.relation.Ingredient
 
 @Database(entities = [Ingredient::class, GramOfUnit::class],  version = 1, exportSchema = true)
 abstract class TestDatabase : RoomDatabase() {

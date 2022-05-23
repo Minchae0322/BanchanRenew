@@ -1,4 +1,4 @@
-package com.example.banchanrenew
+package com.example.banchanrenew.addIngredientsPage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,7 @@ import com.example.banchanrenew.databinding.ActivityAddfridgeBinding
 /**
  * The number of pages (wizard steps) to show in this demo.
  */
-private const val NUM_PAGES = 5
+private const val NUM_PAGES = 3
 
 class AddIngredientsActivity : FragmentActivity() {
 
@@ -32,17 +32,6 @@ class AddIngredientsActivity : FragmentActivity() {
         binding.viewPagerAddIngredients.adapter = pagerAdapter
     }
 
-    override fun onBackPressed() {
-        if (binding.viewPagerAddIngredients.currentItem == 0) {
-            // If the user is currently looking at the first step, allow the system to handle the
-            // Back button. This calls finish() on this activity and pops the back stack.
-            super.onBackPressed()
-        } else {
-            // Otherwise, select the previous step.
-            binding.viewPagerAddIngredients.currentItem = binding.viewPagerAddIngredients.currentItem - 1
-        }
-    }
-
     /**
      * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in
      * sequence.
@@ -50,6 +39,20 @@ class AddIngredientsActivity : FragmentActivity() {
     private inner class ScreenSlidePagerAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
         override fun getItemCount(): Int = NUM_PAGES
 
-        override fun createFragment(position: Int): Fragment = PagerFragment(db.testDao().find())
+        override fun createFragment(position: Int): Fragment {
+            return when(position) {
+                0 -> {
+                    MeatPagerFragment(db.testDao().find())
+                }
+                1 -> {
+                    VegetablePagerFragment(db.testDao().find())
+                }
+                else -> {
+                    FishPagerFragment(db.testDao().find())
+                }
+            }
+
+        }
+
     }
 }

@@ -1,15 +1,16 @@
 package com.example.banchanrenew
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import com.example.banchanrenew.relation.GramOfUnit
+import com.example.banchanrenew.relation.Ingredient
 
 @Dao
 interface IngredientDAO {
 
     @Query("SELECT * FROM Ingredient")
-    fun find(): ArrayList<Ingredient>
+    fun find(): List<Ingredient>
 
     //test
     @Insert fun insertIngredient(ingredient: Ingredient)
