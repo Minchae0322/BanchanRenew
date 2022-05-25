@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.banchanrenew.relation.Ingredient
-import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.databinding.FragmentPagerBinding
 
 class FishPagerFragment(var list: List<Ingredient>): Fragment() {
@@ -23,7 +22,7 @@ class FishPagerFragment(var list: List<Ingredient>): Fragment() {
     }
 
     private fun initRecyclerView() {
-        binding.pagerRecyclerView.adapter = AddIngredientsRecyclerViewAdapter(list)
+        binding.pagerRecyclerView.adapter = AddIngredientsAdapter(list)
         binding.pagerRecyclerView.layoutManager = GridLayoutManager(this.context,3)
         binding.pagerRecyclerView.setHasFixedSize(true)
     }
