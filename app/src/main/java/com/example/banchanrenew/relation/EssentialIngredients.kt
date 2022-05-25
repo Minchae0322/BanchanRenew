@@ -11,9 +11,9 @@ import com.example.banchanrenew.relation.Dish
         ForeignKey(entity = Dish::class, parentColumns = ["dishId"], childColumns = ["dishId"])
     ], primaryKeys = ["dishId", "essential_name", "essential_gram"])
 class EssentialIngredients(
-    var dishId: Int,
     var essential_name: String,
-    var essential_gram: String
+    var essential_gram: String,
+    var dishId: Int
 ) {
 
 }

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <com.ramotion.foldingcell.FoldingCell
+        android:id="@+id/fondingCell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="8dp"
+        android:background="@drawable/background_rounding"
+        >
+
+        <FrameLayout
+            android:id="@+id/cell_content_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:background="@drawable/background_rounding">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_light_background">
+
+                <ImageView
+                    android:id="@+id/iv_onlyMainImage"
+                    android:layout_width="150dp"
+                    android:layout_height="140dp"
+                    android:scaleType="fitXY"
+                    android:background="@drawable/background_rounding"/>
+
+                <TextView
+                    android:id="@+id/tv_onlyMainTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/border"
+                    android:fontFamily="@font/cafe24"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="17dp"
+                    android:textColor="#000000"
+                    android:autoSizeMinTextSize="18sp"
+                    android:autoSizeTextType="uniform"/>
+
+                <TextView
+                    android:id="@+id/tv_onlyMainNation"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="150dp"
+                    android:background="@drawable/border"
+                    android:paddingLeft="15dp"
+                    android:text="국가  "
+                    android:fontFamily="@font/coookie1"
+                    android:layout_marginTop="65dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="9sp"
+                    android:autoSizeMaxTextSize="13sp"
+                    android:textColor="#202C98"/>
+
+                <TextView
+                    android:id="@+id/tv_onlyMainsetNation"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="200dp"
+                    android:fontFamily="@font/coookie1"
+                    android:background="@drawable/border"
+                    android:paddingLeft="8dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="9sp"
+                    android:autoSizeMaxTextSize="13sp"
+                    android:layout_marginTop="65dp"
+                    android:textColor="#CE000000"/>
+
+                <TextView
+                    android:id="@+id/tv_onlyMainFoodKind"
+                    android:layout_width="63dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="270dp"
+                    android:background="@drawable/border"
+                    android:paddingLeft="8dp"
+                    android:text="음식종류  "
+                    android:fontFamily="@font/coookie1"
+                    android:layout_marginTop="65dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="9sp"
+                    android:autoSizeMaxTextSize="13sp"
+                    android:textColor="#202C98"/>
+
+                <TextView
+                    android:id="@+id/tv_onlyMainsetFoodKind"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="337dp"
+                    android:fontFamily="@font/coookie1"
+                    android:background="@drawable/border"
+                    android:paddingLeft="8dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="9sp"
+                    android:autoSizeMaxTextSize="13sp"
+                    android:layout_marginTop="65dp"
+                    android:textColor="#CE000000"/>
+
+                <TextView
+                    android:id="@+id/tv_onlyMainRequiredTime"
+                    android:layout_width="70dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="150dp"
+                    android:background="@drawable/border"
+                    android:paddingLeft="15dp"
+                    android:text="소요시간  "
+                    android:fontFamily="@font/coookie1"
+                    android:layout_marginTop="105dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="9sp"
+                    android:autoSizeMaxTextSize="13sp"
+                    android:textColor="#202C98"/>
+                <TextView
+                    android:id="@+id/tv_onlyMainsetRequiredTime"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="220dp"
+                    android:fontFamily="@font/coookie1"
+                    android:background="@drawable/border"
+                    android:paddingLeft="8dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="9sp"
+                    android:autoSizeMaxTextSize="13sp"
+                    android:layout_marginTop="105dp"
+                    android:textColor="#CE000000"/>
+                <TextView
+                    android:id="@+id/tv_onlyMainCalorie"
+                    android:layout_width="53dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="270dp"
+                    android:background="@drawable/border"
+                    android:paddingLeft="8dp"
+                    android:text="칼로리  "
+                    android:fontFamily="@font/coookie1"
+                    android:layout_marginTop="105dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="9sp"
+                    android:autoSizeMaxTextSize="13sp"
+                    android:textColor="#202C98"/>
+
+                <TextView
+                    android:id="@+id/tv_onlyMainsetCalorie"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="328dp"
+                    android:layout_marginTop="105dp"
+                    android:background="@drawable/border"
+                    android:fontFamily="@font/coookie1"
+                    android:paddingLeft="8dp"
+                    android:textColor="#CE000000"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="9sp"
+                    android:autoSizeMaxTextSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="140dp">
+
+                    <TextView
+                        android:id="@+id/tv_qnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/coookie1"
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="9sp"
+                        android:autoSizeMaxTextSize="14sp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingVertical="10dp"
+                        android:textColor="@color/cardview_dark_background"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_onlyMainINGRDT"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/cardview_dark_background"
+                        android:fontFamily="@font/merona2"
+                        android:textSize="14sp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingVertical="10dp"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#40000000"/>
+
+                    <TextView
+                        android:id="@+id/tv_onlyMainSubINGRDT"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/merona2"
+                        android:textSize="14sp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingVertical="10dp"
+                        android:textColor="@color/cardview_dark_background"
+                        android:layout_below="@+id/tv_onlyMainINGRDT"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#3E000000"/>
+
+                    <TextView
+                        android:id="@+id/tv_onlyMainSeasoningINGRDT"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_onlyMainSubINGRDT"
+                        android:fontFamily="@font/merona2"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingVertical="10dp"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#3C000000"/>
+
+                </LinearLayout>
+
+
+
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal"
+                android:layout_below="@+id/frameLayout">
+
+                <Button
+                    android:id="@+id/bt_onlyMainLeft"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_rounding"
+                    android:fontFamily="@font/coookie1"
+                    android:text="보유 재료보기"
+                    android:layout_margin="5dp"
+                    android:elevation="5dp"
+                    android:padding="5dp"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="8dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/cardview_light_background">
+
+                </TextView>
+
+                <Button
+                    android:id="@+id/bt_onlyMainRight"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:layout_margin="5dp"
+                    android:elevation="5dp"
+                    android:background="@drawable/button_rounding"
+                    android:fontFamily="@font/coookie1"
+                    android:text="레시피"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/cell_title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_onlyMainFoldedCell"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:background="@drawable/background_rounding"
+                    android:scaleType="fitXY" />
+
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_onlyMainTitleFoldedCell"
+                style="@android:style/Widget.DeviceDefault.Light.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginLeft="110dp"
+                android:fontFamily="@font/merona"
+                android:background="@drawable/border"
+                android:paddingLeft="15dp"
+                android:paddingTop="18dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#000000"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="16sp"
+                android:autoSizeMaxTextSize="17sp"/>
+
+            <TextView
+                android:id="@+id/tv_onlyMainEXPFoldedCell"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="55dp"
+                android:background="@drawable/border"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="2dp"
+                android:textColor="#77000000"
+                android:fontFamily="@font/merona2"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="13sp"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|top"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp" />
+
+
+        </FrameLayout>
+
+
+    </com.ramotion.foldingcell.FoldingCell>
+
+</LinearLayout>

@@ -26,7 +26,7 @@ class MeatPagerFragment(var list: List<Ingredient>): Fragment() {
     private fun initRecyclerView() {
         binding.pagerRecyclerView.layoutManager = GridLayoutManager(this.context,4)
         binding.pagerRecyclerView.setHasFixedSize(true)
-        binding.pagerRecyclerView.adapter = AddIngredientsRecyclerViewAdapter(MainActivity.db.testDao().selectIngredientWhereDataType("meat"))
+        binding.pagerRecyclerView.adapter = AddIngredientsRecyclerViewAdapter(list)
 
     }
 

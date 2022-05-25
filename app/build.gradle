@@ -45,6 +45,7 @@ dependencies {
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("androidx.room:room-runtime:$roomVersion")
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    implementation('com.ramotion.foldingcell:folding-cell:1.2.3')
     implementation "androidx.room:room-runtime:2.4.2"
     kapt "androidx.room:room-compiler:2.4.2"
     implementation 'androidx.core:core-ktx:1.7.0'

@@ -24,7 +24,7 @@ class VegetablePagerFragment(var list: List<Ingredient>): Fragment() {
     }
 
     private fun initRecyclerView() {
-        binding.pagerRecyclerView.adapter = AddIngredientsRecyclerViewAdapter(MainActivity.db.testDao().find())
+        binding.pagerRecyclerView.adapter = AddIngredientsRecyclerViewAdapter(list)
         binding.pagerRecyclerView.layoutManager = GridLayoutManager(this.context,3)
         binding.pagerRecyclerView.setHasFixedSize(true)
     }

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.banchanrenew.MainActivity
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.databinding.ActivityAddfridgeBinding
 
@@ -42,7 +43,7 @@ class AddIngredientsActivity : FragmentActivity() {
         override fun createFragment(position: Int): Fragment {
             return when(position) {
                 0 -> {
-                    MeatPagerFragment(db.testDao().find())
+                    MeatPagerFragment(MainActivity.db.testDao().selectIngredientWhereDataType("meat"))
                 }
                 1 -> {
                     VegetablePagerFragment(db.testDao().find())
