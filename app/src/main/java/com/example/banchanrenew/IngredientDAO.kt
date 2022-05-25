@@ -22,6 +22,9 @@ interface IngredientDAO {
     @Query("SELECT unit From Ingredient WHERE id = :id")
     fun selectUnitFromIngredient(id: Int): String
 
+    @Query("SELECT * From Ingredient WHERE dataType = :dataType")
+    fun selectIngredientWhereDataType(dataType: String): List<Ingredient>
+
     @Insert fun insertGramOfUnitList(list: List<GramOfUnit>)
 
     @Query("SELECT id From Ingredient WHERE id = :id")

@@ -5,5 +5,6 @@ import androidx.room.RoomDatabase
 import com.example.banchanrenew.relation.*
 
 @Database(entities = [Ingredient::class, GramOfUnit::class, Dish::class, EssentialIngredients::class, NotEssentialIngredients:: class],  version = 1, exportSchema = true)
-abstract class Database: RoomDatabase() {
+abstract class MainDatabase: RoomDatabase() {
+    abstract fun databaseDao() : IngredientDAO
 }
