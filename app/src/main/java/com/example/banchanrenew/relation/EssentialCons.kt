@@ -655,7 +655,7 @@ class EssentialCons {
         EssentialIngredients("소고기","100" , 402),
         EssentialIngredients("만두피","15", 409),
         EssentialIngredients("미역","5",410),
-                EssentialIngredients( "표고버섯","8", ,3),
+                EssentialIngredients( "표고버섯","8",3),
                 EssentialIngredients( "오이","20",  14),
                 EssentialIngredients( "소고기","10", 16),
                 EssentialIngredients("방울토마토","25", 28),
@@ -693,7 +693,7 @@ class EssentialCons {
                 EssentialIngredients( "양파","25", 128),
                 EssentialIngredients("잣","3", 130),
                 EssentialIngredients( "우유","100", 131),
-                EssentialIngredients( "표고버섯","12",  , 137),
+                EssentialIngredients( "표고버섯","12",  137),
                 EssentialIngredients( "수삼","20", 138),
                 EssentialIngredients( "새우","120" , 139),
                 EssentialIngredients( "샐러리","30", 140),
@@ -800,82 +800,81 @@ class EssentialCons {
                 EssentialIngredients("사골","100", 81),
                 EssentialIngredients( "모시조개","25",  93),
                 EssentialIngredients( "새우","60", 109),
-
                 EssentialIngredients( "도라지","25", 111),
-                EssentialIngredients( "콩나물","15", "햄","8", "게맛살","25", 118),
+                EssentialIngredients( "콩나물","15",  118),
                 EssentialIngredients( "부추","75", 126),
-
-                EssentialIngredients( "양송이","12", "목이버섯","6", "팽이버섯","15" , 137),
-                EssentialIngredients( "오이","80", "딸기","40", 140),
+                EssentialIngredients( "양송이","12",  137),
+                EssentialIngredients( "오이","80",  140),
                 EssentialIngredients( "쑥갓","3", 145),
-
                 EssentialIngredients( "대추","50", 150),
                 EssentialIngredients( "느타리버섯","100" , 151),
-                EssentialIngredients( "당근","100", "오이","80", 152),
-
+                EssentialIngredients( "당근","100", 152),
                 EssentialIngredients( "양송이버섯","15" , 158),
-
                 EssentialIngredients( "당면","15", 160),
                 EssentialIngredients( "새우","50", 161),
-                EssentialIngredients( "모시조개","75", "당면","25" , 175),
+                EssentialIngredients( "모시조개","75",  175),
                 EssentialIngredients( "겨자잎","3" , 179),
                 EssentialIngredients( "느타리버섯","13", 181),
                 EssentialIngredients( "고사리","50", 203),
                 EssentialIngredients( "모시조개","200" , 205),
                 EssentialIngredients( "고구마","100", 206),
-
                 EssentialIngredients( "계란","25" , 219),
                 EssentialIngredients( "치커리","3" , 220),
-
                 EssentialIngredients( "홍합","100", 222),
                 EssentialIngredients( "배추","100", 223),
-                EssentialIngredients( "숙주","25", "느타리버섯","25", "표고버섯","16",226),
-
-
+                EssentialIngredients( "숙주","25", 226),
                 EssentialIngredients( "다진마늘","3", 231),
-                EssentialIngredients( "표고버섯","16", "팽이버섯","25", 236),
-
-                EssentialIngredients( "당근","50", "무","50" , 239),
-                EssentialIngredients( "생굴","50", "낙지","25", 243),
+                EssentialIngredients( "표고버섯","16",  236),
+                EssentialIngredients( "당근","50",  239),
+                EssentialIngredients( "생굴","50",  243),
                 EssentialIngredients( "대파","10", 244),
-
-                EssentialIngredients( "양배추","10", "깻잎","40", "상추","20", 251),
+                EssentialIngredients( "양배추","10",  251),
                 EssentialIngredients( "옥수수","12", 252),
                 EssentialIngredients( "대추","20", 256),
                 EssentialIngredients( "고사리","25" , 257),
-
                 EssentialIngredients( "목이버섯","15" , 300),
-                EssentialIngredients( "고추","60", "오징어","60", 311),
+                EssentialIngredients( "고추","60", 311),
                 EssentialIngredients( "당근","13" , 312),
                 EssentialIngredients( "양송이버섯","50", 317),
-                EssentialIngredients( "고추","24", "미나리","10", 328),
+                EssentialIngredients( "고추","24",  328),
                 EssentialIngredients( "케일","5" , 339),
-
                 EssentialIngredients( "칼국수면","60" , 344),
-
-                EssentialIngredients( "새우","45", "홀토마토","50" , 348),
-
-                EssentialIngredients( "양파","40", "샐러리","2", "피망","30", "무","10" , 368),
-
+                EssentialIngredients( "새우","45",  348),
+                EssentialIngredients( "양파","40",  368),
                 EssentialIngredients( "오징어","60" , 372),
                 EssentialIngredients( "깻잎","24" , 374),
-
-                EssentialIngredients( "느타리버섯","30", "옥수수통조림","170" , 381),
-
-                EssentialIngredients( "소고기","15", "칼국수면","25" , 385),
-
-                EssentialIngredients( "오이","10", "양상추","20" , 388),
-
-
-
+                EssentialIngredients( "느타리버섯","30", 381),
+                EssentialIngredients( "소고기","15", 385),
+                EssentialIngredients( "오이","10",  388),
                 EssentialIngredients( "배추김치","15", 395),
-
-
-
-
-
-
-
+                EssentialIngredients("깐밤","20", 50),
+                EssentialIngredients("배추김치","5", 60),
+                EssentialIngredients("느타리버섯","100", 75),
+                EssentialIngredients( "밀가루","50",  93),
+                EssentialIngredients( "햄","8",  118),
+                EssentialIngredients( "목이버섯","6",  137),
+                EssentialIngredients( "딸기","40", 140),
+                EssentialIngredients( "오이","80", 152),
+                EssentialIngredients( "당면","25" , 175),
+                EssentialIngredients( "느타리버섯","25", 226),
+                EssentialIngredients( "팽이버섯","25", 236),
+                EssentialIngredients( "무","50" , 239),
+                EssentialIngredients( "낙지","25", 243),
+                EssentialIngredients( "깻잎","40",  251),
+                EssentialIngredients( "오징어","60", 311),
+                EssentialIngredients( "미나리","10", 328),
+                EssentialIngredients( "홀토마토","50" , 348),
+                EssentialIngredients( "샐러리","2", 368),
+                EssentialIngredients( "옥수수통조림","170" , 381),
+                EssentialIngredients( "칼국수면","25" , 385),
+                EssentialIngredients( "양상추","20" , 388),
+                EssentialIngredients( "멥쌀","50", 93),
+                EssentialIngredients( "게맛살","25", 118),
+                EssentialIngredients( "팽이버섯","15" , 137),
+                EssentialIngredients( "표고버섯","16",226),
+                EssentialIngredients( "상추","20", 251),
+                EssentialIngredients( "피망","30", 368),
+                EssentialIngredients("무","10" , 368)
                 ))
     }
 }
