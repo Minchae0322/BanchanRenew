@@ -3,9 +3,8 @@ package com.example.banchanrenew
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.banchanrenew.relation.Dish
-import com.example.banchanrenew.relation.GramOfUnit
-import com.example.banchanrenew.relation.Ingredient
+import androidx.room.Update
+import com.example.banchanrenew.relation.*
 
 @Dao
 interface IngredientDAO {
@@ -20,8 +19,18 @@ interface IngredientDAO {
 
     @Insert fun insertGramOfUnit(gramOfUnit: GramOfUnit)
 
+    @Insert fun insertEssentialList(list: List<EssentialIngredients>)
+
+    @Query("UPDATE Ingredient SET remainGram = :remain WHERE id = :id")
+    fun updateTest(remain: Int, id: Int)
+
     @Query("SELECT unit From Ingredient WHERE id = :id")
     fun selectUnitFromIngredient(id: Int): String
+
+    @Query("SELECT nation From Dish WHERE dishId = :id")
+    fun eeeee(id: Int): String
+
+    @Insert fun insertDishList(list: List<Dish>)
 
     @Query("SELECT * From Ingredient WHERE dataType = :dataType")
     fun selectIngredientWhereDataType(dataType: String): List<Ingredient>
