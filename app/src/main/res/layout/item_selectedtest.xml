@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.ramotion.foldingcell.FoldingCell
+        android:id="@+id/foldingCellTest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/cell_content_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_rounding"
+            android:visibility="visible">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_foldingCellTitle1"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:background="@drawable/background_rounding"
+                    android:scaleType="fitXY" />
+
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_foldingCellTitleName1"
+                style="@android:style/Widget.DeviceDefault.Light.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginLeft="110dp"
+                android:autoSizeMaxTextSize="17sp"
+                android:autoSizeMinTextSize="16sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/border"
+                android:fontFamily="@font/merona"
+                android:paddingLeft="15dp"
+                android:paddingTop="18dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/tv_foldingCellTitleExplain1"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="55dp"
+                android:autoSizeMaxTextSize="13sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/border"
+                android:fontFamily="@font/merona2"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="2dp"
+                android:textColor="#77000000" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|top"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp" />
+
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/cell_title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_foldingCellTitle"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:background="@drawable/background_rounding"
+                    android:scaleType="fitXY" />
+
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_foldingCellTitleName"
+                style="@android:style/Widget.DeviceDefault.Light.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginLeft="110dp"
+                android:fontFamily="@font/merona"
+                android:background="@drawable/border"
+                android:paddingLeft="15dp"
+                android:paddingTop="18dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#000000"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="16sp"
+                android:autoSizeMaxTextSize="17sp"/>
+
+            <TextView
+                android:id="@+id/tv_foldingCellTitleExplain"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="55dp"
+                android:background="@drawable/border"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="2dp"
+                android:textColor="#77000000"
+                android:fontFamily="@font/merona2"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="13sp"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|top"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp" />
+
+
+        </FrameLayout>
+
+
+
+    </com.ramotion.foldingcell.FoldingCell>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

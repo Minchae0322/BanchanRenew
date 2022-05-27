@@ -3,7 +3,7 @@ package com.example.banchanrenew
 import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.banchanrenew.chooseDish.RecipeDAO
+import com.example.banchanrenew.selectDish.RecipeDAO
 import com.example.banchanrenew.relation.*
 
 import org.junit.Test

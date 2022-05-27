@@ -1,4 +1,4 @@
-package com.example.banchanrenew.chooseDish
+package com.example.banchanrenew.selectDish
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,10 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.databinding.ActivitySelectedBinding
 import com.example.banchanrenew.relation.Dish
-import com.example.banchanrenew.relation.EssentialIngredients
-import com.example.banchanrenew.relation.Ingredient
 
-class RecipeWithMainHave: AppCompatActivity() {
+class RecipeWithMainHaveActivity: AppCompatActivity() {
     private lateinit var binding: ActivitySelectedBinding
     private val recipeDao: RecipeDAO = db.recipeDao()
 
@@ -21,8 +19,17 @@ class RecipeWithMainHave: AppCompatActivity() {
 
         binding.recyclerViewSelected.setHasFixedSize(true)
         binding.recyclerViewSelected.layoutManager = LinearLayoutManager(applicationContext)
-        binding.recyclerViewSelected.adapter = RecipeAdapter(recipeDao.getDishListWithDishId(recipeDao.getDishListWithMainIngredients()))
+        binding.recyclerViewSelected.adapter = RecipeAdapter(getDishList(recipeDao.getDishListWithMainIngredients()))
 
+    }
+
+    private fun getDishList(list: List<Int>): List<Dish> {
+        var dishList = mutableListOf<Dish>()
+        for(dishId in list) {
+            dishList.add(recipeDao.getDishWhereId(dishId))
+        }
+
+        return dishList
     }
 
 

@@ -1,4 +1,4 @@
-package com.example.banchanrenew.chooseDish
+package com.example.banchanrenew.selectDish
 
 import androidx.room.Dao
 import androidx.room.Query

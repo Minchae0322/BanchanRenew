@@ -1,4 +1,4 @@
-package com.example.banchanrenew.chooseDish
+package com.example.banchanrenew.selectDish
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,16 +8,10 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.banchanrenew.R
-import com.example.banchanrenew.addIngredientsPage.AddIngredientsActivity
 
 class SelectDishAdapter(val list: List<Int>): RecyclerView.Adapter<SelectDishAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView: TextView = itemView.findViewById(R.id.tv_menuSelect)
-        init {
-            when(absoluteAdapterPosition) {
-
-            }
-        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,7 +23,17 @@ class SelectDishAdapter(val list: List<Int>): RecyclerView.Adapter<SelectDishAda
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.textView.text = list[position].toString()
         holder.textView.setOnClickListener {
+            when(position) {
+                0 -> {
+                    val intent = Intent(holder.itemView.context, RecipeWithMainHaveActivity::class.java)
+                    startActivity(holder.itemView.context, intent, null)
+                }
 
+                1 -> {
+                    val intent = Intent(holder.itemView.context, RecipeActivity::class.java)
+                    startActivity(holder.itemView.context, intent, null)
+                }
+            }
 
         }
     }

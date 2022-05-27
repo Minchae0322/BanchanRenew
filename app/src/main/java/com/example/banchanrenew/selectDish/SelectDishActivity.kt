@@ -1,9 +1,8 @@
-package com.example.banchanrenew.chooseDish
+package com.example.banchanrenew.selectDish
 
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.banchanrenew.databinding.ActivitySelectdishBinding
 
 class SelectDishActivity: AppCompatActivity() {
@@ -14,6 +13,8 @@ class SelectDishActivity: AppCompatActivity() {
         binding = ActivitySelectdishBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        binding.recycelrViewSelectMenu.layoutManager = LinearLayoutManager(applicationContext)
+        binding.recycelrViewSelectMenu.setHasFixedSize(true)
+        binding.recycelrViewSelectMenu.adapter = SelectDishAdapter(listOf(1,2))
     }
 }

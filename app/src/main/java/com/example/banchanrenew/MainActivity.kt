@@ -1,19 +1,12 @@
 package com.example.banchanrenew
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.room.Database
 import androidx.room.Room
-import androidx.room.RoomDatabase
-import androidx.sqlite.db.SupportSQLiteDatabase
-import com.example.banchanrenew.addIngredientsPage.AddIngredientsActivity
+import com.example.banchanrenew.selectDish.SelectDishActivity
 import com.example.banchanrenew.databinding.ActivityMainBinding
-import com.example.banchanrenew.relation.GramOfUnitCons
-import com.example.banchanrenew.relation.Ingredient
-import com.example.banchanrenew.relation.IngredientsCons
-import java.util.concurrent.Executors
+import com.example.banchanrenew.relation.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,18 +23,21 @@ class MainActivity : AppCompatActivity() {
         prefs = PreferenceUtil(applicationContext)
         db = Room.databaseBuilder(
             applicationContext,
-            TestDatabase::class.java, "test.db3"
+            TestDatabase::class.java, "test.db4"
         ).allowMainThreadQueries().build()
-        if(prefs.getString("version1234","0") == "0") {
+        if(prefs.getString("version2","0") == "0") {
             var testDao1: IngredientDAO = db.testDao()
             testDao1.insertGramOfUnitList(GramOfUnitCons().getData())
             testDao1.insertIngredientList(IngredientsCons().getData())
-            prefs.setString("version1234","1")
+            testDao1.insertDishList(DishCons().getData())
+            testDao1.insertEssentialList(EssentialCons().getData())
+            testDao1.updateTest(600,"돼지갈비")
+            prefs.setString("version2","1")
         }
 
         var list = ArrayList<Ingredient>()
         binding.textViewTest.setOnClickListener {
-            val nextIntent = Intent(this, AddIngredientsActivity::class.java)
+            val nextIntent = Intent(this, SelectDishActivity::class.java)
             startActivity(nextIntent)
         }
     }
