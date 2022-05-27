@@ -28,12 +28,14 @@ class Test2 {
         val db = Room.databaseBuilder(
             appContext,
             TestDatabase::class.java,
-            "TestDB17"
+            "TestDB18"
         ).build()
         testDao = db.testDao()
         recipeDAO = db.recipeDao()
         testDao.delete()
         testDao.delete2()
+        testDao.delete3()
+        testDao.delete4()
         testDao.insertGramOfUnitList(GramOfUnitCons().getData())
         testDao.insertIngredientList(IngredientsCons().getData())
         testDao.insertDishList(DishCons().getData())
@@ -55,7 +57,9 @@ class Test2 {
 
     @Test
     fun test1() {
-        testDao.updateTest(600,448)
-        assertEquals(448, recipeDAO.getTest2()[0])
+        testDao.updateTest(600,"돼지갈비")
+        assertEquals("돼지갈비",testDao.selectUnitFromIngredientName("돼지갈비"))
+        assertEquals(600,testDao.eee2("돼지갈비"))
+        assertEquals(449, recipeDAO.getDishListWithMainIngredients()[1])
     }
 }

@@ -17,7 +17,7 @@ class RecipeActivity: AppCompatActivity() {
 
         binding.recyclerViewSelected.layoutManager = LinearLayoutManager(applicationContext)
         binding.recyclerViewSelected.setHasFixedSize(true)
-        binding.recyclerViewSelected.adapter = RecipeAdapter(db.testDao().selectAllFromDish())
+        binding.recyclerViewSelected.adapter = RecipeAdapter(db.recipeDao().getDishList())
 
     }
 }
