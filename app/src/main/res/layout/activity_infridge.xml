@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cardview_light_background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/cardview_light_background"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:elevation="10dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/recipe2222"/>
+
+            <TextView
+                android:id="@+id/textView_godish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_rounding"
+                android:fontFamily="@font/coookie1"
+                android:paddingVertical="10dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="10dp"
+                android:text="메뉴 보기"
+                android:textColor="@android:color/black"
+                android:textSize="11sp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/title"
+            android:text="반찬 뭐 먹지"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="18sp">
+
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:elevation="10dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+
+                android:background="@drawable/fridge"/>
+
+            <TextView
+                android:id="@+id/textView_gofridge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/coookie1"
+                android:text="재료 선택하기"
+                android:paddingVertical="10dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="3dp"
+                android:textColor="@android:color/black"
+                android:background="@drawable/background_rounding"
+                android:textSize="11sp" />
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:background="@color/cardview_light_background">
+
+        <EditText
+            android:id="@+id/editText_search"
+            android:layout_width="320dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/coookie1"
+            android:hint="재료를 입력하세요"
+            android:paddingLeft="20dp" />
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_fridge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#12000000"
+            >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

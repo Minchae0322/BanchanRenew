@@ -45,6 +45,9 @@ interface IngredientDAO {
 
     @Insert fun insertGramOfUnitList(list: List<GramOfUnit>)
 
+    @Query("SELECT * FROM ingredient WHERE remainGram > 0")
+    fun getIngredientMoreThanZeroGram(): MutableList<Ingredient>
+
     @Query("SELECT * From Dish")
     fun selectAllFromDish(): List<Dish>
 

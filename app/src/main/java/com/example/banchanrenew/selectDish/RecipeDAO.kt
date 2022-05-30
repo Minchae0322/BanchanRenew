@@ -21,7 +21,7 @@ interface RecipeDAO {
     fun getDishWhereId(dishId: Int): Dish
 
     @Query("SELECT * FROM essential WHERE dishID = :dishId")
-    fun getEssentialListWhereDishID(dishId: Int): List<EssentialIngredients>
+    fun getEssentialListWhereDishID(dishId: Int): MutableList<EssentialIngredients>
 
     @Query("SELECT e.dishId  FROM " +
             "(SELECT essential.dishId, Count(essential.dishId) as count FROM essential Group by dishId) as e " +
