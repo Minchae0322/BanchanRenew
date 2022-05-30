@@ -105,9 +105,13 @@
 
 
         <androidx.viewpager2.widget.ViewPager2
+            android:clipChildren="false"
+            android:clipToPadding="false"
             android:id="@+id/viewPager_addIngredients"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:layout_gravity="center"
             android:orientation="horizontal">
 
         </androidx.viewpager2.widget.ViewPager2>

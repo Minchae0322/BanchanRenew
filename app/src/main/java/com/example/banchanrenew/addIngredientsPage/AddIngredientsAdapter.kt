@@ -14,9 +14,9 @@ class AddIngredientsAdapter(private val list: List<Ingredient>):
     RecyclerView.Adapter<AddIngredientsAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageViewAddIngredients: ImageView = itemView.findViewById(R.id.pager_imageView)
-        val textViewAddIngredientsTitle: TextView = itemView.findViewById(R.id.textView_pager)
-        val textViewAddIngredientsRemain: TextView = itemView.findViewById(R.id.textView_pager2)
+        val imageViewAddIngredients: ImageView = itemView.findViewById(R.id.iv_fridge)
+        val textViewAddIngredientsTitle: TextView = itemView.findViewById(R.id.tv_fridgeName)
+        val textViewAddIngredientsRemain: TextView = itemView.findViewById(R.id.tv_fridgeAmount)
         init {
             imageViewAddIngredients.setOnClickListener {
 
@@ -33,7 +33,7 @@ class AddIngredientsAdapter(private val list: List<Ingredient>):
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.imageViewAddIngredients.setImageResource(list[position].image)
         holder.textViewAddIngredientsTitle.text = list[position].name
-        holder.textViewAddIngredientsRemain.text = list[position].remainGram.toString()
+        holder.textViewAddIngredientsRemain.text = list[position].remainGram.toString() + "g"
     }
 
     override fun getItemCount(): Int {

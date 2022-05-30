@@ -4,17 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2555" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/background_rounding.xml" value="0.1495" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/activity_addfridge.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/activity_infridge.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/activity_selectdish.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/activity_selected.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/fragment_pager.xml" value="0.25" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/item_fridge.xml" value="0.264" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/item_infridge.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/item_selectdish.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/item_selected.xml" value="0.2" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/item_selectedtest.xml" value="0.176" />
-        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/item_viewpager.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/item_viewpager.xml" value="0.264" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/tab_custom.xml" value="0.12335359675785208" />
       </map>
     </option>
   </component>
