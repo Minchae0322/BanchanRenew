@@ -26,15 +26,15 @@ class MainActivity : AppCompatActivity() {
         prefs = PreferenceUtil(applicationContext)
         db = Room.databaseBuilder(
             applicationContext,
-            TestDatabase::class.java, "test.db5"
+            TestDatabase::class.java, "test.db6"
         ).allowMainThreadQueries().build()
-        if(prefs.getString("version23","0") == "0") {
+        if(prefs.getString("version24","0") == "0") {
             var testDao1: IngredientDAO = db.testDao()
             testDao1.insertGramOfUnitList(GramOfUnitCons().getData())
             testDao1.insertIngredientList(IngredientsCons().getData())
             testDao1.insertDishList(DishCons().getData())
             testDao1.insertEssentialList(EssentialCons().getData())
-            prefs.setString("version23","1")
+            prefs.setString("version24","1")
             testDao1.updateTest(600,"돼지갈비")
             testDao1.updateTest(600,"소고기")
             testDao1.updateTest(600,"돼지고기")

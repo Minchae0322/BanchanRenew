@@ -1,5 +1,6 @@
 package com.example.banchanrenew.addIngredientsPage
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,21 +13,18 @@ import com.example.banchanrenew.R
 //재료 추기하기의 육류/가공품, 채소, 어류 리사이클러뷰 재료들이 리사이클러뷰의 뷰홀더에 들어감.
 class AddIngredientsAdapter(private val list: List<Ingredient>):
     RecyclerView.Adapter<AddIngredientsAdapter.ViewHolder>() {
+    lateinit var context: Context
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageViewAddIngredients: ImageView = itemView.findViewById(R.id.iv_fridge)
         val textViewAddIngredientsTitle: TextView = itemView.findViewById(R.id.tv_fridgeName)
         val textViewAddIngredientsRemain: TextView = itemView.findViewById(R.id.tv_fridgeAmount)
-        init {
-            imageViewAddIngredients.setOnClickListener {
-
-            }
-        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_viewpager, parent, false)
+        context = parent.context
         return ViewHolder(view)
     }
 
@@ -34,6 +32,10 @@ class AddIngredientsAdapter(private val list: List<Ingredient>):
         holder.imageViewAddIngredients.setImageResource(list[position].image)
         holder.textViewAddIngredientsTitle.text = list[position].name
         holder.textViewAddIngredientsRemain.text = list[position].remainGram.toString() + "g"
+        holder.itemView.setOnClickListener {
+            val dialog = AddIngredientsDialog(context, list[position])
+            dialog.showDialog()
+        }
     }
 
     override fun getItemCount(): Int {
