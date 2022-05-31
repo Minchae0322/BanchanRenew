@@ -10,6 +10,7 @@ import android.text.Spanned
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.WindowManager
+import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
 import com.example.banchanrenew.databinding.DialogAddBinding
 import com.example.banchanrenew.relation.Ingredient
@@ -56,43 +57,17 @@ class AddIngredientsDialog(val context: Context, var ingredient: Ingredient) {
         binding.tvAddDialogOk.setOnClickListener {
             when(buttonNum) {
                 0 -> {
+                    db.recipeDao().updateRemainOfIngredient(remain, ingredient.id)
+                }
+                1 -> {
 
                 }
             }
-        }
-    }
-
-    inner class MinMaxFilter() : InputFilter {
-        private var intMin: Int = 0
-        private var intMax: Int = 0
-
-        // Initialized
-        constructor(minValue: Int, maxValue: Int) : this() {
-            this.intMin = minValue
-            this.intMax = maxValue
-        }
-
-        override fun filter(source: CharSequence, start: Int, end: Int, dest: Spanned, dStart: Int, dEnd: Int): CharSequence? {
-            try {
-                val input = Integer.parseInt(dest.toString() + source.toString())
-                if (isInRange(intMin, intMax, input)) {
-                    return null
-                }
-            } catch (e: NumberFormatException) {
-                e.printStackTrace()
-            }
-            return ""
-        }
-
-        // Check if input c is in between min a and max b and
-        // returns corresponding boolean
-        private fun isInRange(a: Int, b: Int, c: Int): Boolean {
-            return if (b > a) c in a..b else c in b..a
         }
     }
 
     private fun setEditTextView() {
-        binding.etAddDialogAmount.filters
+        binding.etAddDialogAmount.hint = "0"
         binding.etAddDialogAmount.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -110,11 +85,27 @@ class AddIngredientsDialog(val context: Context, var ingredient: Ingredient) {
             updateView()
         }
         binding.tvPlus.setOnClickListener {
-            editTextGram += 100
-            updateView()
+            when(buttonNum) {
+                0 -> {
+                    editTextGram += 100
+                    updateView()
+                }
+                1 -> {
+                    if(ingredient.remainGram - 100 <= editTextGram) {
+                        editTextGram = ingredient.remainGram
+                    } else {
+                        editTextGram += 100
+                        updateView()
+                    }
+                }
+                2 -> {
+                    editTextGram = ingredient.remainGram
+                    updateView()
+                }
+            }
+
         }
     }
-
 
     private fun setMenuView() {
         binding.tvAddDialogPlus.setOnClickListener {
@@ -140,6 +131,7 @@ class AddIngredientsDialog(val context: Context, var ingredient: Ingredient) {
             0 -> {
                 binding.tvAddDialogPlus.setBackgroundResource(R.drawable.background_colorrounding)
                 binding.tvAddDialogPlus.setTextColor(Color.WHITE)
+                editTextGram = 0
                 updateView()
             }
             1 -> {
@@ -209,4 +201,33 @@ class AddIngredientsDialog(val context: Context, var ingredient: Ingredient) {
         }
     }
 
+
+    inner class MinMaxFilter() : InputFilter {
+        private var intMin: Int = 0
+        private var intMax: Int = 0
+
+        // Initialized
+        constructor(minValue: Int, maxValue: Int) : this() {
+            this.intMin = minValue
+            this.intMax = maxValue
+        }
+
+        override fun filter(source: CharSequence, start: Int, end: Int, dest: Spanned, dStart: Int, dEnd: Int): CharSequence? {
+            try {
+                val input = Integer.parseInt(dest.toString() + source.toString())
+                if (isInRange(intMin, intMax, input)) {
+                    return null
+                }
+            } catch (e: NumberFormatException) {
+                e.printStackTrace()
+            }
+            return ""
+        }
+
+        // Check if input c is in between min a and max b and
+        // returns corresponding boolean
+        private fun isInRange(a: Int, b: Int, c: Int): Boolean {
+            return if (b > a) c in a..b else c in b..a
+        }
+    }
 }
