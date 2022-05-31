@@ -12,6 +12,7 @@ import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
 import com.example.banchanrenew.databinding.ActivityAddfridgeBinding
 import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 /**
  * The number of pages (wizard steps) to show in this demo.
@@ -30,38 +31,26 @@ class AddIngredientsActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAddfridgeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initPagerAdapter()
+        initTabLayout()
 
-        // Instantiate a ViewPager2 and a PagerAdapter.
-
-        // The pager adapter, which provides the pages to the view pager widget.
-        val pagerAdapter = ScreenSlidePagerAdapter(this)
-        binding.viewPagerAddIngredients.adapter = pagerAdapter
-        //https://korean-otter.tistory.com/entry/android-kotlin-TabLayout%EA%B3%BC-ViewPager%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
-        binding.tablayout.addTab(binding.tablayout.newTab().setCustomView(createCustomView("육류/가공품")))
-        binding.tablayout.addTab(binding.tablayout.newTab().setCustomView(createCustomView("채소")))
-        binding.tablayout.addTab(binding.tablayout.newTab().setCustomView(createCustomView("소스/향신료")))
-        binding.tablayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-
-            }
-
-        })
     }
 
-    private fun createCustomView(text: String): View? {
-        val inflater = LayoutInflater.from(applicationContext)
-        val view: View = inflater.inflate(R.layout.tab_custom, null)
-        val textView = view.findViewById<View>(R.id.tv_tab) as TextView
-        textView.text = text
-        return view
+    private fun initPagerAdapter() {
+        val pagerAdapter = ScreenSlidePagerAdapter(this)
+        binding.viewPagerAddIngredients.adapter = pagerAdapter
+    }
+
+    private fun initTabLayout() {
+        val tabTitleArray = arrayOf(
+            "육류/가공품",
+            "야채",
+            "소스/향신료"
+        )
+
+        TabLayoutMediator(binding.tablayout, binding.viewPagerAddIngredients) { tab, position ->
+            tab.text = tabTitleArray[position]
+        }.attach()
     }
 
     /**

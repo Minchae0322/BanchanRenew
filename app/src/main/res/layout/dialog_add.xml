@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintWidth_percent="0.7"
+        android:id="@+id/tv_addDialogName"
+        android:layout_width="0dp"
+        app:layout_constraintHeight_percent="0.2"
+        android:layout_height="0dp"
+        android:text="멸치"
+        android:layout_marginVertical="10dp"
+        android:fontFamily="@font/merona"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintWidth_percent="0.7"
+        android:id="@+id/tv_addDialogRemain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="보유수량 :"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_addDialogName" />
+
+    <TextView
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintWidth_percent="0.7"
+        android:id="@+id/tv_addDialogText1"
+        android:layout_width="0dp"
+        android:text="선택"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/merona"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_addDialogRemain"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:id="@+id/constraint"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintHorizontal_bias="0.1"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_addDialogText1"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/bt_addDialogPlus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/background_rounding"
+            android:fontFamily="@font/coookie1"
+            android:gravity="center"
+            android:text="추가하기"
+            android:textColor="#919191"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/bt_addDialogRemove"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+
+            android:text="제거하기"
+            android:textColor="#919191"
+            android:fontFamily="@font/coookie1"
+            android:background="@drawable/background_rounding"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:id="@+id/bt_addDialogRemove"
+            android:layout_width="0dp"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toStartOf="@id/bt_addDialogRemoveAll"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/bt_addDialogPlus"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+
+            android:text="모두제거"
+            android:textColor="#919191"
+            android:fontFamily="@font/coookie1"
+            android:background="@drawable/background_rounding"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:id="@+id/bt_addDialogRemoveAll"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/bt_addDialogRemove"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint"
+        app:layout_constraintWidth_percent="0.7">
+
+        <TextView
+            android:id="@+id/tv_minus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="-"
+            android:fontFamily="@font/coookie1"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@drawable/background_btrounding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_addDialogAmount"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_addDialogAmount"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/background_rounding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_plus"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintStart_toEndOf="@id/tv_minus"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_plus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="+"
+            android:fontFamily="@font/coookie1"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:background="@drawable/background_btrounding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_addDialogAmount"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="35dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tv_addDialogOk"
+            android:layout_width="0dp"
+            android:text="취소"
+            android:fontFamily="@font/coookie1"
+            android:textColor="#EFEFEF"
+            android:background="@drawable/background_colorrounding"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_addDialogCancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_addDialogCancel"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="5dp"
+            android:layout_height="0dp"
+            android:text="확인"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="#EFEFEF"
+            android:fontFamily="@font/coookie1"
+            android:background="@drawable/background_colorrounding"
+            app:layout_constraintStart_toEndOf="@id/tv_addDialogOk"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

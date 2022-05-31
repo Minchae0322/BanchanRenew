@@ -4,12 +4,21 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2555" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/background_4button.xml" value="0.259" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/background_btrounding.xml" value="0.259" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/background_colorrounding.xml" value="0.259" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/background_rectangle.xml" value="0.259" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/background_rounding.xml" value="0.1495" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/border.xml" value="0.259" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/button_rounding.xml" value="0.259" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/ic_launcher_background.xml" value="0.259" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/intro.xml" value="0.259" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/activity_addfridge.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/activity_infridge.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/activity_selectdish.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/activity_selected.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/dialog_add.xml" value="0.264" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/fragment_pager.xml" value="0.25" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/item_fridge.xml" value="0.264" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/item_infridge.xml" value="0.25364583333333335" />
