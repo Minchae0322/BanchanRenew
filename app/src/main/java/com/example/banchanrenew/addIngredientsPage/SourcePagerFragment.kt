@@ -9,13 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.banchanrenew.MainActivity.Companion.db
+import com.example.banchanrenew.MainActivity
 import com.example.banchanrenew.relation.Ingredient
 import com.example.banchanrenew.databinding.FragmentPagerBinding
 
-class MeatPagerFragment(): Fragment() {
+class SourcePagerFragment(): Fragment() {
     private lateinit var binding: FragmentPagerBinding
-    private val dataList: MutableList<Ingredient> = db.testDao().selectIngredientWhereDataType("meat")
+    private val dataList: MutableList<Ingredient> = MainActivity.db.testDao().selectIngredientWhereDataType("source")
     private val adapter: AddIngredientsAdapter = AddIngredientsAdapter(dataList)
 
     override fun onCreateView(inflater: LayoutInflater,
@@ -26,7 +26,12 @@ class MeatPagerFragment(): Fragment() {
         initRecyclerView()
         initEditText()
         return binding.root
+    }
 
+    private fun initRecyclerView() {
+        binding.pagerRecyclerView.adapter = adapter
+        binding.pagerRecyclerView.layoutManager = GridLayoutManager(this.context,3)
+        binding.pagerRecyclerView.setHasFixedSize(true)
     }
 
     private fun initEditText() {
@@ -54,13 +59,6 @@ class MeatPagerFragment(): Fragment() {
             }
         }
         return dataListWithText
-    }
-
-    private fun initRecyclerView() {
-        binding.pagerRecyclerView.layoutManager = GridLayoutManager(this.context,4)
-        binding.pagerRecyclerView.setHasFixedSize(true)
-        binding.pagerRecyclerView.adapter = adapter
-
     }
 
 

@@ -13,7 +13,7 @@ import com.example.banchanrenew.relation.Ingredient
 import com.example.banchanrenew.R
 
 //재료 추기하기의 육류/가공품, 채소, 어류 리사이클러뷰 재료들이 리사이클러뷰의 뷰홀더에 들어감.
-class AddIngredientsAdapter(private var list: MutableList<Ingredient>):
+class AddIngredientsAdapter(var list: MutableList<Ingredient>):
     RecyclerView.Adapter<AddIngredientsAdapter.ViewHolder>() {
     lateinit var context: Context
 

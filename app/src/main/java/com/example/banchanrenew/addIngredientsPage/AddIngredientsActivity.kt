@@ -1,17 +1,10 @@
 package com.example.banchanrenew.addIngredientsPage
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.banchanrenew.MainActivity
-import com.example.banchanrenew.MainActivity.Companion.db
-import com.example.banchanrenew.R
 import com.example.banchanrenew.databinding.ActivityAddfridgeBinding
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 /**
@@ -63,13 +56,13 @@ class AddIngredientsActivity : FragmentActivity() {
         override fun createFragment(position: Int): Fragment {
             return when(position) {
                 0 -> {
-                    MeatPagerFragment(db.testDao().selectIngredientWhereDataType("meat"))
+                    MeatPagerFragment()
                 }
                 1 -> {
-                    VegetablePagerFragment(db.testDao().selectIngredientWhereDataType("vegetable"))
+                    VegetablePagerFragment()
                 }
                 else -> {
-                    FishPagerFragment(db.testDao().selectIngredientWhereDataType("source"))
+                    SourcePagerFragment()
                 }
             }
 
