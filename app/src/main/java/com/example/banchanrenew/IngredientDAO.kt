@@ -41,7 +41,7 @@ interface IngredientDAO {
     @Insert fun insertDishList(list: List<Dish>)
 
     @Query("SELECT * From Ingredient WHERE dataType = :dataType")
-    fun selectIngredientWhereDataType(dataType: String): List<Ingredient>
+    fun selectIngredientWhereDataType(dataType: String): MutableList<Ingredient>
 
     @Insert fun insertGramOfUnitList(list: List<GramOfUnit>)
 

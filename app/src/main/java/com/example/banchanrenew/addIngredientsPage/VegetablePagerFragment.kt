@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.banchanrenew.relation.Ingredient
 import com.example.banchanrenew.databinding.FragmentPagerBinding
 
-class VegetablePagerFragment(var list: List<Ingredient>): Fragment() {
+class VegetablePagerFragment(var list: MutableList<Ingredient>): Fragment() {
     private lateinit var binding: FragmentPagerBinding
 
     override fun onCreateView(inflater: LayoutInflater,

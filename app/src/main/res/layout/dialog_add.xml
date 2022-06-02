@@ -79,7 +79,7 @@
             android:text="추가하기"
             android:textColor="#F4F4F4"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/bt_addDialogRemove"
+            app:layout_constraintEnd_toStartOf="@id/tv_addDialogRemove"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +93,7 @@
             android:background="@drawable/background_rounding"
             android:gravity="center"
             android:layout_margin="8dp"
-            android:id="@+id/bt_addDialogRemove"
+            android:id="@+id/tv_addDialogRemove"
             android:layout_width="0dp"
             app:layout_constraintHorizontal_weight="1"
             android:layout_height="0dp"
@@ -116,7 +116,7 @@
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/bt_addDialogRemove"
+            app:layout_constraintStart_toEndOf="@id/tv_addDialogRemove"
             app:layout_constraintTop_toTopOf="parent" />
 
 

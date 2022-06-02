@@ -16,12 +16,12 @@ import com.example.banchanrenew.databinding.DialogAddBinding
 import com.example.banchanrenew.relation.Ingredient
 
 
-class AddIngredientsDialog(val context: Context, var ingredient: Ingredient) {
+class AddIngredientsDialog(val context: Context, var ingredient: Ingredient, val adapter:AddIngredientsAdapter) {
     private val dialog = Dialog(context)
     private lateinit var binding: DialogAddBinding
     private var buttonNum: Int = 0
-    private var editTextGram: Int = 0
-    private var remain: Int = ingredient.remainGram
+    private var editTextGram: Int = 100
+    private var remain: Int = ingredient.remainGram + 100
 
     fun showDialog() {
         binding = DialogAddBinding.bind(LayoutInflater.from(context).inflate(R.layout.dialog_add, null))
@@ -42,35 +42,40 @@ class AddIngredientsDialog(val context: Context, var ingredient: Ingredient) {
     fun bindView() {
         binding.tvAddDialogName.text = ingredient.name
         binding.tvAddDialogRemain.text = "보유수량 :  " + ingredient.remainGram.toString() + "g"
-        binding.tvAddDialogAfterChange.text = (remain + 100).toString() + "g"
-        setMenuView()
-        setEditTextView()
-        setCheckView()
+        initMenuView()
+        initEditTextView()
+        initCheckView()
+        updateAfterChangeTextView()
     }
 
 
 
-    private fun setCheckView() {
+    @SuppressLint("NotifyDataSetChanged")
+    private fun initCheckView() {
         binding.tvAddDialogCancel.setOnClickListener {
             dialog.dismiss()
         }
         binding.tvAddDialogOk.setOnClickListener {
-            when(buttonNum) {
-                0 -> {
-                    db.recipeDao().updateRemainOfIngredient(remain, ingredient.id)
-                }
-                1 -> {
-
-                }
-            }
+            updateRemain()
+            db.recipeDao().updateRemainOfIngredient(remain,ingredient.id)
+            adapter.updateList()
+            dialog.dismiss()
         }
     }
 
-    private fun setEditTextView() {
+    private fun initEditTextView() {
         binding.etAddDialogAmount.hint = "0"
+        updateEditTextView()
+        binding.etAddDialogAmount.filters = arrayOf<InputFilter>(MinMaxFilter(1, 100000))
+        binding.etAddDialogAmount.setSelection( binding.etAddDialogAmount.length())
         binding.etAddDialogAmount.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                editTextGram = if(p0.toString() == "") {
+                    0
+                } else {
+                    p0.toString().toInt()
+                }
 
             }
             override fun afterTextChanged(p0: Editable?) {}
@@ -82,94 +87,93 @@ class AddIngredientsDialog(val context: Context, var ingredient: Ingredient) {
             } else {
                 editTextGram -= 100
             }
-            updateView()
+            updateViews()
         }
         binding.tvPlus.setOnClickListener {
             when(buttonNum) {
                 0 -> {
                     editTextGram += 100
-                    updateView()
+                    updateViews()
                 }
                 1 -> {
-                    if(ingredient.remainGram - 100 <= editTextGram) {
+                    if(ingredient.remainGram - 100 < editTextGram) {
                         editTextGram = ingredient.remainGram
                     } else {
                         editTextGram += 100
-                        updateView()
+                        updateViews()
                     }
                 }
                 2 -> {
                     editTextGram = ingredient.remainGram
-                    updateView()
+                    updateViews()
                 }
             }
 
         }
     }
 
-    private fun setMenuView() {
+    private fun initMenuView() {
         binding.tvAddDialogPlus.setOnClickListener {
-            menuClicked(0)
-            updateView()
             binding.etAddDialogAmount.filters = arrayOf<InputFilter>(MinMaxFilter(1, 100000))
+            menuUnClicked(0)
+            menuClicked(0)
+            updateViews()
         }
-        binding.btAddDialogRemove.setOnClickListener {
-            menuClicked(1)
-            updateView()
+        binding.tvAddDialogRemove.setOnClickListener {
             binding.etAddDialogAmount.filters = arrayOf<InputFilter>(MinMaxFilter(0, ingredient.remainGram))
+            menuUnClicked(1)
+            menuClicked(1)
+            updateViews()
         }
         binding.tvAddDialogRemoveAll.setOnClickListener {
+            binding.etAddDialogAmount.filters = arrayOf<InputFilter>(MinMaxFilter(0, ingredient.remainGram))
+            menuUnClicked(2)
             menuClicked(2)
-            updateView()
-            binding.etAddDialogAmount.filters = arrayOf<InputFilter>(MinMaxFilter(0, 0))
+            updateViews()
         }
     }
 
     private fun menuClicked(count: Int) {
-        menuUnClicked(count)
         when(count) {
             0 -> {
                 binding.tvAddDialogPlus.setBackgroundResource(R.drawable.background_colorrounding)
                 binding.tvAddDialogPlus.setTextColor(Color.WHITE)
-                editTextGram = 0
-                updateView()
+                editTextGram = 100
             }
             1 -> {
-                binding.btAddDialogRemove.setBackgroundResource(R.drawable.background_colorrounding)
-                binding.btAddDialogRemove.setTextColor(Color.WHITE)
+                binding.tvAddDialogRemove.setBackgroundResource(R.drawable.background_colorrounding)
+                binding.tvAddDialogRemove.setTextColor(Color.WHITE)
                 editTextGram = 0
-                updateView()
             }
             2 -> {
                 binding.tvAddDialogRemoveAll.setBackgroundResource(R.drawable.background_colorrounding)
                 binding.tvAddDialogRemoveAll.setTextColor(Color.WHITE)
-                editTextGram = 0
-                updateView()
+                editTextGram = ingredient.remainGram
             }
         }
         buttonNum =  count
     }
 
     private fun menuUnClicked(count: Int) {
-        when(buttonNum) {
-            0 -> {
-                if(buttonNum != count) {
+        if(buttonNum != count) {
+            when (buttonNum) {
+                0 -> {
                     binding.tvAddDialogPlus.setBackgroundResource(R.drawable.background_rounding)
                     binding.tvAddDialogPlus.setTextColor(Color.parseColor("#919191"))
                 }
-            }
-            1 -> {
-                binding.btAddDialogRemove.setBackgroundResource(R.drawable.background_rounding)
-                binding.btAddDialogRemove.setTextColor(Color.parseColor("#919191"))
-            }
-            2 -> {
-                binding.tvAddDialogRemoveAll.setBackgroundResource(R.drawable.background_rounding)
-                binding.tvAddDialogRemoveAll.setTextColor(Color.parseColor("#919191"))
+                1 -> {
+                    binding.tvAddDialogRemove.setBackgroundResource(R.drawable.background_rounding)
+                    binding.tvAddDialogRemove.setTextColor(Color.parseColor("#919191"))
+                }
+                2 -> {
+                    binding.tvAddDialogRemoveAll.setBackgroundResource(R.drawable.background_rounding)
+                    binding.tvAddDialogRemoveAll.setTextColor(Color.parseColor("#919191"))
+                }
             }
         }
     }
 
-    private fun updateView() {
+    private fun updateViews() {
         updateEditTextView()
         updateRemain()
         updateAfterChangeTextView()
@@ -196,7 +200,7 @@ class AddIngredientsDialog(val context: Context, var ingredient: Ingredient) {
                 remain = ingredient.remainGram - editTextGram
             }
             2 -> {
-                remain = 0
+                remain = ingredient.remainGram - editTextGram
             }
         }
     }

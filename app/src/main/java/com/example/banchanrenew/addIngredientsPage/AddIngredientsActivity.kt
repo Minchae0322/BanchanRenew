@@ -63,13 +63,13 @@ class AddIngredientsActivity : FragmentActivity() {
         override fun createFragment(position: Int): Fragment {
             return when(position) {
                 0 -> {
-                    MeatPagerFragment(MainActivity.db.testDao().selectIngredientWhereDataType("meat"))
+                    MeatPagerFragment(db.testDao().selectIngredientWhereDataType("meat"))
                 }
                 1 -> {
-                    VegetablePagerFragment(db.testDao().find())
+                    VegetablePagerFragment(db.testDao().selectIngredientWhereDataType("vegetable"))
                 }
                 else -> {
-                    FishPagerFragment(db.testDao().find())
+                    FishPagerFragment(db.testDao().selectIngredientWhereDataType("source"))
                 }
             }
 
