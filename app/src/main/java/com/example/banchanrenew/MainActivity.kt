@@ -52,7 +52,6 @@ class MainActivity : AppCompatActivity() {
         for(i in 0..jsonArray.length()) {
             val jsonObject = jsonArray.getJSONObject(i)
             Recipe(jsonObject.getInt("RECIPE_ID"),jsonObject.getInt("COOKING_NO"), jsonObject.getString("COOKING_DC"))
-            Recipe
         }
 
 
