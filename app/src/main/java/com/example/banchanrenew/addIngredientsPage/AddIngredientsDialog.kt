@@ -4,11 +4,13 @@ import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.text.Editable
 import android.text.InputFilter
 import android.text.Spanned
 import android.text.TextWatcher
 import android.view.LayoutInflater
+import android.view.Window
 import android.view.WindowManager
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
@@ -36,6 +38,8 @@ class AddIngredientsDialog(val context: Context, var ingredient: Ingredient, val
         dialog.window!!.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT)
         dialog.setCanceledOnTouchOutside(true)
         dialog.setCancelable(true)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -76,6 +80,8 @@ class AddIngredientsDialog(val context: Context, var ingredient: Ingredient, val
                 } else {
                     p0.toString().toInt()
                 }
+                updateRemain()
+                updateAfterChangeTextView()
 
             }
             override fun afterTextChanged(p0: Editable?) {}

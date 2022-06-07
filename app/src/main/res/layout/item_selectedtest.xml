@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/iv_foldingCellTitle"
+                    android:id="@+id/iv_cell_title_dish"
                     android:layout_width="110dp"
                     android:layout_height="110dp"
                     android:background="@drawable/background_rounding"
@@ -93,7 +93,7 @@
             </FrameLayout>
 
             <TextView
-                android:id="@+id/tv_foldingCellTitleName"
+                android:id="@+id/tv_cell_title_dishName"
                 style="@android:style/Widget.DeviceDefault.Light.TextView"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
@@ -109,7 +109,7 @@
                 android:autoSizeMaxTextSize="17sp"/>
 
             <TextView
-                android:id="@+id/tv_foldingCellTitleExplain"
+                android:id="@+id/tv_cell_title_explain"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginLeft="110dp"

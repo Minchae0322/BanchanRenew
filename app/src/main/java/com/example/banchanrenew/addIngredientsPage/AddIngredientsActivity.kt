@@ -7,9 +7,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.banchanrenew.databinding.ActivityAddfridgeBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
-/**
- * The number of pages (wizard steps) to show in this demo.
- */
 private const val NUM_PAGES = 3
 
 class AddIngredientsActivity : FragmentActivity() {

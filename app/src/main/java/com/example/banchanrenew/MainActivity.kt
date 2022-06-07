@@ -10,6 +10,8 @@ import com.example.banchanrenew.databinding.ActivityMainBinding
 import com.example.banchanrenew.fridge.FridgeActivity
 import com.example.banchanrenew.fridge.FridgeAdapter
 import com.example.banchanrenew.relation.*
+import com.example.banchanrenew.selectDish.RecipeActivity
+import org.json.JSONArray
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         lateinit var prefs: PreferenceUtil
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -26,15 +29,15 @@ class MainActivity : AppCompatActivity() {
         prefs = PreferenceUtil(applicationContext)
         db = Room.databaseBuilder(
             applicationContext,
-            TestDatabase::class.java, "test.db6"
+            TestDatabase::class.java, "test.db7"
         ).allowMainThreadQueries().build()
-        if(prefs.getString("version24","0") == "0") {
+        if(prefs.getString("version25","0") == "0") {
             var testDao1: IngredientDAO = db.testDao()
             testDao1.insertGramOfUnitList(GramOfUnitCons().getData())
             testDao1.insertIngredientList(IngredientsCons().getData())
             testDao1.insertDishList(DishCons().getData())
             testDao1.insertEssentialList(EssentialCons().getData())
-            prefs.setString("version24","1")
+            prefs.setString("version25","1")
             testDao1.updateTest(600,"돼지갈비")
             testDao1.updateTest(600,"소고기")
             testDao1.updateTest(600,"돼지고기")
@@ -43,12 +46,23 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        val jsonString = assets.open("recipe1").reader().readText()
+        val jsonArray = JSONArray(jsonString)
+
+        for(i in 0..jsonArray.length()) {
+            val jsonObject = jsonArray.getJSONObject(i)
+            Recipe(jsonObject.getInt("RECIPE_ID"),jsonObject.getInt("COOKING_NO"), jsonObject.getString("COOKING_DC"))
+        }
+
+
 
         var list = ArrayList<Ingredient>()
         binding.textViewTest.setOnClickListener {
-            val nextIntent = Intent(this, AddIngredientsActivity::class.java)
+            val nextIntent = Intent(this, RecipeActivity::class.java)
             startActivity(nextIntent)
         }
+
+
     }
 
 
