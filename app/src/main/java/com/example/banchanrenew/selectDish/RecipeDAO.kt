@@ -4,12 +4,16 @@ import androidx.room.Dao
 import androidx.room.Query
 import com.example.banchanrenew.relation.Dish
 import com.example.banchanrenew.relation.EssentialIngredients
+import com.example.banchanrenew.relation.IRDNTDescription
 import com.example.banchanrenew.relation.Ingredient
 
 @Dao
 interface RecipeDAO {
     @Query("UPDATE ingredient SET remainGram = :remain WHERE id = :id")
     fun updateRemainOfIngredient(remain: Int, id: Int)
+
+    @Query("SELECT * FROM ingredientDC WHERE recipeID = :dishId AND ingredientDCType = :type")
+    fun getIngredientDC(dishId: Int, type: String): List<IRDNTDescription>
 
     @Query("SELECT * FROM Dish")
     fun getDishList(): List<Dish>

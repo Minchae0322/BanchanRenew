@@ -12,6 +12,7 @@ interface IngredientDAO {
     @Query("SELECT * FROM Ingredient")
     fun find(): List<Ingredient>
 
+    @Insert fun insertRecipe(recipe: Recipe)
     //test
     @Insert fun insertIngredient(ingredient: Ingredient)
 
@@ -69,4 +70,7 @@ interface IngredientDAO {
 
     @Query("DELETE FROM dish")
     fun delete4()
+
+    @Query("DELETE FROM recipe")
+    fun delete5()
 }

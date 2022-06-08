@@ -9,100 +9,60 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/iv_cell_content_dishImage"
-            android:layout_width="150dp"
-            android:layout_height="140dp"
-            android:background="@drawable/cell_rounding"
-            android:scaleType="fitXY"
-
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
+
+            <ImageView
+                android:id="@+id/iv_cell_content_dishImage"
+                android:layout_width="150dp"
+                android:layout_height="0dp"
+                android:background="@drawable/cell_rounding"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/tv_cell_content_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/tv_cell_content_sub"
+            android:textColor="@color/cardview_dark_background"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+
+        <TextView
+            android:id="@+id/tv_cell_content_sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/tv_cell_content_seasoning"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cell_content_main" />
+
+
+        <TextView
+            android:id="@+id/tv_cell_content_seasoning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cell_content_sub" />
+
 
 
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
-
-
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="140dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tv_qnt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:autoSizeMaxTextSize="14sp"
-                        android:autoSizeMinTextSize="9sp"
-                        android:autoSizeTextType="uniform"
-                        android:fontFamily="@font/coookie1"
-                        android:paddingVertical="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:textColor="@color/cardview_dark_background" />
-
-                    <TextView
-                        android:id="@+id/tv_onlyMainINGRDT"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/merona2"
-                        android:paddingVertical="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:textColor="@color/cardview_dark_background"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#40000000" />
-
-                    <TextView
-                        android:id="@+id/tv_onlyMainSubINGRDT"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_onlyMainINGRDT"
-                        android:fontFamily="@font/merona2"
-                        android:paddingVertical="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:textColor="@color/cardview_dark_background"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#3E000000" />
-
-                    <TextView
-                        android:id="@+id/tv_onlyMainSeasoningINGRDT"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_onlyMainSubINGRDT"
-                        android:fontFamily="@font/merona2"
-                        android:paddingVertical="10dp"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:textColor="@color/cardview_dark_background"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#3C000000" />
-
-                </LinearLayout>
 
 
             </FrameLayout>

@@ -1,16 +1,21 @@
 package com.example.banchanrenew
 
+import android.content.res.AssetManager
+import android.util.Log
 import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.banchanrenew.selectDish.RecipeDAO
 import com.example.banchanrenew.relation.*
+import org.json.JSONException
+import org.json.JSONObject
 
 import org.junit.Test
 import org.junit.runner.RunWith
 
 import org.junit.Assert.*
 import org.junit.Before
+import java.io.InputStream
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -28,7 +33,7 @@ class Test2 {
         val db = Room.databaseBuilder(
             appContext,
             TestDatabase::class.java,
-            "TestDB18"
+            "TestDB20"
         ).build()
         testDao = db.testDao()
         recipeDAO = db.recipeDao()
@@ -36,6 +41,7 @@ class Test2 {
         testDao.delete2()
         testDao.delete3()
         testDao.delete4()
+        testDao.delete5()
         testDao.insertGramOfUnitList(GramOfUnitCons().getData())
         testDao.insertIngredientList(IngredientsCons().getData())
         testDao.insertDishList(DishCons().getData())
@@ -62,4 +68,35 @@ class Test2 {
         assertEquals(600,testDao.eee2("돼지갈비"))
         assertEquals(449, recipeDAO.getDishListWithMainIngredients()[1])
     }
+
+    @Test
+    fun test2() {
+        try {
+            val assetManager: AssetManager = appContext.resources.assets
+            val inputStream: Array<InputStream> = arrayOf(
+                assetManager.open("recipe1_1000"),
+                assetManager.open("recipe1001_1996"),
+                assetManager.open("recipe1997_2993"),
+                assetManager.open("recipe2994_"))
+            for(index in 0..inputStream.size) {
+                val jsonString = inputStream[index].bufferedReader().use { it.readText() }
+                val jObject = JSONObject(jsonString)
+                val grid: JSONObject = jObject.getJSONObject("Grid_20150827000000000228_1")
+                val jArray = grid.getJSONArray("row")
+                for(row in 0..jArray.length()) {
+                    val jsonObject = jArray.getJSONObject(row)
+                    val recipe = Recipe(jsonObject.getInt("RECIPE_ID"),jsonObject.getInt("COOKING_NO"), jsonObject.getString("COOKING_DC"))
+                    Log.d("number", row.toString() + "recipe_ID: " + recipe.dishId + ", " + recipe.cookingNum)
+                    testDao.insertRecipe(recipe)
+                }
+            }
+
+        } catch (e: JSONException) {
+
+        }
+        assertEquals("돼지갈비",testDao.selectUnitFromIngredientName("돼지갈비"))
+
+    }
+
+
 }
