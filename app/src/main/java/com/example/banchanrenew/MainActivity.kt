@@ -28,9 +28,9 @@ class MainActivity : AppCompatActivity() {
         prefs = PreferenceUtil(applicationContext)
         db = Room.databaseBuilder(
             applicationContext,
-            TestDatabase::class.java, "test.db16"
+            TestDatabase::class.java, "test.db17"
         ).allowMainThreadQueries().build()
-        if(prefs.getString("version34","0") == "0") {
+        if(prefs.getString("version35","0") == "0") {
             var testDao1: IngredientDAO = db.testDao()
             testDao1.insertGramOfUnitList(GramOfUnitCons().getData())
             testDao1.insertIngredientList(IngredientsCons().getData())
@@ -39,9 +39,8 @@ class MainActivity : AppCompatActivity() {
             try {
                 jsonParser()
             } catch (e: JSONException) {
-
             }
-            prefs.setString("version34","1")
+            prefs.setString("version35","1")
             testDao1.updateTest(600,"돼지갈비")
             testDao1.updateTest(600,"소고기")
             testDao1.updateTest(600,"돼지고기")
@@ -87,11 +86,13 @@ class MainActivity : AppCompatActivity() {
          jsonRecipeObjectList.add(jsonFileToJsonObject("recipe2994_","Grid_20150827000000000228_1"))
 
          for(jsonFileObject in jsonRecipeObjectList) {
+             val list: MutableList<Recipe> = mutableListOf()
              val jArray = jsonObjectToJsonArray(jsonFileObject,"row")
              for(row in 0 until jArray.length()) {
                  val jsonRecipeObject = jArray.getJSONObject(row)
-                 db.testDao().insertRecipe(Recipe(jsonRecipeObject.getInt("RECIPE_ID"),jsonRecipeObject.getInt("COOKING_NO"), jsonRecipeObject.getString("COOKING_DC")))
+                 list.add(Recipe(jsonRecipeObject.getInt("RECIPE_ID"),jsonRecipeObject.getInt("COOKING_NO"), jsonRecipeObject.getString("COOKING_DC")))
              }
+             db.testDao().insertRecipeList(list)
          }
 
          val jsonDCObjectList: MutableList<JSONObject> = mutableListOf()
@@ -106,12 +107,14 @@ class MainActivity : AppCompatActivity() {
 
          for(jsonFileObject in jsonDCObjectList) {
              val jArray = jsonObjectToJsonArray(jsonFileObject,"row")
+             val list: MutableList<IngredientDC> = mutableListOf()
              for(row in 0 until jArray.length()) {
                  val jsonDCObject = jArray.getJSONObject(row)
-                 db.testDao().insertIngredientDC(IngredientDC(jsonDCObject.getInt("RECIPE_ID"),
+                 list.add(IngredientDC(jsonDCObject.getInt("RECIPE_ID"),
                      jsonDCObject.getInt("IRDNT_SN"),jsonDCObject.getString("IRDNT_NM"),
                      jsonDCObject.getString("IRDNT_CPCTY"), jsonDCObject.getString("IRDNT_TY_NM")))
              }
+             db.testDao().insertIngredientDCList(list)
          }
     }
 

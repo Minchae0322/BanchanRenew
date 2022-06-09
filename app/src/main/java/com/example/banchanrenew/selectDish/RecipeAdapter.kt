@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
 import com.example.banchanrenew.relation.Dish
+import com.example.banchanrenew.relation.IngredientDC
 import com.ramotion.foldingcell.FoldingCell
 
 class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
@@ -43,9 +44,9 @@ class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.Vi
         holder.textViewTitleExplain.text = list[position].explain
         holder.foldingCell.setOnClickListener {
             holder.imageViewContent.setImageResource(list[position].dishImage)
-            //TODO 주재료 부재료 양념 정보 담은 assets에 json넣고 그거 데이터베이스에 넣기 joson파싱해야됨
-            // val iDC: List<IRDNTDescription> = dao.getIngredientDC(list[position].dishId,"주재료")
-            // holder.textViewContentMain.text = iDC[0].ingredientDCName.toString()
+            holder.textViewContentMain.text = parseIngredientDCToString(position, "주재료")
+            holder.textViewContentSub.text = parseIngredientDCToString(position, "부재료")
+            holder.textViewContentSeasoning.text = parseIngredientDCToString(position, "양념")
             holder.foldingCell.toggle(true)
         }
         holder.imageViewStar.setOnClickListener {
@@ -61,5 +62,14 @@ class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.Vi
 
     override fun getItemCount(): Int {
        return list.size
+    }
+
+    private fun parseIngredientDCToString(position: Int, type: String): String {
+        val iDC: List<IngredientDC> = dao.getIngredientDCList(list[position].dishId, type)
+        var text = "$type : "
+        for(index in iDC) {
+            text += index.ingredientDCName + " [ " + index.ingredientDCCapacity + " ] " + " , "
+        }
+        return text.substring(0, text.length - 3)
     }
 }

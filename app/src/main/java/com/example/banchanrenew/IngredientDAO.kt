@@ -13,10 +13,14 @@ interface IngredientDAO {
     fun find(): List<Ingredient>
 
     @Insert fun insertRecipe(recipe: Recipe)
+
+    @Insert fun insertRecipeList(recipe: MutableList<Recipe>)
     //test
     @Insert fun insertIngredient(ingredient: Ingredient)
 
     @Insert fun insertIngredientDC(ingredientDC: IngredientDC)
+
+    @Insert fun insertIngredientDCList(ingredientDC: MutableList<IngredientDC>)
 
     @Insert fun insertIngredientList(list: List<Ingredient>)
 
