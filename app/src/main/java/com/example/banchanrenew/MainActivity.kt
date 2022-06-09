@@ -1,12 +1,14 @@
 package com.example.banchanrenew
 
 import android.content.Intent
+import android.content.res.AssetManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.banchanrenew.databinding.ActivityMainBinding
 import com.example.banchanrenew.relation.*
 import com.example.banchanrenew.selectDish.RecipeActivity
+import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -26,9 +28,9 @@ class MainActivity : AppCompatActivity() {
         prefs = PreferenceUtil(applicationContext)
         db = Room.databaseBuilder(
             applicationContext,
-            TestDatabase::class.java, "test.db14"
+            TestDatabase::class.java, "test.db16"
         ).allowMainThreadQueries().build()
-        if(prefs.getString("version32","0") == "0") {
+        if(prefs.getString("version34","0") == "0") {
             var testDao1: IngredientDAO = db.testDao()
             testDao1.insertGramOfUnitList(GramOfUnitCons().getData())
             testDao1.insertIngredientList(IngredientsCons().getData())
@@ -39,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             } catch (e: JSONException) {
 
             }
-            prefs.setString("version32","1")
+            prefs.setString("version34","1")
             testDao1.updateTest(600,"돼지갈비")
             testDao1.updateTest(600,"소고기")
             testDao1.updateTest(600,"돼지고기")
@@ -65,28 +67,56 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+    private fun jsonFileToJsonObject(fileName: String, objectName: String):JSONObject {
+        val assetManager: AssetManager = applicationContext.resources.assets
+        val inputStream = assetManager.open(fileName)
+        val jObject = JSONObject(inputStream.bufferedReader().use { it.readText() })
+        return jObject.getJSONObject(objectName)
+    }
+
+    private fun jsonObjectToJsonArray(jObject: JSONObject, arrayName: String): JSONArray {
+        return jObject.getJSONArray(arrayName)
+    }
+
      private fun jsonParser() {
-        val jsonStringArr: Array<String> = arrayOf(
-            assets.open("recipe1_1000").reader().readText(),
-            assets.open("recipe1001_1996").reader().readText(),
-            assets.open("recipe1997_2993").reader().readText(),
-            assets.open("recipe2994_").reader().readText()
-        )
+         val jsonRecipeObjectList: MutableList<JSONObject> = mutableListOf()
+         jsonRecipeObjectList.add(jsonFileToJsonObject("recipe1_1000","Grid_20150827000000000228_1"))
+         jsonRecipeObjectList.add(jsonFileToJsonObject("recipe1001_1996","Grid_20150827000000000228_1"))
+         jsonRecipeObjectList.add(jsonFileToJsonObject("recipe1997_2993","Grid_20150827000000000228_1"))
+         jsonRecipeObjectList.add(jsonFileToJsonObject("recipe2994_","Grid_20150827000000000228_1"))
+
+         for(jsonFileObject in jsonRecipeObjectList) {
+             val jArray = jsonObjectToJsonArray(jsonFileObject,"row")
+             for(row in 0 until jArray.length()) {
+                 val jsonRecipeObject = jArray.getJSONObject(row)
+                 db.testDao().insertRecipe(Recipe(jsonRecipeObject.getInt("RECIPE_ID"),jsonRecipeObject.getInt("COOKING_NO"), jsonRecipeObject.getString("COOKING_DC")))
+             }
+         }
+
+         val jsonDCObjectList: MutableList<JSONObject> = mutableListOf()
+         jsonDCObjectList.add(jsonFileToJsonObject("ingredientDC1","Grid_20150827000000000227_1"))
+         jsonDCObjectList.add(jsonFileToJsonObject("ingredientDC2","Grid_20150827000000000227_1"))
+         jsonDCObjectList.add(jsonFileToJsonObject("ingredientDC3","Grid_20150827000000000227_1"))
+         jsonDCObjectList.add(jsonFileToJsonObject("ingredientDC4","Grid_20150827000000000227_1"))
+         jsonDCObjectList.add(jsonFileToJsonObject("ingredientDC5","Grid_20150827000000000227_1"))
+         jsonDCObjectList.add(jsonFileToJsonObject("ingredientDC6","Grid_20150827000000000227_1"))
+         jsonDCObjectList.add(jsonFileToJsonObject("ingredientDC7","Grid_20150827000000000227_1"))
 
 
-        for(element in jsonStringArr) {
-            try {
-                val jObject = JSONObject(element)
-                val grid: JSONObject = jObject.getJSONObject("Grid_20150827000000000228_1")
-                val jArray = grid.getJSONArray("row")
-                for(row in 0..jArray.length()) {
-                    val jsonObject = jArray.getJSONObject(row)
-                    db.testDao().insertRecipe(Recipe(jsonObject.getInt("RECIPE_ID"),jsonObject.getInt("COOKING_NO"), jsonObject.getString("COOKING_DC")))
-                }
-            } catch (e: JSONException) {
+         for(jsonFileObject in jsonDCObjectList) {
+             val jArray = jsonObjectToJsonArray(jsonFileObject,"row")
+             for(row in 0 until jArray.length()) {
+                 val jsonDCObject = jArray.getJSONObject(row)
+                 db.testDao().insertIngredientDC(IngredientDC(jsonDCObject.getInt("RECIPE_ID"),
+                     jsonDCObject.getInt("IRDNT_SN"),jsonDCObject.getString("IRDNT_NM"),
+                     jsonDCObject.getString("IRDNT_CPCTY"), jsonDCObject.getString("IRDNT_TY_NM")))
+             }
+         }
+    }
 
-            }
-        }
+    private fun insertJsonObjectToDB() {
+
     }
 
 

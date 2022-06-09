@@ -9,9 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
 import com.example.banchanrenew.relation.Dish
-import com.example.banchanrenew.relation.IRDNTDescription
 import com.ramotion.foldingcell.FoldingCell
-import org.w3c.dom.Text
 
 class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
     private var isFavorite = false

@@ -5,11 +5,11 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "ingredientDC")
-class IRDNTDescription(
+class IngredientDC(
     val recipeId: Int,
-    @PrimaryKey var ingredientDCNum: Int,
+    @PrimaryKey val ingredientDCNum: Int,
     val ingredientDCName: String,
-    val ingredientDCCapacity: Int,
-    val ingredientDCType: Int
+    val ingredientDCCapacity: String,
+    val ingredientDCType: String
 )    {
 }

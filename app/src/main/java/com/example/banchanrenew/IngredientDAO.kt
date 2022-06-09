@@ -16,6 +16,8 @@ interface IngredientDAO {
     //test
     @Insert fun insertIngredient(ingredient: Ingredient)
 
+    @Insert fun insertIngredientDC(ingredientDC: IngredientDC)
+
     @Insert fun insertIngredientList(list: List<Ingredient>)
 
     @Insert fun insertGramOfUnit(gramOfUnit: GramOfUnit)
@@ -32,6 +34,9 @@ interface IngredientDAO {
 
     @Query("SELECT name From Ingredient WHERE name = :name")
     fun selectUnitFromIngredientName(name: String): String
+
+    @Query("SELECT * FROM ingredientDC WHERE ingredientDCNum = :num")
+    fun getIngredientDCFromDCNum(num: Int): IngredientDC
 
     @Query("SELECT nation From Dish WHERE dishId = :id")
     fun eeeee(id: Int): String
@@ -73,4 +78,7 @@ interface IngredientDAO {
 
     @Query("DELETE FROM recipe")
     fun delete5()
+
+    @Query("DELETE FROM ingredientDC")
+    fun delete6()
 }
