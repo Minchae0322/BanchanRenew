@@ -31,7 +31,6 @@ class RecipeActivity: AppCompatActivity() {
 
         binding.editTextSearch.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                TODO("Not yet implemented")
             }
 
             @SuppressLint("NotifyDataSetChanged")
@@ -47,7 +46,6 @@ class RecipeActivity: AppCompatActivity() {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                TODO("Not yet implemented")
             }
 
         })

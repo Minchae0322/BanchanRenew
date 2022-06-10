@@ -44,6 +44,7 @@ class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.Vi
         holder.textViewTitleExplain.text = list[position].explain
         holder.foldingCell.setOnClickListener {
             holder.imageViewContent.setImageResource(list[position].dishImage)
+            holder.imageViewContent.clipToOutline = true
             holder.textViewContentMain.text = parseIngredientDCToString(position, "주재료")
             holder.textViewContentSub.text = parseIngredientDCToString(position, "부재료")
             holder.textViewContentSeasoning.text = parseIngredientDCToString(position, "양념")
@@ -66,10 +67,15 @@ class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.Vi
 
     private fun parseIngredientDCToString(position: Int, type: String): String {
         val iDC: List<IngredientDC> = dao.getIngredientDCList(list[position].dishId, type)
-        var text = "$type : "
+        var text = ""
         for(index in iDC) {
-            text += index.ingredientDCName + " [ " + index.ingredientDCCapacity + " ] " + " , "
+            text += index.ingredientDCName + ":  " + index.ingredientDCCapacity + ",    "
         }
-        return text.substring(0, text.length - 3)
+        if(text.length >= 5) {
+            return text.substring(0, text.length - 5)
+        } else {
+            return text
+        }
+
     }
 }
