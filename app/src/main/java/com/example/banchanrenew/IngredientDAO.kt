@@ -42,7 +42,7 @@ interface IngredientDAO {
     @Query("SELECT * FROM ingredientDC WHERE ingredientDCNum = :num")
     fun getIngredientDCFromDCNum(num: Int): IngredientDC
 
-    @Query("SELECT nation From Dish WHERE dishId = :id")
+    @Query("SELECT nation From Dish WHERE recipeID = :id")
     fun eeeee(id: Int): String
 
     @Query("SELECT remainGram From ingredient WHERE name = :name")

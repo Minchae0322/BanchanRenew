@@ -27,21 +27,23 @@ interface RecipeDAO {
     @Query("SELECT * FROM INGREDIENT WHERE remainGram > 0")
     fun getIngredientMoreThanZero(): List<Ingredient>
 
-    @Query("SELECT * FROM Dish WHERE dishId = :dishId")
+    @Query("SELECT * FROM Dish WHERE recipeID = :dishId")
     fun getDishWhereId(dishId: Int): Dish
 
-    @Query("SELECT * FROM essential WHERE dishID = :dishId")
+    @Query("SELECT * FROM essential WHERE recipeID = :dishId")
     fun getEssentialListWhereDishID(dishId: Int): MutableList<EssentialIngredients>
 
-    @Query("SELECT e.dishId  FROM " +
-            "(SELECT essential.dishId, Count(essential.dishId) as count FROM essential Group by dishId) as e " +
-            "join (SELECT essential.dishId, Count(essential.dishId) as count FROM essential join ingredient on (essential_name = name) WHERE essential_gram <= remainGram And remainGram != 0 Group By essential.dishId) as ei " +
-            "on (e.dishId = ei.dishId) WHERE e.count = ei.count")
+    @Query(
+        "SELECT e.recipeID  FROM " +
+                "(SELECT essential.recipeID, Count(essential.recipeID) as count FROM essential Group by recipeID) as e " +
+                "join (SELECT essential.recipeID, Count(essential.recipeID) as count FROM essential join ingredient on (essential_name = name) WHERE essential_gram <= remainGram And remainGram != 0 Group By essential.recipeID) as ei " +
+                "on (e.recipeID = ei.recipeID) WHERE e.count = ei.count"
+    )
     fun getDishListWithMainIngredients(): List<Int>
 
-    @Query("SELECT dishId FROM essential join ingredient on (essential_name = name) WHERE essential_gram < remainGram Group By dishId")
+    @Query("SELECT recipeID FROM essential join ingredient on (essential_name = name) WHERE essential_gram < remainGram Group By recipeID")
     fun getTest2(): List<Int>
 
-    @Query("SELECT * From DIsh Where dishId = :dishId")
+    @Query("SELECT * From DIsh Where recipeID = :dishId")
     fun getDishListWithDishId(dishId: List<Int>): List<Dish>
 }

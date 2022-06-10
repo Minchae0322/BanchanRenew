@@ -5,7 +5,9 @@ import android.content.res.AssetManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
+import com.example.banchanrenew.addIngredientsPage.AddIngredientsActivity
 import com.example.banchanrenew.databinding.ActivityMainBinding
+import com.example.banchanrenew.fridge.FridgeActivity
 import com.example.banchanrenew.relation.*
 import com.example.banchanrenew.selectDish.RecipeActivity
 import org.json.JSONArray
@@ -18,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     companion object {
         lateinit var db: TestDatabase
         lateinit var prefs: PreferenceUtil
+
+
     }
 
 
@@ -28,9 +32,9 @@ class MainActivity : AppCompatActivity() {
         prefs = PreferenceUtil(applicationContext)
         db = Room.databaseBuilder(
             applicationContext,
-            TestDatabase::class.java, "test.db17"
+            TestDatabase::class.java, "test.db18"
         ).allowMainThreadQueries().build()
-        if(prefs.getString("version35","0") == "0") {
+        if(prefs.getString("version36","0") == "0") {
             var testDao1: IngredientDAO = db.testDao()
             testDao1.insertGramOfUnitList(GramOfUnitCons().getData())
             testDao1.insertIngredientList(IngredientsCons().getData())
@@ -40,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                 jsonParser()
             } catch (e: JSONException) {
             }
-            prefs.setString("version35","1")
+            prefs.setString("version36","1")
             testDao1.updateTest(600,"돼지갈비")
             testDao1.updateTest(600,"소고기")
             testDao1.updateTest(600,"돼지고기")
@@ -58,13 +62,29 @@ class MainActivity : AppCompatActivity() {
 
 
         var list = ArrayList<Ingredient>()
-        binding.textViewTest.setOnClickListener {
+        initTabLayout()
+
+
+
+    }
+
+    fun initTabLayout() {
+        binding.constraintLayoutRecipe.setOnClickListener {
             val nextIntent = Intent(this, RecipeActivity::class.java)
             startActivity(nextIntent)
         }
 
+        binding.constraintLayoutAddIngredient.setOnClickListener {
+            val nextIntent = Intent(this, AddIngredientsActivity::class.java)
+            startActivity(nextIntent)
+        }
 
+        binding.constraintLayoutFridge.setOnClickListener {
+            val nextIntent = Intent(this, FridgeActivity::class.java)
+            startActivity(nextIntent)
+        }
     }
+
 
 
     private fun jsonFileToJsonObject(fileName: String, objectName: String):JSONObject {

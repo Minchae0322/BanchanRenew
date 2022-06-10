@@ -1,10 +1,13 @@
 package com.example.banchanrenew.addIngredientsPage
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.banchanrenew.databinding.ActivityAddfridgeBinding
+import com.example.banchanrenew.fridge.FridgeActivity
+import com.example.banchanrenew.selectDish.RecipeActivity
 import com.google.android.material.tabs.TabLayoutMediator
 
 private const val NUM_PAGES = 3
@@ -23,6 +26,7 @@ class AddIngredientsActivity : FragmentActivity() {
         setContentView(binding.root)
         initPagerAdapter()
         initTabLayout()
+        initStartActivityTabLayout()
 
     }
 
@@ -42,6 +46,29 @@ class AddIngredientsActivity : FragmentActivity() {
             tab.text = tabTitleArray[position]
         }.attach()
     }
+
+    private fun initStartActivityTabLayout() {
+        binding.constraintLayoutRecipe.setOnClickListener {
+            val nextIntent = Intent(this, RecipeActivity::class.java)
+            nextIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET
+            startActivity(nextIntent)
+        }
+
+        binding.constraintLayoutAddIngredient.setOnClickListener {
+            val nextIntent = Intent(this, AddIngredientsActivity::class.java)
+            nextIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET
+            startActivity(nextIntent)
+        }
+
+        binding.constraintLayoutFridge.setOnClickListener {
+            val nextIntent = Intent(this, FridgeActivity::class.java)
+            nextIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET
+
+            startActivity(nextIntent)
+        }
+    }
+
+
 
     /**
      * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in

@@ -28,6 +28,7 @@ class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.Vi
         val textViewContentMain: TextView = itemView.findViewById(R.id.tv_cell_content_main)
         val textViewContentSub: TextView = itemView.findViewById(R.id.tv_cell_content_sub)
         val textViewContentSeasoning: TextView = itemView.findViewById(R.id.tv_cell_content_seasoning)
+        val textViewContentRecipeName: TextView = itemView.findViewById(R.id.tv_cell_content_recipeName)
 
     }
 
@@ -38,13 +39,14 @@ class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.Vi
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textViewTitleName.text = list[position].dishName
+        holder.textViewTitleName.text = list[position].recipeName
         holder.imageViewTitle.setImageResource(list[position].dishImage)
         holder.imageViewTitle.clipToOutline = true
         holder.textViewTitleExplain.text = list[position].explain
         holder.foldingCell.setOnClickListener {
             holder.imageViewContent.setImageResource(list[position].dishImage)
             holder.imageViewContent.clipToOutline = true
+            holder.textViewContentRecipeName.text = list[position].recipeName
             holder.textViewContentMain.text = parseIngredientDCToString(position, "주재료")
             holder.textViewContentSub.text = parseIngredientDCToString(position, "부재료")
             holder.textViewContentSeasoning.text = parseIngredientDCToString(position, "양념")
@@ -66,7 +68,7 @@ class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.Vi
     }
 
     private fun parseIngredientDCToString(position: Int, type: String): String {
-        val iDC: List<IngredientDC> = dao.getIngredientDCList(list[position].dishId, type)
+        val iDC: List<IngredientDC> = dao.getIngredientDCList(list[position].recipeID, type)
         var text = ""
         for(index in iDC) {
             text += index.ingredientDCName + ":  " + index.ingredientDCCapacity + ",    "

@@ -8,12 +8,12 @@ import com.example.banchanrenew.relation.Dish
 
 @Entity(tableName = "essential",
     foreignKeys = [
-        ForeignKey(entity = Dish::class, parentColumns = ["dishId"], childColumns = ["dishId"])
-    ], primaryKeys = ["dishId", "essential_name", "essential_gram"])
+        ForeignKey(entity = Dish::class, parentColumns = ["recipeID"], childColumns = ["recipeID"])
+    ], primaryKeys = ["recipeID", "essential_name", "essential_gram"])
 class EssentialIngredients(
     var essential_name: String,
     var essential_gram: String,
-    var dishId: Int
+    var recipeID: Int
 ) {
 
 }

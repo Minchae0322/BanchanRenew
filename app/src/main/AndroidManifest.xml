@@ -11,18 +11,21 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".addIngredientsPage.AddIngredientsActivity"/>
+        <activity android:name=".addIngredientsPage.AddIngredientsActivity"
+            android:launchMode="singleInstance"/>
         <activity android:name=".selectDish.SelectDishActivity"/>
         <activity android:name=".selectDish.RecipeWithMainHaveActivity"/>
         <activity android:name=".selectDish.RecipeActivity"/>
-        <activity android:name=".fridge.FridgeActivity"/>
+        <activity android:name=".fridge.FridgeActivity"
+            android:launchMode="singleInstance"/>
     </application>
 
 </manifest>

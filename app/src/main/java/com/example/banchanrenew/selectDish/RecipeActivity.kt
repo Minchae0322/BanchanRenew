@@ -8,7 +8,6 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.databinding.ActivitySelectedBinding
@@ -62,14 +61,14 @@ class RecipeActivity: AppCompatActivity() {
         when(spinnerNum) {
             0 -> {
                 for(dish in dishList) {
-                    if(dish.dishName.contains(charText)) {
+                    if(dish.recipeName.contains(charText)) {
                         dishListWithText.add(dish)
                     }
                 }
             }
             1 -> {
                 for(dish in dishList) {
-                    var essentialList: MutableList<EssentialIngredients> = db.recipeDao().getEssentialListWhereDishID(dish.dishId)
+                    var essentialList: MutableList<EssentialIngredients> = db.recipeDao().getEssentialListWhereDishID(dish.recipeID)
                     for(essential in essentialList) {
                         if(essential.essential_name.contains(charText)) {
                             dishListWithText.add(dish)

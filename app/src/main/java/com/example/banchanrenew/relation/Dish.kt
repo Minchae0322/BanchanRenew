@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "Dish")
 class Dish(
-    @ColumnInfo(name = "dishName") val dishName: String,
-    @PrimaryKey val dishId: Int,
+    @ColumnInfo(name = "dishName") val recipeName: String,
+    @PrimaryKey val recipeID: Int,
     @ColumnInfo(name = "explain") var explain: String?,
     @ColumnInfo(name = "nation") var nation: String?,
     @ColumnInfo(name = "type") var type: String?,
