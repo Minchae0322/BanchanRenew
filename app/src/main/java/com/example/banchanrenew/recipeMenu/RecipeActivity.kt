@@ -10,12 +10,12 @@ import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.banchanrenew.MainActivity.Companion.db
-import com.example.banchanrenew.databinding.ActivitySelectedBinding
+import com.example.banchanrenew.databinding.ActivityRecipeBinding
 import com.example.banchanrenew.relation.Dish
 import com.example.banchanrenew.relation.EssentialIngredients
 
 class RecipeActivity: AppCompatActivity() {
-    private lateinit var binding: ActivitySelectedBinding
+    private lateinit var binding: ActivityRecipeBinding
     private var spinnerNum: Int = 0
     private var dishList: List<Dish> = db.recipeDao().getDishList()
     private var dishListWithText: MutableList<Dish> = mutableListOf()
@@ -23,7 +23,7 @@ class RecipeActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySelectedBinding.inflate(layoutInflater)
+        binding = ActivityRecipeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initRecyclerView()
         initSpinner()

@@ -4,14 +4,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.banchanrenew.MainActivity
-import com.example.banchanrenew.databinding.ActivitySelectedBinding
+import com.example.banchanrenew.databinding.ActivityRecipeBinding
+
 
 class RecipeWithInput: AppCompatActivity(){
-    private lateinit var binding: ActivitySelectedBinding
+    private lateinit var binding: ActivityRecipeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySelectedBinding.inflate(layoutInflater)
+        binding = ActivityRecipeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initRecyclerView()
         binding.editTextSearch
