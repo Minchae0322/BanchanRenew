@@ -15,6 +15,7 @@
             android:id="@+id/constraintLayout3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="@drawable/background_yellow"
             app:layout_constraintBottom_toTopOf="@id/tv1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.35"
@@ -36,9 +37,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:id="@+id/constraint"
+                android:background="@drawable/background_yellow"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iv_cell_content_dishImage"
@@ -46,42 +48,45 @@
 
 
                 <TextView
+                    android:paddingLeft="5dp"
                     android:id="@+id/tv_cell_content_recipeName"
                     android:layout_width="0dp"
-                    android:text="콩나물밥"
                     android:layout_height="0dp"
-                    android:gravity="center_vertical"
+                    android:background="@drawable/background_yellow"
                     android:autoSizeMaxTextSize="23sp"
                     android:autoSizeMinTextSize="17sp"
                     android:autoSizeTextType="uniform"
-                    android:background="@drawable/border"
                     android:fontFamily="@font/cookie2"
+                    android:gravity="center_vertical"
+                    android:text="콩나물밥"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="#000000"
-                    app:layout_constraintHeight_percent="0.45"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintHeight_percent="0.45"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintTop"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+
+                    app:layout_constraintBottom_toTopOf="@id/constraintBottom"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/constraintBottom"
                     app:layout_constraintTop_toBottomOf="@+id/tv_cell_content_recipeName">
 
                     <TextView
                         android:id="@+id/tv_cell_content_nation"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:background="@drawable/border"
                         android:fontFamily="@font/coookie1"
                         android:paddingTop="10dp"
+                        android:paddingLeft="5dp"
                         android:text="국가  "
-                        android:textColor="#202C98"
+                        android:background="@drawable/background_yellow"
+                        android:textColor="#000000"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/tv_cell_content_nationIs"
                         app:layout_constraintStart_toStartOf="parent"
@@ -91,10 +96,10 @@
                         android:id="@+id/tv_cell_content_nationIs"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:background="@drawable/border"
+                        android:background="@drawable/background_yellow"
                         android:fontFamily="@font/coookie1"
                         android:paddingTop="10dp"
-                        android:textColor="#CE000000"
+                        android:textColor="#5C4A00"
 
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/tv_cell_content_kind"
@@ -105,12 +110,11 @@
                         android:id="@+id/tv_cell_content_kind"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:background="@drawable/border"
+                        android:background="@drawable/background_yellow"
                         android:fontFamily="@font/coookie1"
                         android:paddingTop="10dp"
                         android:text="음식종류  "
-                        android:textColor="#202C98"
-
+                        android:textColor="#CE000000"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/tv_cell_content_kindIs"
                         app:layout_constraintStart_toEndOf="@id/tv_cell_content_nationIs"
@@ -120,10 +124,10 @@
                         android:id="@+id/tv_cell_content_kindIs"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:background="@drawable/border"
+                        android:background="@drawable/background_yellow"
                         android:fontFamily="@font/coookie1"
                         android:paddingTop="10dp"
-                        android:textColor="#CE000000"
+                        android:textColor="#5C4A00"
 
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -135,9 +139,9 @@
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintBottom"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:id="@+id/constraintBottom"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/constraintTop">
 
@@ -146,11 +150,12 @@
                         android:id="@+id/tv_cell_content_time"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:background="@drawable/border"
+                        android:background="@drawable/background_yellow"
+                        android:paddingLeft="5dp"
                         android:fontFamily="@font/coookie1"
                         android:paddingTop="5dp"
                         android:text="소요시간  "
-                        android:textColor="#202C98"
+                        android:textColor="#000000"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/tv_cell_content_timeIs"
                         app:layout_constraintStart_toStartOf="parent"
@@ -160,10 +165,10 @@
                         android:id="@+id/tv_cell_content_timeIs"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:background="@drawable/border"
+                        android:background="@drawable/background_yellow"
                         android:fontFamily="@font/coookie1"
                         android:paddingTop="5dp"
-                        android:textColor="#CE000000"
+                        android:textColor="#5C4A00"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/tv_cell_content_calorie"
                         app:layout_constraintStart_toEndOf="@id/tv_cell_content_time"
@@ -173,11 +178,11 @@
                         android:id="@+id/tv_cell_content_calorie"
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:background="@drawable/border"
+                        android:background="@drawable/background_yellow"
                         android:fontFamily="@font/coookie1"
                         android:paddingTop="5dp"
                         android:text="칼로리  "
-                        android:textColor="#202C98"
+                        android:textColor="#000000"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/tv_cell_conent_calorieIs"
                         app:layout_constraintStart_toEndOf="@id/tv_cell_content_timeIs"
@@ -187,10 +192,10 @@
                         android:id="@+id/tv_cell_conent_calorieIs"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:background="@drawable/border"
+                        android:background="@drawable/background_yellow"
                         android:fontFamily="@font/coookie1"
                         android:paddingTop="5dp"
-                        android:textColor="#CE000000"
+                        android:textColor="#5C4A00"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/tv_cell_content_calorie"
@@ -198,7 +203,6 @@
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

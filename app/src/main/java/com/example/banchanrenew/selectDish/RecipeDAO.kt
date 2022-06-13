@@ -2,10 +2,7 @@ package com.example.banchanrenew.selectDish
 
 import androidx.room.Dao
 import androidx.room.Query
-import com.example.banchanrenew.relation.Dish
-import com.example.banchanrenew.relation.EssentialIngredients
-import com.example.banchanrenew.relation.IngredientDC
-import com.example.banchanrenew.relation.Ingredient
+import com.example.banchanrenew.relation.*
 
 @Dao
 interface RecipeDAO {
@@ -49,4 +46,7 @@ interface RecipeDAO {
 
     @Query("UPDATE Dish SET bookMark = :bookMark WHERE recipeID = :recipeID")
     fun updateBookMark(recipeID: Int, bookMark: Boolean)
+
+    @Query("SELECT * From recipe WHERE recipeID = :recipeID")
+    fun getRecipeInformation(recipeID: Int): Recipe
 }

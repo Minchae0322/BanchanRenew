@@ -11,6 +11,7 @@
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/background_rectangle.xml" value="0.259" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/background_rounding.xml" value="0.1495" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/background_title.xml" value="0.259" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/background_yellow.xml" value="0.259" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/border.xml" value="0.259" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/button_rounding.xml" value="0.259" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/drawable/cell_rounding.xml" value="0.259" />
@@ -27,6 +28,7 @@
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/cell_content.xml" value="0.264" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/dialog_add.xml" value="0.2" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/dialog_custom.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/dialog_recipe.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/fragment_pager.xml" value="0.25" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/item_cell_recipe.xml" value="0.2" />
         <entry key="..\:/Users/Min_C/AndroidStudioProjects/BanchanRenew/app/src/main/res/layout/item_fridge.xml" value="0.264" />

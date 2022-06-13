@@ -1,5 +1,6 @@
 package com.example.banchanrenew.selectDish
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,7 @@ import org.w3c.dom.Text
 class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
     private var isFavorite = false
     private val dao: RecipeDAO = db.recipeDao()
+    lateinit var context: Context
 //TODO foldingCell Title 부분만 viewHolder 에  선언해놓은 상태이고 content 부분은 나중에 디자인 작업할때 해야한다.
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val foldingCell: FoldingCell = itemView.findViewById(R.id.foldingCell)
@@ -40,6 +42,7 @@ class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.Vi
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_cell_recipe, parent, false)
+        context = parent.context
         return ViewHolder(view)
     }
 
@@ -74,7 +77,8 @@ class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.Vi
             holder.textViewContentSub.text = parseIngredientDCToString(position, "양념")
             holder.foldingCell.toggle(true)
             holder.textViewContentRecipeMenu.setOnClickListener {
-
+                val dialog = RecipeDialog(context, dao.getRecipeInformation(list[position].recipeID))
+                dialog.showDialog()
             }
         }
 
