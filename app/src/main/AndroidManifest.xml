@@ -21,9 +21,12 @@
         </activity>
         <activity android:name=".addIngredientsPage.AddIngredientsActivity"
             android:launchMode="singleInstance"/>
-        <activity android:name=".selectDish.SelectDishActivity"/>
-        <activity android:name=".selectDish.RecipeWithMainHaveActivity"/>
-        <activity android:name=".selectDish.RecipeActivity"/>
+        <activity android:name=".recipeMenu.SelectDishActivity"/>
+        <activity android:name=".recipeMenu.RecipeWithMainIngredientsActivity"/>
+        <activity android:name=".recipeMenu.RecipeActivity">
+
+        </activity>
+
         <activity android:name=".fridge.FridgeActivity"
             android:launchMode="singleInstance"/>
     </application>

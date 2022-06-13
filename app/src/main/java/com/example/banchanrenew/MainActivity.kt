@@ -9,7 +9,7 @@ import com.example.banchanrenew.addIngredientsPage.AddIngredientsActivity
 import com.example.banchanrenew.databinding.ActivityMainBinding
 import com.example.banchanrenew.fridge.FridgeActivity
 import com.example.banchanrenew.relation.*
-import com.example.banchanrenew.selectDish.RecipeActivity
+import com.example.banchanrenew.recipeMenu.RecipeActivity
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject

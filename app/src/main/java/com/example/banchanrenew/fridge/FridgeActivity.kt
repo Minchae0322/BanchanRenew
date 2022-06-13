@@ -12,7 +12,7 @@ import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.addIngredientsPage.AddIngredientsActivity
 import com.example.banchanrenew.databinding.ActivityFridgeBinding
 import com.example.banchanrenew.relation.Ingredient
-import com.example.banchanrenew.selectDish.RecipeActivity
+import com.example.banchanrenew.recipeMenu.RecipeActivity
 
 class FridgeActivity: AppCompatActivity() {
     private lateinit var binding: ActivityFridgeBinding

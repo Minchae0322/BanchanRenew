@@ -1,4 +1,4 @@
-package com.example.banchanrenew.selectDish
+package com.example.banchanrenew.recipeMenu
 
 import androidx.room.Dao
 import androidx.room.Query
@@ -48,5 +48,5 @@ interface RecipeDAO {
     fun updateBookMark(recipeID: Int, bookMark: Boolean)
 
     @Query("SELECT * From recipe WHERE recipeID = :recipeID")
-    fun getRecipeInformation(recipeID: Int): Recipe
+    fun getRecipeInformation(recipeID: Int): MutableList<Recipe>
 }

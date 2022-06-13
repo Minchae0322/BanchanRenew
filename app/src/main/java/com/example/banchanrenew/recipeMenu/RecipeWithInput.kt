@@ -1,4 +1,4 @@
-package com.example.banchanrenew.selectDish
+package com.example.banchanrenew.recipeMenu
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

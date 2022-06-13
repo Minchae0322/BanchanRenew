@@ -1,4 +1,4 @@
-package com.example.banchanrenew.selectDish
+package com.example.banchanrenew.recipeMenu
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -12,7 +12,6 @@ import com.example.banchanrenew.R
 import com.example.banchanrenew.relation.Dish
 import com.example.banchanrenew.relation.IngredientDC
 import com.ramotion.foldingcell.FoldingCell
-import org.w3c.dom.Text
 
 class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
     private var isFavorite = false
@@ -77,7 +76,7 @@ class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.Vi
             holder.textViewContentSub.text = parseIngredientDCToString(position, "양념")
             holder.foldingCell.toggle(true)
             holder.textViewContentRecipeMenu.setOnClickListener {
-                val dialog = RecipeDialog(context, dao.getRecipeInformation(list[position].recipeID))
+                val dialog = RecipeDialog(context, dao.getRecipeInformation(list[position].recipeID), list[position].recipeName)
                 dialog.showDialog()
             }
         }

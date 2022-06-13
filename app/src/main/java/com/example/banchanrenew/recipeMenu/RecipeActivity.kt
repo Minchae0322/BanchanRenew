@@ -1,4 +1,4 @@
-package com.example.banchanrenew.selectDish
+package com.example.banchanrenew.recipeMenu
 
 import android.annotation.SuppressLint
 import android.os.Bundle

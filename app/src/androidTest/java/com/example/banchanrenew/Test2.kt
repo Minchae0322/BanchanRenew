@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.banchanrenew.selectDish.RecipeDAO
+import com.example.banchanrenew.recipeMenu.RecipeDAO
 import com.example.banchanrenew.relation.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -16,7 +16,6 @@ import org.junit.runner.RunWith
 
 import org.junit.Assert.*
 import org.junit.Before
-import java.io.InputStream
 
 /**
  * Instrumented test, which will execute on an Android device.

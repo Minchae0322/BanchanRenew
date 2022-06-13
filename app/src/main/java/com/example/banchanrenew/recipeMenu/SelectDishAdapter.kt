@@ -1,4 +1,4 @@
-package com.example.banchanrenew.selectDish
+package com.example.banchanrenew.recipeMenu
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -25,7 +25,7 @@ class SelectDishAdapter(val list: List<Int>): RecyclerView.Adapter<SelectDishAda
         holder.textView.setOnClickListener {
             when(position) {
                 0 -> {
-                    val intent = Intent(holder.itemView.context, RecipeWithMainHaveActivity::class.java)
+                    val intent = Intent(holder.itemView.context, RecipeWithMainIngredientsActivity::class.java)
                     startActivity(holder.itemView.context, intent, null)
                 }
 

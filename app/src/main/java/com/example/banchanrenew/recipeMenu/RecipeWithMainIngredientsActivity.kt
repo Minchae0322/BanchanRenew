@@ -1,4 +1,4 @@
-package com.example.banchanrenew.selectDish
+package com.example.banchanrenew.recipeMenu
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.databinding.ActivitySelectedBinding
 import com.example.banchanrenew.relation.Dish
 
-class RecipeWithMainHaveActivity: AppCompatActivity() {
+class RecipeWithMainIngredientsActivity: AppCompatActivity() {
     private lateinit var binding: ActivitySelectedBinding
     private val recipeDao: RecipeDAO = db.recipeDao()
 

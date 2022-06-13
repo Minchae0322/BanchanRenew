@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.banchanrenew.databinding.ActivityAddfridgeBinding
 import com.example.banchanrenew.fridge.FridgeActivity
-import com.example.banchanrenew.selectDish.RecipeActivity
+import com.example.banchanrenew.recipeMenu.RecipeActivity
 import com.google.android.material.tabs.TabLayoutMediator
 
 private const val NUM_PAGES = 3
