@@ -15,4 +15,5 @@ class Dish(
     @ColumnInfo(name = "calorie") var calorie: String?,
     @ColumnInfo(name = "dishImage") var dishImage: Int,
     )    {
+    @ColumnInfo(name = "bookMark") var bookMark: Boolean = false
 }

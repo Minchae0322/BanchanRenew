@@ -11,6 +11,7 @@ import com.example.banchanrenew.R
 import com.example.banchanrenew.relation.Dish
 import com.example.banchanrenew.relation.IngredientDC
 import com.ramotion.foldingcell.FoldingCell
+import org.w3c.dom.Text
 
 class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
     private var isFavorite = false
@@ -26,10 +27,14 @@ class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.Vi
     //content
         val imageViewContent: ImageView = itemView.findViewById(R.id.iv_cell_content_dishImage)
         val textViewContentMain: TextView = itemView.findViewById(R.id.tv_cell_content_main)
+        val textViewContentNation: TextView = itemView.findViewById(R.id.tv_cell_content_nationIs)
+        val textViewContentTime: TextView = itemView.findViewById(R.id.tv_cell_content_timeIs)
+        val textViewContentKind: TextView = itemView.findViewById(R.id.tv_cell_content_kindIs)
+        val textViewContentCalorie: TextView = itemView.findViewById(R.id.tv_cell_conent_calorieIs)
         val textViewContentSub: TextView = itemView.findViewById(R.id.tv_cell_content_sub)
         val textViewContentSeasoning: TextView = itemView.findViewById(R.id.tv_cell_content_seasoning)
         val textViewContentRecipeName: TextView = itemView.findViewById(R.id.tv_cell_content_recipeName)
-
+        val textViewContentRecipeMenu: TextView = itemView.findViewById(R.id.tv_cell_content_recipeMenu)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -43,24 +48,36 @@ class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.Vi
         holder.imageViewTitle.setImageResource(list[position].dishImage)
         holder.imageViewTitle.clipToOutline = true
         holder.textViewTitleExplain.text = list[position].explain
+        holder.imageViewStar.setOnClickListener {
+            if(isFavorite) {
+                holder.imageViewStar.setImageResource(R.drawable.emptystar)
+                dao.updateBookMark(list[position].recipeID, false)
+                isFavorite = false
+            } else {
+                holder.imageViewStar.setImageResource(R.drawable.star)
+                dao.updateBookMark(list[position].recipeID, true)
+                isFavorite = true
+            }
+        }
+
+        //content
         holder.foldingCell.setOnClickListener {
             holder.imageViewContent.setImageResource(list[position].dishImage)
             holder.imageViewContent.clipToOutline = true
             holder.textViewContentRecipeName.text = list[position].recipeName
+            holder.textViewContentNation.text = list[position].nation
+            holder.textViewContentTime.text = " " + list[position].cookingTime
+            holder.textViewContentKind.text = list[position].type
+            holder.textViewContentCalorie.text = list[position].calorie
             holder.textViewContentMain.text = parseIngredientDCToString(position, "주재료")
-            holder.textViewContentSub.text = parseIngredientDCToString(position, "부재료")
-            holder.textViewContentSeasoning.text = parseIngredientDCToString(position, "양념")
+            holder.textViewContentSeasoning.text = parseIngredientDCToString(position, "부재료")
+            holder.textViewContentSub.text = parseIngredientDCToString(position, "양념")
             holder.foldingCell.toggle(true)
-        }
-        holder.imageViewStar.setOnClickListener {
-            if(isFavorite) {
-                holder.imageViewStar.setImageResource(R.drawable.emptystar)
-                isFavorite = false
-            } else {
-                holder.imageViewStar.setImageResource(R.drawable.star)
-                isFavorite = true
+            holder.textViewContentRecipeMenu.setOnClickListener {
+
             }
         }
+
     }
 
     override fun getItemCount(): Int {

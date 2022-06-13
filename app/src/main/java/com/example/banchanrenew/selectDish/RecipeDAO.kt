@@ -44,6 +44,9 @@ interface RecipeDAO {
     @Query("SELECT recipeID FROM essential join ingredient on (essential_name = name) WHERE essential_gram < remainGram Group By recipeID")
     fun getTest2(): List<Int>
 
-    @Query("SELECT * From DIsh Where recipeID = :dishId")
+    @Query("SELECT * From Dish Where recipeID = :dishId")
     fun getDishListWithDishId(dishId: List<Int>): List<Dish>
+
+    @Query("UPDATE Dish SET bookMark = :bookMark WHERE recipeID = :recipeID")
+    fun updateBookMark(recipeID: Int, bookMark: Boolean)
 }
