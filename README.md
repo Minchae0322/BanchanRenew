@@ -6,5 +6,5 @@ json 데이터 처리
 6-9 재료정보 json 파싱 함수 리팩토링과 database 초기설정 속도가 느려서 list에 담은 후 데이터베이스에 한번만 접근 하도록 설정
 6-10 recipe content 디자인 중간 완료, activity전환 tabLayout 설정, intent 처리할때 task 관련 menifest 수정(액티비티가 한번만 불러지게)
 6/13 recipeDialog 제작, recipe_cell_content부분 완성
-//todo recipeActivity가 초기화면으로 불러올 수 있게 설정, recipeSelectMenu Actitvity 설정해서 보유한 main재료로 찾기, 즐겨찾기, 모든레시피 등등 메뉴 설정하기 
-//todo 레시피 안에 사진 url 어떻게 처리할지 고민 database에 자주 i/o 할때 어떻게 더 빨리 처리할 수 있는지 고민, 
+\n 6/14 recipeActivity, fridgeActivity, addIngredientActivity 모두 fragment로 바꾸고 tablayout 클릭리스너에 따라 바뀌게 전환. selectRecipeMenu 설정완료, 디자인변경
+//todo 레시피 안에 사진 url 어떻게 처리할지 고민 database에 자주 i/o 할때 어떻게 더 빨리 처리할 수 있는지 고민, selectRecipeMenu 각 item 디자인과 textView설정, fridgeFragment에서 item 클릭시 addIngredientDialog로 넘어가게 설정(adapter변수 처리 고민)
