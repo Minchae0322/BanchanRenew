@@ -12,13 +12,15 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Adapter
+import androidx.recyclerview.widget.RecyclerView
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
 import com.example.banchanrenew.databinding.DialogAddBinding
 import com.example.banchanrenew.relation.Ingredient
 
 
-class AddIngredientsDialog(val context: Context, var ingredient: Ingredient, val adapter:AddIngredientsAdapter) {
+class AddIngredientsDialog(val context: Context, var ingredient: Ingredient, val adapter: AddIngredientsAdapter) {
     private val dialog = Dialog(context)
     private lateinit var binding: DialogAddBinding
     private var buttonNum: Int = 0

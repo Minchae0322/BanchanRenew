@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.banchanrenew.databinding.ActivityAddfridgeBinding
+import com.example.banchanrenew.databinding.ActivityAddingredientBinding
 import com.example.banchanrenew.fridge.FridgeActivity
 import com.example.banchanrenew.recipeMenu.RecipeActivity
 import com.google.android.material.tabs.TabLayoutMediator
@@ -18,11 +18,11 @@ class AddIngredientsActivity : FragmentActivity() {
      * The pager widget, which handles animation and allows swiping horizontally to access previous
      * and next wizard steps.
      */
-    private lateinit var binding: ActivityAddfridgeBinding
+    private lateinit var binding: ActivityAddingredientBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddfridgeBinding.inflate(layoutInflater)
+        binding = ActivityAddingredientBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initPagerAdapter()
         initTabLayout()

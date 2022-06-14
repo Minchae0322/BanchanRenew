@@ -6,61 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </FrameLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout6"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.08"
-        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout_recipe"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/constraintLayout_addIngredient"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout_addIngredient"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/iv_tab_changeToRecipeActivity"
-                app:layout_constraintWidth_percent="0.3"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintHeight_percent="0.6"
                 android:background="@drawable/recipe2222"
                 app:layout_constraintBottom_toTopOf="@id/tv_tab_changeToRecipeActivity"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.6"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.3" />
 
             <TextView
                 android:id="@+id/tv_tab_changeToRecipeActivity"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintWidth_percent="0.5"
-                android:text="레시피"
-                android:textColor="#575757"
                 android:fontFamily="@font/merona"
                 android:gravity="center_horizontal"
+                android:text="레시피"
+                android:textColor="#575757"
                 android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_tab_changeToRecipeActivity" />
+                app:layout_constraintTop_toBottomOf="@id/iv_tab_changeToRecipeActivity"
+                app:layout_constraintWidth_percent="0.5" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -75,30 +77,30 @@
 
             <ImageView
                 android:id="@+id/iv_tab_changeToAddIngredientActivity"
-                app:layout_constraintWidth_percent="0.3"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintHeight_percent="0.6"
                 android:background="@drawable/ingrdtfinal"
                 app:layout_constraintBottom_toTopOf="@id/tv_tab_changeToAddIngredientActivity"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.6"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.3" />
 
             <TextView
                 android:id="@+id/tv_tab_changeToAddIngredientActivity"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintWidth_percent="0.7"
-                android:text="재료 추가하기"
-                android:textColor="#575757"
                 android:fontFamily="@font/merona"
                 android:gravity="center_horizontal"
+                android:text="재료 추가하기"
+                android:textColor="#575757"
                 android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_tab_changeToAddIngredientActivity" />
+                app:layout_constraintTop_toBottomOf="@id/iv_tab_changeToAddIngredientActivity"
+                app:layout_constraintWidth_percent="0.7" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -114,30 +116,30 @@
 
             <ImageView
                 android:id="@+id/iv_tab_changeToFridgeActivity"
-                app:layout_constraintWidth_percent="0.3"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintHeight_percent="0.6"
                 android:background="@drawable/fridge"
                 app:layout_constraintBottom_toTopOf="@id/tv_tab_changeToFridgeActivity"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.6"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.3" />
 
             <TextView
                 android:id="@+id/tv_tab_changeToFridgeActivity"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintWidth_percent="0.5"
-                android:text="냉장고"
-                android:textColor="#575757"
                 android:fontFamily="@font/merona"
                 android:gravity="center_horizontal"
+                android:text="냉장고"
+                android:textColor="#575757"
                 android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_tab_changeToFridgeActivity" />
+                app:layout_constraintTop_toBottomOf="@id/iv_tab_changeToFridgeActivity"
+                app:layout_constraintWidth_percent="0.5" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

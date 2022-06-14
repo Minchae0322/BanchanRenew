@@ -9,7 +9,7 @@ import com.example.banchanrenew.addIngredientsPage.AddIngredientsActivity
 import com.example.banchanrenew.databinding.ActivityMainBinding
 import com.example.banchanrenew.fridge.FridgeActivity
 import com.example.banchanrenew.relation.*
-import com.example.banchanrenew.recipeMenu.RecipeActivity
+import com.example.banchanrenew.recipeMenu.SelectDishFragment
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -60,18 +60,19 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
         var list = ArrayList<Ingredient>()
         initTabLayout()
-
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, SelectDishFragment())
 
 
     }
 
     fun initTabLayout() {
         binding.constraintLayoutRecipe.setOnClickListener {
-            val nextIntent = Intent(this, RecipeActivity::class.java)
-            startActivity(nextIntent)
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SelectDishFragment())
+                .commit()
         }
 
         binding.constraintLayoutAddIngredient.setOnClickListener {

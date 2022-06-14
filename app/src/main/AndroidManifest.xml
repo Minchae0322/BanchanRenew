@@ -21,7 +21,7 @@
         </activity>
         <activity android:name=".addIngredientsPage.AddIngredientsActivity"
             android:launchMode="singleInstance"/>
-        <activity android:name=".recipeMenu.SelectDishActivity"/>
+        <activity android:name=".recipeMenu.SelectDishFragment"/>
         <activity android:name=".recipeMenu.RecipeWithMainIngredientsActivity"/>
         <activity android:name=".recipeMenu.RecipeActivity">
 
