@@ -1,16 +1,16 @@
 package com.example.banchanrenew
 
-import android.content.Intent
 import android.content.res.AssetManager
 import android.graphics.Color
+import android.graphics.Point
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.banchanrenew.addIngredientsPage.AddIngredientsActivity
 import com.example.banchanrenew.databinding.ActivityMainBinding
 import com.example.banchanrenew.fridge.FridgeFragment
-import com.example.banchanrenew.relation.*
 import com.example.banchanrenew.recipeMenu.SelectDishFragment
+import com.example.banchanrenew.relation.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity() {
     companion object {
         lateinit var db: TestDatabase
         lateinit var prefs: PreferenceUtil
-
+        var DISPLAY_WITH = 0
+        var DISPLAY_HEIGHT = 0
 
     }
 
@@ -135,6 +136,14 @@ class MainActivity : AppCompatActivity() {
         val inputStream = assetManager.open(fileName)
         val jObject = JSONObject(inputStream.bufferedReader().use { it.readText() })
         return jObject.getJSONObject(objectName)
+    }
+
+    fun setDisplaySize() {
+        val display = windowManager.defaultDisplay
+        val size = Point()
+        display.getSize(size)
+        MainActivity.DISPLAY_WITH = size.x
+        MainActivity.DISPLAY_HEIGHT = size.y
     }
 
     private fun jsonObjectToJsonArray(jObject: JSONObject, arrayName: String): JSONArray {

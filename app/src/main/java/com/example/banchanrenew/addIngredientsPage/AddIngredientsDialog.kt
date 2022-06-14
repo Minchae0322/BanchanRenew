@@ -12,8 +12,8 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.Window
 import android.view.WindowManager
-import android.widget.Adapter
-import androidx.recyclerview.widget.RecyclerView
+import com.example.banchanrenew.MainActivity.Companion.DISPLAY_HEIGHT
+import com.example.banchanrenew.MainActivity.Companion.DISPLAY_WITH
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
 import com.example.banchanrenew.databinding.DialogAddBinding
@@ -167,15 +167,15 @@ class AddIngredientsDialog(val context: Context, var ingredient: Ingredient, val
             when (buttonNum) {
                 0 -> {
                     binding.tvAddDialogPlus.setBackgroundResource(R.drawable.background_rounding)
-                    binding.tvAddDialogPlus.setTextColor(Color.parseColor("#919191"))
+                    binding.tvAddDialogPlus.setTextColor(Color.parseColor("#3E3E3E"))
                 }
                 1 -> {
                     binding.tvAddDialogRemove.setBackgroundResource(R.drawable.background_rounding)
-                    binding.tvAddDialogRemove.setTextColor(Color.parseColor("#919191"))
+                    binding.tvAddDialogRemove.setTextColor(Color.parseColor("#3E3E3E"))
                 }
                 2 -> {
                     binding.tvAddDialogRemoveAll.setBackgroundResource(R.drawable.background_rounding)
-                    binding.tvAddDialogRemoveAll.setTextColor(Color.parseColor("#919191"))
+                    binding.tvAddDialogRemoveAll.setTextColor(Color.parseColor("#3E3E3E"))
                 }
             }
         }
