@@ -6,7 +6,11 @@ import android.content.Intent.*
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.addIngredientsPage.AddIngredientsActivity
@@ -14,50 +18,29 @@ import com.example.banchanrenew.databinding.ActivityFridgeBinding
 import com.example.banchanrenew.relation.Ingredient
 import com.example.banchanrenew.recipeMenu.RecipeActivity
 
-class FridgeActivity: AppCompatActivity() {
+class FridgeFragment: Fragment() {
     private lateinit var binding: ActivityFridgeBinding
     private var ingredientList: MutableList<Ingredient> = db.testDao().getIngredientMoreThanZeroGram()
     private var ingredientListWithText: MutableList<Ingredient> = mutableListOf()
     private val fridgeAdapter: FridgeAdapter = FridgeAdapter(ingredientList)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityFridgeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = ActivityFridgeBinding.inflate(layoutInflater, container, false)
         initRecyclerView()
         initEditText()
-        initTabLayout()
-
+        return binding.root
     }
 
     private fun initRecyclerView() {
-        binding.rvFridge.layoutManager = GridLayoutManager(applicationContext,4)
+        binding.rvFridge.layoutManager = GridLayoutManager(context,4)
         binding.rvFridge.setHasFixedSize(true)
         binding.rvFridge.adapter = fridgeAdapter
     }
 
-    private fun initTabLayout() {
-        binding.constraintLayoutRecipe.setOnClickListener {
-            val nextIntent = Intent(this, RecipeActivity::class.java)
-            nextIntent.flags = FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET
-            nextIntent.flags = FLAG_ACTIVITY_NO_ANIMATION
-            startActivity(nextIntent)
-        }
-
-        binding.constraintLayoutAddIngredient.setOnClickListener {
-            val nextIntent = Intent(this, AddIngredientsActivity::class.java)
-            nextIntent.flags = FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET
-            nextIntent.flags = FLAG_ACTIVITY_NO_ANIMATION
-            startActivity(nextIntent)
-        }
-
-        binding.constraintLayoutFridge.setOnClickListener {
-            val nextIntent = Intent(this, FridgeActivity::class.java)
-            nextIntent.flags = FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET
-            nextIntent.flags = FLAG_ACTIVITY_NO_ANIMATION
-            startActivity(nextIntent)
-        }
-    }
 
 
     private fun initEditText() {

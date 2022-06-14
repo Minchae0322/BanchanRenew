@@ -2,12 +2,13 @@ package com.example.banchanrenew
 
 import android.content.Intent
 import android.content.res.AssetManager
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.banchanrenew.addIngredientsPage.AddIngredientsActivity
 import com.example.banchanrenew.databinding.ActivityMainBinding
-import com.example.banchanrenew.fridge.FridgeActivity
+import com.example.banchanrenew.fridge.FridgeFragment
 import com.example.banchanrenew.relation.*
 import com.example.banchanrenew.recipeMenu.SelectDishFragment
 import org.json.JSONArray
@@ -17,6 +18,7 @@ import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private var fragmentRunningNum: Int = 0
     companion object {
         lateinit var db: TestDatabase
         lateinit var prefs: PreferenceUtil
@@ -52,37 +54,77 @@ class MainActivity : AppCompatActivity() {
             testDao1.updateTest(600,"소세지")
         }
 
-
-
-
-
-
-
-
-
         var list = ArrayList<Ingredient>()
         initTabLayout()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, SelectDishFragment())
-
-
+            .commit()
     }
 
-    fun initTabLayout() {
+    private fun updateUnClicked(clickedFragmentNum: Int) {
+        if(clickedFragmentNum != fragmentRunningNum) {
+            when(fragmentRunningNum) {
+                0 -> {
+                    binding.ivTabChangeToRecipeActivity.setImageResource(R.drawable.recipe_unclicked)
+                    binding.tvTabChangeToRecipeActivity.setTextColor(Color.parseColor("#919191"))
+                }
+                1 -> {
+                    binding.ivTabChangeToAddIngredientActivity.setImageResource(R.drawable.ingrdtfinal_uncliked)
+                    binding.tvTabChangeToAddIngredientActivity.setTextColor(Color.parseColor("#919191"))
+                }
+                2 -> {
+                    binding.ivTabChangeToFridgeActivity.setImageResource(R.drawable.fridge_uncliked)
+                    binding.tvTabChangeToFridgeActivity.setTextColor(Color.parseColor("#919191"))
+                }
+            }
+        }
+    }
+
+    private fun updateClicked(clickedFragmentNum: Int) {
+        if(clickedFragmentNum != fragmentRunningNum) {
+            when(clickedFragmentNum) {
+                0 -> {
+                    binding.ivTabChangeToRecipeActivity.setImageResource(R.drawable.recipe2222)
+                    binding.tvTabChangeToRecipeActivity.setTextColor(Color.parseColor("#FFFF4444"))
+                }
+                1 -> {
+                    binding.ivTabChangeToAddIngredientActivity.setImageResource(R.drawable.ingrdtfinal)
+                    binding.tvTabChangeToAddIngredientActivity.setTextColor(Color.parseColor("#FFFF4444"))
+                }
+                2 -> {
+                    binding.ivTabChangeToFridgeActivity.setImageResource(R.drawable.fridge)
+                    binding.tvTabChangeToFridgeActivity.setTextColor(Color.parseColor("#FFFF4444"))
+                }
+            }
+        }
+    }
+
+    private fun initTabLayout() {
         binding.constraintLayoutRecipe.setOnClickListener {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, SelectDishFragment())
                 .commit()
+            updateUnClicked(0)
+            updateClicked(0)
+            fragmentRunningNum = 0
         }
 
         binding.constraintLayoutAddIngredient.setOnClickListener {
-            val nextIntent = Intent(this, AddIngredientsActivity::class.java)
-            startActivity(nextIntent)
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, AddIngredientsActivity())
+                .commit()
+            updateUnClicked(1)
+            updateClicked(1)
+            fragmentRunningNum = 1
         }
 
         binding.constraintLayoutFridge.setOnClickListener {
-            val nextIntent = Intent(this, FridgeActivity::class.java)
-            startActivity(nextIntent)
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, FridgeFragment())
+                .commit()
+            updateUnClicked(2)
+            updateClicked(2)
+            fragmentRunningNum = 2
         }
     }
 
@@ -138,13 +180,5 @@ class MainActivity : AppCompatActivity() {
              db.testDao().insertIngredientDCList(list)
          }
     }
-
-    private fun insertJsonObjectToDB() {
-
-    }
-
-
-
-
 
 }

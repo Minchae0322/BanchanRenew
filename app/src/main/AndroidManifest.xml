@@ -27,7 +27,7 @@
 
         </activity>
 
-        <activity android:name=".fridge.FridgeActivity"
+        <activity android:name=".fridge.FridgeFragment"
             android:launchMode="singleInstance"/>
     </application>
 
