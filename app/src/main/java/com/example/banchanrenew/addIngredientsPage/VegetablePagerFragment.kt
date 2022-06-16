@@ -26,8 +26,15 @@ class VegetablePagerFragment(): Fragment() {
         binding = FragmentPagerBinding.inflate(inflater, container, false)
         initRecyclerView()
         initEditText()
+        bindViews()
         return binding.root
+    }
 
+    private fun bindViews() {
+        binding.layoutEasySetting.setOnClickListener {
+            val easySettingDialog = EasySettingDialog(this.requireContext(), adapter, "vegetable")
+            easySettingDialog.showDialog()
+        }
     }
 
     override fun onResume() {

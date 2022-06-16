@@ -30,8 +30,14 @@ interface IngredientDAO {
 
     @Insert fun insertEssential(essentialIngredients: EssentialIngredients)
 
-    @Query("UPDATE ingredient SET remainGram = :remain WHERE name = :name")
-    fun updateTest(remain: Int, name: String)
+    @Query("UPDATE ingredient SET remainGram = :remain WHERE id = :id")
+    fun updateRemainGramOfIngredient(remain: Int, id: Int)
+
+    @Query("UPDATE ingredient SET remainGram = :remain WHERE id = :name")
+    fun updateRemainGramOfIngredient(remain: Int, name: String)
+
+    @Query("SELECT remainGram From Ingredient WHERE id = :id")
+    fun getRemainGramOfIngredient(id: Int): Int
 
     @Query("SELECT unit From Ingredient WHERE id = :id")
     fun selectUnitFromIngredient(id: Int): String

@@ -1,8 +1,6 @@
 package com.example.banchanrenew.addIngredientsPage
 
 import android.content.Context
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +12,7 @@ import com.example.banchanrenew.relation.Ingredient
 
 class EasySettingAdapter(val list: List<Ingredient>) : RecyclerView.Adapter<EasySettingAdapter.ViewHolder>() {
     lateinit var context: Context
+    var isCheckedList: Array<Int> = Array(list.size) { 0 }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageViewAddIngredients: ImageView = itemView.findViewById(R.id.iv_fridge)
@@ -33,6 +32,15 @@ class EasySettingAdapter(val list: List<Ingredient>) : RecyclerView.Adapter<Easy
         holder.imageViewAddIngredients.setImageResource(list[position].image)
         holder.textViewAddIngredientsTitle.text = list[position].name
         holder.textViewAddIngredientsRemain.text = list[position].remainGram.toString() + "g"
+        holder.itemView.setOnClickListener {
+            if(isCheckedList[position] != 0) {
+                holder.itemView.setBackgroundResource(R.drawable.background_stroke)
+                isCheckedList[position] = 0
+            } else {
+                holder.itemView.setBackgroundResource(R.drawable.background_redstroke)
+                isCheckedList[position] = list[position].id
+            }
+        }
     }
 
     override fun getItemCount(): Int {

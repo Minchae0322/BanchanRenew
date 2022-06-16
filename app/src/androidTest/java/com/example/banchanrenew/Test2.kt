@@ -75,7 +75,7 @@ class Test2 {
 
     @Test
     fun test1() {
-        testDao.updateTest(600,"돼지갈비")
+        testDao.updateRemainGramOfIngredient(600,"돼지갈비")
         assertEquals("돼지갈비",testDao.selectUnitFromIngredientName("돼지갈비"))
         assertEquals(600,testDao.eee2("돼지갈비"))
         assertEquals(449, recipeDAO.getDishListWithMainIngredients()[1])

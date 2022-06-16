@@ -14,6 +14,7 @@ import com.example.banchanrenew.databinding.DialogEasysettingBinding
 class EasySettingDialog(val context: Context, private val addIngredientsAdapter: AddIngredientsAdapter, val dataType: String) {
     private val dialog = Dialog(context)
     private lateinit var binding: DialogEasysettingBinding
+    private val adapter = EasySettingAdapter(db.testDao().selectIngredientWhereDataType(dataType))
 
     fun showDialog() {
         binding = DialogEasysettingBinding.bind(LayoutInflater.from(context).inflate(R.layout.dialog_easysetting, null))
@@ -26,7 +27,7 @@ class EasySettingDialog(val context: Context, private val addIngredientsAdapter:
     private fun initRecyclerView() {
         binding.rvEasySetting.layoutManager = GridLayoutManager(this.context,4)
         binding.rvEasySetting.setHasFixedSize(true)
-        binding.rvEasySetting.adapter = EasySettingAdapter(db.testDao().selectIngredientWhereDataType(dataType))
+        binding.rvEasySetting.adapter = adapter
     }
 
     private fun initDialog() {
@@ -39,9 +40,22 @@ class EasySettingDialog(val context: Context, private val addIngredientsAdapter:
 
     }
 
+    private fun easySettingToDB() {
+        for(id in adapter.isCheckedList) {
+            if(id != 0) {
+                val remain = db.testDao().getRemainGramOfIngredient(id)
+                db.testDao().updateRemainGramOfIngredient(remain + 500, id)
+            }
+        }
+    }
+
     private fun bindViews() {
         binding.tvEasySettingOk.setOnClickListener {
+            easySettingToDB()
             addIngredientsAdapter.updateList(dataType)
+            dialog.dismiss()
+        }
+        binding.tvEasySettingCancel.setOnClickListener {
             dialog.dismiss()
         }
     }

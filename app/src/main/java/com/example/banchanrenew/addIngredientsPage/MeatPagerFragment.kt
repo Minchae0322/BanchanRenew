@@ -28,16 +28,16 @@ class MeatPagerFragment(): Fragment() {
         initEditText()
         context
         Log.d("onCreateView","MeatPager")
+        bindViews()
+        return binding.root
+    }
+
+    private fun bindViews() {
         binding.layoutEasySetting.setOnClickListener {
             val easySettingDialog = EasySettingDialog(this.requireContext(), adapter, "meat")
             easySettingDialog.showDialog()
         }
-
-        return binding.root
-        //TODO easySetting 누르면 색 변하게
-
     }
-
 
     override fun onResume() {
         super.onResume()
