@@ -36,6 +36,10 @@ class SelectDishAdapter(val list: List<Int>): RecyclerView.Adapter<SelectDishAda
                     val intent = Intent(holder.itemView.context, RecipeWithMainIngredientsActivity::class.java)
                     startActivity(holder.itemView.context, intent, null)
                 }
+                2 -> {
+                    val intent = Intent(holder.itemView.context, RecipeWithBookMarkActivity::class.java)
+                    startActivity(holder.itemView.context, intent, null)
+                }
             }
 
         }

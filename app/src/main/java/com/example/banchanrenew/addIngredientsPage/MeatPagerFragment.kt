@@ -37,6 +37,10 @@ class MeatPagerFragment(): Fragment() {
             val easySettingDialog = EasySettingDialog(this.requireContext(), adapter, "meat")
             easySettingDialog.showDialog()
         }
+        binding.textViewSearch.setOnClickListener {
+            val easySettingDialog = EasySettingDialog(this.requireContext(), adapter, "meat")
+            easySettingDialog.showDialog()
+        }
     }
 
     override fun onResume() {

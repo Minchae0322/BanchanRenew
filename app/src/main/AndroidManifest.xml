@@ -19,16 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".addIngredientsPage.AddIngredientsActivity"
-            android:launchMode="singleInstance"/>
-        <activity android:name=".recipeMenu.SelectDishFragment"/>
+        <activity android:name=".recipeMenu.RecipeWithBookMarkActivity"/>
         <activity android:name=".recipeMenu.RecipeWithMainIngredientsActivity"/>
         <activity android:name=".recipeMenu.RecipeActivity">
 
         </activity>
 
-        <activity android:name=".fridge.FridgeFragment"
-            android:launchMode="singleInstance"/>
+
     </application>
 
 </manifest>

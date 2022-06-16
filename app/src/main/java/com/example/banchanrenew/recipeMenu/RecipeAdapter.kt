@@ -50,14 +50,21 @@ class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.Vi
         holder.imageViewTitle.setImageResource(list[position].dishImage)
         holder.imageViewTitle.clipToOutline = true
         holder.textViewTitleExplain.text = list[position].explain
+        if(list[position].bookMark == 1) {
+            holder.imageViewStar.setImageResource(R.drawable.star)
+            isFavorite = true
+        } else {
+            holder.imageViewStar.setImageResource(R.drawable.emptystar)
+            isFavorite = false
+        }
         holder.imageViewStar.setOnClickListener {
             if(isFavorite) {
                 holder.imageViewStar.setImageResource(R.drawable.emptystar)
-                dao.updateBookMark(list[position].recipeID, false)
+                dao.updateBookMark(list[position].recipeID, 0)
                 isFavorite = false
             } else {
                 holder.imageViewStar.setImageResource(R.drawable.star)
-                dao.updateBookMark(list[position].recipeID, true)
+                dao.updateBookMark(list[position].recipeID, 1)
                 isFavorite = true
             }
         }

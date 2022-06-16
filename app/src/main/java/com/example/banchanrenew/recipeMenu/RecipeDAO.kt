@@ -30,6 +30,9 @@ interface RecipeDAO {
     @Query("SELECT * FROM essential WHERE recipeID = :dishId")
     fun getEssentialListWhereDishID(dishId: Int): MutableList<EssentialIngredients>
 
+    @Query("SELECT * FROM Dish WHERE bookMark = :oneIsTrueZeroFalse")
+    fun getRecipeWithBookMarkList(oneIsTrueZeroFalse: Int): List<Dish>
+
     @Query(
         "SELECT e.recipeID  FROM " +
                 "(SELECT essential.recipeID, Count(essential.recipeID) as count FROM essential Group by recipeID) as e " +
@@ -44,8 +47,8 @@ interface RecipeDAO {
     @Query("SELECT * From Dish Where recipeID = :dishId")
     fun getDishListWithDishId(dishId: List<Int>): List<Dish>
 
-    @Query("UPDATE Dish SET bookMark = :bookMark WHERE recipeID = :recipeID")
-    fun updateBookMark(recipeID: Int, bookMark: Boolean)
+    @Query("UPDATE Dish SET bookMark = :oneIsTrueZeroFalse WHERE recipeID = :recipeID")
+    fun updateBookMark(recipeID: Int, oneIsTrueZeroFalse: Int)
 
     @Query("SELECT * From recipe WHERE recipeID = :recipeID")
     fun getRecipeInformation(recipeID: Int): MutableList<Recipe>
