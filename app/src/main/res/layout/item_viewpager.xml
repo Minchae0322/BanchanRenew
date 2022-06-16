@@ -3,15 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="100dp"
-    android:layout_height="120dp"
+    android:layout_width="90dp"
+    android:layout_height="110dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/background_stroke"
     >
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            android:layout_margin="5dp"
+            >
 
                 <ImageView
                     android:layout_margin="3dp"
@@ -34,7 +37,7 @@
                     android:textSize="14sp"
                     android:text="돼지고기"
                     android:gravity="center_vertical"
-                    android:paddingStart="15dp"
+                    android:paddingStart="10dp"
                     app:layout_constraintBottom_toTopOf="@id/tv_fridgeAmount"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +54,7 @@
                     android:textSize="12sp"
                     android:gravity="center_vertical"
                     android:text="500g"
-                    android:paddingStart="16dp"
+                    android:paddingStart="10dp"
                     app:layout_constraintVertical_weight="1"
                     app:layout_constraintTop_toBottomOf="@id/tv_fridgeName"
                     app:layout_constraintBottom_toBottomOf="parent"

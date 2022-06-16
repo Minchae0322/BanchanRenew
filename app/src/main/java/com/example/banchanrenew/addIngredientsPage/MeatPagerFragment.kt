@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,8 +26,28 @@ class MeatPagerFragment(): Fragment() {
         binding = FragmentPagerBinding.inflate(inflater, container, false)
         initRecyclerView()
         initEditText()
-        return binding.root
+        context
+        Log.d("onCreateView","MeatPager")
+        binding.layoutEasySetting.setOnClickListener {
+            val easySettingDialog = EasySettingDialog(this.requireContext(), adapter, "meat")
+            easySettingDialog.showDialog()
+        }
 
+        return binding.root
+        //TODO easySetting 누르면 색 변하게
+
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        adapter.updateList("meat")
+        Log.d("onResume","MeatPager")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("onPause","MeatPager")
     }
 
     private fun initEditText() {
@@ -62,6 +83,7 @@ class MeatPagerFragment(): Fragment() {
         binding.pagerRecyclerView.adapter = adapter
 
     }
+
 
 
 }

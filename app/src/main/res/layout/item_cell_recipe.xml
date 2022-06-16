@@ -237,7 +237,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="주재료"
-                    android:fontFamily="@font/coookie1"
+                    android:fontFamily="@font/suseong"
                     android:textSize="22sp"
                     android:gravity="center_vertical"
                     android:paddingLeft="10dp"
@@ -252,7 +252,7 @@
                     android:id="@+id/tv_cell_content_main"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/tway_air"
+                    android:fontFamily="@font/suseong"
 
                     app:layout_constraintBottom_toTopOf="@id/tv2"
                     android:textColor="#9E9E9E"
@@ -265,7 +265,7 @@
                     android:id="@+id/tv2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/coookie1"
+                    android:fontFamily="@font/suseong"
                     android:gravity="center_vertical"
                     android:paddingLeft="10dp"
                     android:text="부재료"
@@ -278,7 +278,7 @@
 
 
                 <TextView
-                    android:fontFamily="@font/tway_air"
+                    android:fontFamily="@font/suseong"
                     android:textSize="15sp"
                     android:id="@+id/tv_cell_content_sub"
                     android:layout_width="match_parent"
@@ -294,7 +294,7 @@
                     android:id="@+id/tv3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/coookie1"
+                    android:fontFamily="@font/suseong"
                     android:gravity="center_vertical"
                     android:paddingLeft="10dp"
                     android:text="양념"
@@ -305,7 +305,7 @@
 
 
                 <TextView
-                    android:fontFamily="@font/tway_air"
+                    android:fontFamily="@font/suseong"
                     android:textSize="15sp"
                     android:textColor="#9E9E9E"
                     android:paddingLeft="10dp"

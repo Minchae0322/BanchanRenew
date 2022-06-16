@@ -35,8 +35,8 @@ class FridgeAdapter(var list: MutableList<Ingredient>): RecyclerView.Adapter<Fri
         holder.textViewAmount.text = list[position].remainGram.toString() + "g"
         holder.itemView.setOnClickListener {
             //TODO
-        //val dialog = AddIngredientsDialog(context, list[position], this)
-            //dialog.showDialog()
+        val dialog = AddIngredientsDialog(context, list[position], null)
+            dialog.showDialog()
         }
     }
 

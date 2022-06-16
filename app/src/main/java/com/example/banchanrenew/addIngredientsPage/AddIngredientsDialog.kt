@@ -20,7 +20,7 @@ import com.example.banchanrenew.databinding.DialogAddBinding
 import com.example.banchanrenew.relation.Ingredient
 
 
-class AddIngredientsDialog(val context: Context, var ingredient: Ingredient, val adapter: AddIngredientsAdapter) {
+class AddIngredientsDialog(val context: Context, var ingredient: Ingredient, val adapter: AddIngredientsAdapter?) {
     private val dialog = Dialog(context)
     private lateinit var binding: DialogAddBinding
     private var buttonNum: Int = 0
@@ -33,6 +33,7 @@ class AddIngredientsDialog(val context: Context, var ingredient: Ingredient, val
         bindView()
 
     }
+
 
     private fun initDialog() {
         dialog.setContentView(binding.root)
@@ -64,7 +65,7 @@ class AddIngredientsDialog(val context: Context, var ingredient: Ingredient, val
         binding.tvAddDialogOk.setOnClickListener {
             updateRemain()
             db.recipeDao().updateRemainOfIngredient(remain,ingredient.id)
-            adapter.updateList()
+            adapter?.updateList(ingredient.dataType)
             dialog.dismiss()
         }
     }

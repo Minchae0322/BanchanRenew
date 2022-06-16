@@ -1,20 +1,18 @@
 package com.example.banchanrenew.addIngredientsPage
 
-import android.annotation.SuppressLint
 import android.content.Context
+import android.os.Parcel
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.banchanrenew.MainActivity.Companion.db
-import com.example.banchanrenew.relation.Ingredient
 import com.example.banchanrenew.R
+import com.example.banchanrenew.relation.Ingredient
 
-//재료 추기하기의 육류/가공품, 채소, 어류 리사이클러뷰 재료들이 리사이클러뷰의 뷰홀더에 들어감.
-class AddIngredientsAdapter(var list: MutableList<Ingredient>):
-    RecyclerView.Adapter<AddIngredientsAdapter.ViewHolder>() {
+class EasySettingAdapter(val list: List<Ingredient>) : RecyclerView.Adapter<EasySettingAdapter.ViewHolder>() {
     lateinit var context: Context
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -23,6 +21,7 @@ class AddIngredientsAdapter(var list: MutableList<Ingredient>):
         val textViewAddIngredientsRemain: TextView = itemView.findViewById(R.id.tv_fridgeAmount)
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_viewpager, parent, false)
@@ -30,26 +29,13 @@ class AddIngredientsAdapter(var list: MutableList<Ingredient>):
         return ViewHolder(view)
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.imageViewAddIngredients.setImageResource(list[position].image)
         holder.textViewAddIngredientsTitle.text = list[position].name
         holder.textViewAddIngredientsRemain.text = list[position].remainGram.toString() + "g"
-        holder.itemView.setOnClickListener {
-            val dialog = AddIngredientsDialog(context, list[position], this)
-            dialog.showDialog()
-        }
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
-    fun updateList(dataType: String) {
-        list = db.testDao().selectIngredientWhereDataType(dataType)
-        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
         return list.size
     }
-
-
 }
