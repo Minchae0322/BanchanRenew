@@ -7,5 +7,7 @@ json 데이터 처리
 6-10 recipe content 디자인 중간 완료, activity전환 tabLayout 설정, intent 처리할때 task 관련 menifest 수정(액티비티가 한번만 불러지게)
 6/13 recipeDialog 제작, recipe_cell_content부분 완성
 6/14 recipeActivity, fridgeActivity, addIngredientActivity 모두 fragment로 바꾸고 tablayout 클릭리스너에 따라 바뀌게 전환. selectRecipeMenu 설정완료, 디자인변경
-//todo 레시피 안에 사진 url 어떻게 처리할지 고민 database에 자주 i/o 할때 어떻게 더 빨리 처리할 수 있는지 고민, selectRecipeMenu 각 item 디자인과 textView설정, fridgeFragment에서 item 클릭시 addIngredientDialog로 넘어가게 설정(adapter변수 처리 고민)
-6/16 easySetting Dialog만들고 addIngredientAdapter에 updateList dataType: String으로 변수 설정, viewPager2에서 fragment생명주기 : 슬라이드 및 탭 클릭시 onPause()만 실행 후 다시 전 fragment로 돌아갈시 onResume()실행 그래서 여기에다가 updateAdapter처리 해놓음
+6/16 easySetting Dialog만들고 addIngredientAdapter에 updateList dataType: String으로 변수 설정, viewPager2에서 fragment생명주기 : 슬라이드 및 탭 클릭시 onPause()만 실행 후 다시 전 fragment로 돌아갈시 onResume()실행 그래서 여기에다가 updateAdapter처리 해놓음, easySetting처리완료
+//todo 레시피 안에 사진 url 어떻게 처리할지 고민 database에 자주 i/o 할때 어떻게 더 빨리 처리할 수 있는지 고민, selectRecipeMenu 각 item 디자인과 textView설정, 
+//todo fridgeFragment에서 item 클릭시 addIngredientDialog로 넘어가게 설정(adapter변수 처리 고민), 
+//todo MeatPagerFragment, VegetableFragment, SourceFragment 추상클래스만들어서 하나로 합치기 대충 PagerFragment 만들어서 PagerFragment("meat") 이런식으로 factory로 생성할수 있도록
