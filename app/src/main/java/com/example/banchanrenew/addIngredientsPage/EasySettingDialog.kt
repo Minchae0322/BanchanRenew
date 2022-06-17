@@ -52,7 +52,7 @@ class EasySettingDialog(val context: Context, private val addIngredientsAdapter:
     private fun bindViews() {
         binding.tvEasySettingOk.setOnClickListener {
             easySettingToDB()
-            addIngredientsAdapter.updateList(dataType)
+            addIngredientsAdapter.update(dataType)
             dialog.dismiss()
         }
         binding.tvEasySettingCancel.setOnClickListener {

@@ -45,7 +45,7 @@ class MeatPagerFragment(): Fragment() {
 
     override fun onResume() {
         super.onResume()
-        adapter.updateList("meat")
+        adapter.update("meat")
         Log.d("onResume","MeatPager")
     }
 

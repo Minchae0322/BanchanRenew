@@ -12,6 +12,8 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Adapter
+import androidx.recyclerview.widget.RecyclerView
 import com.example.banchanrenew.MainActivity.Companion.DISPLAY_HEIGHT
 import com.example.banchanrenew.MainActivity.Companion.DISPLAY_WITH
 import com.example.banchanrenew.MainActivity.Companion.db
@@ -20,7 +22,7 @@ import com.example.banchanrenew.databinding.DialogAddBinding
 import com.example.banchanrenew.relation.Ingredient
 
 
-class AddIngredientsDialog(val context: Context, var ingredient: Ingredient, val adapter: AddIngredientsAdapter?) {
+class IngredientModificationDialog(val context: Context, var ingredient: Ingredient, val adapter: UpdateAdapterImpl) {
     private val dialog = Dialog(context)
     private lateinit var binding: DialogAddBinding
     private var buttonNum: Int = 0
@@ -65,7 +67,7 @@ class AddIngredientsDialog(val context: Context, var ingredient: Ingredient, val
         binding.tvAddDialogOk.setOnClickListener {
             updateRemain()
             db.recipeDao().updateRemainOfIngredient(remain,ingredient.id)
-            adapter?.updateList(ingredient.dataType)
+            adapter.update(ingredient.dataType)
             dialog.dismiss()
         }
     }

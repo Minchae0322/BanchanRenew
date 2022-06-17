@@ -39,7 +39,7 @@ class SourcePagerFragment(): Fragment() {
 
     override fun onResume() {
         super.onResume()
-        adapter.updateList("source")
+        adapter.update("source")
         Log.d("onResume","MeatPager")
     }
 

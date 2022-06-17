@@ -1,18 +1,22 @@
 package com.example.banchanrenew.fridge
 
+import android.annotation.SuppressLint
 import android.content.Context
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.banchanrenew.MainActivity
+import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
-import com.example.banchanrenew.addIngredientsPage.AddIngredientsDialog
+import com.example.banchanrenew.addIngredientsPage.IngredientModificationDialog
+import com.example.banchanrenew.addIngredientsPage.UpdateAdapterImpl
 import com.example.banchanrenew.relation.Ingredient
 
-class FridgeAdapter(var list: MutableList<Ingredient>): RecyclerView.Adapter<FridgeAdapter.ViewHolder>() {
+class FridgeAdapter(var list: MutableList<Ingredient>):
+    RecyclerView.Adapter<FridgeAdapter.ViewHolder>(), UpdateAdapterImpl {
     private lateinit var context: Context
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -35,12 +39,18 @@ class FridgeAdapter(var list: MutableList<Ingredient>): RecyclerView.Adapter<Fri
         holder.textViewAmount.text = list[position].remainGram.toString() + "g"
         holder.itemView.setOnClickListener {
             //TODO
-        val dialog = AddIngredientsDialog(context, list[position], null)
+        val dialog = IngredientModificationDialog(context, list[position], this)
             dialog.showDialog()
         }
     }
 
     override fun getItemCount(): Int {
         return list.size
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    override fun update(dataType: String) {
+        list = db.testDao().getIngredientMoreThanZeroGram()
+        notifyDataSetChanged()
     }
 }

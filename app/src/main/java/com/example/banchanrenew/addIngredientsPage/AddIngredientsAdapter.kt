@@ -14,7 +14,7 @@ import com.example.banchanrenew.R
 
 //재료 추기하기의 육류/가공품, 채소, 어류 리사이클러뷰 재료들이 리사이클러뷰의 뷰홀더에 들어감.
 class AddIngredientsAdapter(var list: MutableList<Ingredient>):
-    RecyclerView.Adapter<AddIngredientsAdapter.ViewHolder>() {
+    RecyclerView.Adapter<AddIngredientsAdapter.ViewHolder>(), UpdateAdapterImpl {
     lateinit var context: Context
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -36,20 +36,21 @@ class AddIngredientsAdapter(var list: MutableList<Ingredient>):
         holder.textViewAddIngredientsTitle.text = list[position].name
         holder.textViewAddIngredientsRemain.text = list[position].remainGram.toString() + "g"
         holder.itemView.setOnClickListener {
-            val dialog = AddIngredientsDialog(context, list[position], this)
+            val dialog = IngredientModificationDialog(context, list[position], this)
             dialog.showDialog()
         }
     }
 
+    override fun getItemCount(): Int {
+        return list.size
+    }
+
+
     @SuppressLint("NotifyDataSetChanged")
-    fun updateList(dataType: String) {
+    override fun update(dataType: String) {
         list = db.testDao().selectIngredientWhereDataType(dataType)
         list.sortByDescending { it.remainGram }
         notifyDataSetChanged()
-    }
-
-    override fun getItemCount(): Int {
-        return list.size
     }
 
 
