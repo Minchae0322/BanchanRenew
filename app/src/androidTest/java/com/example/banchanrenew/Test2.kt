@@ -43,7 +43,15 @@ class Test2 {
         testDao.delete4()
         testDao.delete5()
         testDao.delete6()
+        val list = GramOfUnitCons().getData()
+        for(i in list) {
+            val k = i.unit
+        }
         testDao.insertGramOfUnitList(GramOfUnitCons().getData())
+
+        val list2 = IngredientsCons().getData()
+        Log.d("id",list2.size.toString())
+
         testDao.insertIngredientList(IngredientsCons().getData())
         testDao.insertDishList(DishCons().getData())
         testDao.insertEssentialList(EssentialCons().getData())

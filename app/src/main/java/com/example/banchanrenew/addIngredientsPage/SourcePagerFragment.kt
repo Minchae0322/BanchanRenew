@@ -45,7 +45,7 @@ class SourcePagerFragment(): Fragment() {
 
     private fun initRecyclerView() {
         binding.pagerRecyclerView.adapter = adapter
-        binding.pagerRecyclerView.layoutManager = GridLayoutManager(this.context,3)
+        binding.pagerRecyclerView.layoutManager = GridLayoutManager(this.context,4)
         binding.pagerRecyclerView.setHasFixedSize(true)
     }
 

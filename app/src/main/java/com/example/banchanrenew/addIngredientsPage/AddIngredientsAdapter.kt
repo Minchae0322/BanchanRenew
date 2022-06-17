@@ -44,6 +44,7 @@ class AddIngredientsAdapter(var list: MutableList<Ingredient>):
     @SuppressLint("NotifyDataSetChanged")
     fun updateList(dataType: String) {
         list = db.testDao().selectIngredientWhereDataType(dataType)
+        list.sortByDescending { it.remainGram }
         notifyDataSetChanged()
     }
 

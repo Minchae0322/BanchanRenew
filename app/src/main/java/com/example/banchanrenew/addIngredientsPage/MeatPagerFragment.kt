@@ -17,7 +17,7 @@ import com.example.banchanrenew.databinding.FragmentPagerBinding
 class MeatPagerFragment(): Fragment() {
     private lateinit var binding: FragmentPagerBinding
     private val dataList: MutableList<Ingredient> = db.testDao().selectIngredientWhereDataType("meat")
-    private val adapter: AddIngredientsAdapter = AddIngredientsAdapter(dataList)
+    private lateinit var adapter: AddIngredientsAdapter
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
@@ -84,6 +84,8 @@ class MeatPagerFragment(): Fragment() {
     private fun initRecyclerView() {
         binding.pagerRecyclerView.layoutManager = GridLayoutManager(this.context,4)
         binding.pagerRecyclerView.setHasFixedSize(true)
+        dataList.sortByDescending { it.remainGram }
+        adapter= AddIngredientsAdapter(dataList)
         binding.pagerRecyclerView.adapter = adapter
 
     }
