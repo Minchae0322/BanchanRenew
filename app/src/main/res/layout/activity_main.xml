@@ -22,7 +22,7 @@
         android:id="@+id/constraintLayout6"
         android:layout_width="match_parent"
         android:layout_height="67dp"
-        android:background="@color/white"
+        android:background="#94B49F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
