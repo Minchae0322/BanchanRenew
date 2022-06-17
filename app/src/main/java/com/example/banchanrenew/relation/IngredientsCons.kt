@@ -106,7 +106,165 @@ class IngredientsCons {
                 Ingredient(ingredientId++,"가래떡","가래떡1줄", R.drawable.garaedduk,"meat", 0),
                 Ingredient(ingredientId++,"떡국떡","떡국떡1컵", R.drawable.dduckgukdduck,"meat", 0),
                 Ingredient(ingredientId++,"모짜렐라치즈","g", R.drawable.mozzarella,"meat", 0),
-                Ingredient(ingredientId++,"파마산치즈","g", R.drawable.pamasancheese,"meat", 0)
-            ))
+                Ingredient(ingredientId++,"파마산치즈","g", R.drawable.pamasancheese,"meat", 0),
+
+
+
+
+
+                Ingredient(ingredientId++,"배추김치","g", R.drawable.kimchi,"vegetable",0),
+                Ingredient(ingredientId++,"당근","당근1개", R.drawable.carrots,"vegetable",0),
+                Ingredient(ingredientId++,"오이","오이1개", R.drawable.cucumber,"vegetable",0),
+                Ingredient(ingredientId++,"시금치","시금치1단", R.drawable.spinach,"vegetable",0),
+                Ingredient(ingredientId++,"단무지","g", R.drawable.danmuji,"vegetable",0),
+                Ingredient(ingredientId++,"스타후르츠","근", R.drawable.starfruit,"vegetable",0),
+                Ingredient(ingredientId++,"감자","감자1개", R.drawable.potato,"vegetable",0),
+                        Ingredient(ingredientId++,"도라지","g",R.drawable.dorage,"vegetable",0),
+                        Ingredient(ingredientId++,"대파","대파1대", R.drawable.bigpa,"vegetable",0),
+
+                        Ingredient(ingredientId++,"마늘","마늘1통", R.drawable.onion,"vegetable",0),
+                        Ingredient(ingredientId++,"무","무1개", R.drawable.mu,"vegetable",0),
+                        Ingredient(ingredientId++,"미나리","미나리1단", R.drawable.minari,"vegetable",0),
+                        Ingredient(ingredientId++,"표고버섯","표고버섯1개", R.drawable.pyogo,"vegetable",0),
+                        Ingredient(ingredientId++,"배추","배추1포기", R.drawable.baechu,"vegetable",0),
+                        Ingredient(ingredientId++,"부추","부추1단", R.drawable.buchu,"vegetable",0),
+                        Ingredient(ingredientId++,"고추","고추1개", R.drawable.gochu,"vegetable",0),
+                        Ingredient(ingredientId++,"브로콜리","브로콜리1개", R.drawable.brocoli,"vegetable",0),
+                        Ingredient(ingredientId++,"생강","생강1톨", R.drawable.sengang,"vegetable",0),
+                        Ingredient(ingredientId++,"연근","g", R.drawable.yungen,"vegetable",0),
+                        Ingredient(ingredientId++,"우엉","g", R.drawable.ueng,"vegetable",0),
+                        Ingredient(ingredientId++,"양파","양파1개", R.drawable.yangpa,"vegetable",0),
+                        Ingredient(ingredientId++,"양배추","양배추1통", R.drawable.yangbaechu,"vegetable",0),
+                        Ingredient(ingredientId++,"깻잎","깻잎1장", R.drawable.ggatnib,"vegetable",0),
+                        Ingredient(ingredientId++,"옥수수","옥수수1큰술", R.drawable.oksusu,"vegetable",0),
+                        Ingredient(ingredientId++,"청경채","g", R.drawable.chunggyungchae,"vegetable",0),
+                        Ingredient(ingredientId++,"가지","가지1개", R.drawable.gaji,"vegetable",0),
+                        Ingredient(ingredientId++,"실파","실파1뿌리", R.drawable.silpa,"vegetable",0),
+                        Ingredient(ingredientId++,"애호박","애호박1개", R.drawable.aepumkin,"vegetable",0),
+                        Ingredient(ingredientId++,"단호박","단호박1개", R.drawable.danpumkin,"vegetable",0),
+                        Ingredient(ingredientId++,"버섯","g", R.drawable.mushroom,"vegetable",0),
+                        Ingredient(ingredientId++,"양송이버섯","양송이버섯1개", R.drawable.yangsongyi,"vegetable",0),
+                        Ingredient(ingredientId++,"느타리버섯","느타리버섯1묶음", R.drawable.neutari,"vegetable",0),
+                        Ingredient(ingredientId++,"피클","피클1개", R.drawable.pikle,"vegetable",0),
+                        Ingredient(ingredientId++,"무청","g", R.drawable.mucheng,"vegetable",0),
+                        Ingredient(ingredientId++,"상추","상추1장", R.drawable.sangchu,"vegetable",0),
+                        Ingredient(ingredientId++,"인삼","g", R.drawable.insam,"vegetable",0),
+                        Ingredient(ingredientId++,"홍삼","g", R.drawable.hongsam,"vegetable",0),
+                        Ingredient(ingredientId++,"쑥갓","쑥갓1단", R.drawable.ssukgat,"vegetable",0),
+                        Ingredient(ingredientId++,"피망","피망1개", R.drawable.pimang,"vegetable",0),
+                        Ingredient(ingredientId++,"파프리카","파프리카1개", R.drawable.pafreeca,"vegetable",0),
+                        Ingredient(ingredientId++,"열무","열무1단", R.drawable.yulmu,"vegetable",0),
+                        Ingredient(ingredientId++,"케일","g", R.drawable.kayle,"vegetable",0),
+                        Ingredient(ingredientId++,"콩나물","g", R.drawable.beanamul,"vegetable",0),
+                        Ingredient(ingredientId++,"찹쌀","찹쌀1컵", R.drawable.chapssal,"vegetable",0),
+                        Ingredient(ingredientId++,"깐밤","깐밤1개", R.drawable.kkanbam,"vegetable",0),
+                        Ingredient(ingredientId++,"대추","대추1개", R.drawable.daechu,"vegetable",0),
+                        Ingredient(ingredientId++,"잣","잣1큰술", R.drawable.jat,"vegetable",0),
+                        Ingredient(ingredientId++,"팥","팥1컵", R.drawable.pat,"vegetable",0),
+                        Ingredient(ingredientId++,"동치미","동치미1그릇", R.drawable.dongchimi,"vegetable",0),
+                        Ingredient(ingredientId++,"계란","계란1개", R.drawable.egg,"vegetable",0),
+                        Ingredient(ingredientId++,"숙주","g", R.drawable.sukju,"vegetable",0),
+                        Ingredient(ingredientId++,"두부","두부1모", R.drawable.dubu,"vegetable",0),
+
+                        Ingredient(ingredientId++,"다시마","다시마1장", R.drawable.dasima,"vegetable",0),
+                        Ingredient(ingredientId++,"미역","미역1컵", R.drawable.miyuk,"vegetable",0),
+                        Ingredient(ingredientId++,"방울토마토","g", R.drawable.bangultomato,"vegetable",0),
+                        Ingredient(ingredientId++,"케이퍼","g", R.drawable.kayper,"vegetable",0),
+                        Ingredient(ingredientId++,"그린올리브","그린올리브1개", R.drawable.greenolive,"vegetable",0),
+                        Ingredient(ingredientId++,"블랙올리브","블랙올리브1개", R.drawable.blackolive,"vegetable",0),
+                        Ingredient(ingredientId++,"죽순","죽순1개", R.drawable.juksun,"vegetable",0),
+                        Ingredient(ingredientId++,"적양배추","g", R.drawable.redyangbaechu,"vegetable",0),
+                        Ingredient(ingredientId++,"토마토","토마토1개", R.drawable.tomato,"vegetable",0),
+                        Ingredient(ingredientId++,"바질","바질1장", R.drawable.bazil,"vegetable",0),
+                        Ingredient(ingredientId++,"꽈리고추","꽈리고추1줌", R.drawable.ggualigochu,"vegetable",0),
+
+                        Ingredient(ingredientId++,"목이버섯","목이버섯1g", R.drawable.mokyi,"vegetable",0),
+                        Ingredient(ingredientId++,"파인애플","파인애플1쪽", R.drawable.pineapple,"vegetable",0),
+                        Ingredient(ingredientId++,"은행","은행1알", R.drawable.bank,"vegetable",0),
+                        Ingredient(ingredientId++,"배","배1개", R.drawable.peer,"vegetable",0),
+                        Ingredient(ingredientId++,"갓","갓1단", R.drawable.gat,"vegetable",0),
+                        Ingredient(ingredientId++,"순두부","g", R.drawable.sundubu,"vegetable",0),
+                        Ingredient(ingredientId++,"콩","콩1컵", R.drawable.kong,"vegetable",0),
+                        Ingredient(ingredientId++,"흑임자","g", R.drawable.blackimja,"vegetable",0),
+                        Ingredient(ingredientId++,"풋배추","g", R.drawable.putbaechu,"vegetable",0),
+                        Ingredient(ingredientId++,"총각무","총각무1단", R.drawable.chonggakmu,"vegetable",0),
+                        Ingredient(ingredientId++,"고사리","고사리1줌", R.drawable.gosari,"vegetable",0),
+                        Ingredient(ingredientId++,"우거지","g", R.drawable.ugeji,"vegetable",0),
+                        Ingredient(ingredientId++,"팽이버섯","팽이버섯1봉", R.drawable.pangyimushroom,"vegetable",0),
+                        Ingredient(ingredientId++,"곤약","g", R.drawable.konnyak,"vegetable",0),
+
+                        Ingredient(ingredientId++,"김","김1장", R.drawable.kim,"vegetable",0),
+                        Ingredient(ingredientId++,"석이버섯","석이버섯1개", R.drawable.sukyimushroom,"vegetable",0),
+                        Ingredient(ingredientId++,"냉이","g", R.drawable.nangyi,"vegetable",0),
+                        Ingredient(ingredientId++,"더덕","g", R.drawable.deodeok,"vegetable",0),
+                        Ingredient(ingredientId++,"마늘종","g", R.drawable.onionjjong,"vegetable",0),
+                        Ingredient(ingredientId++,"메주콩","메주콩1컵", R.drawable.mejukong,"vegetable",0),
+                        Ingredient(ingredientId++,"치커리","g", R.drawable.qicurry,"vegetable",0),
+                        Ingredient(ingredientId++,"도토리묵","도토리묵1모", R.drawable.dotorimuk,"vegetable",0),
+                        Ingredient(ingredientId++,"청포묵","청포묵1모", R.drawable.chungpomuk,"vegetable",0),
+                        Ingredient(ingredientId++,"양상추","양상추1장", R.drawable.yangsangchu,"vegetable",0),
+                        Ingredient(ingredientId++,"수삼","수삼1뿌리", R.drawable.susam,"vegetable",0),
+                        Ingredient(ingredientId++,"콜리플라워","g", R.drawable.coliflower,"vegetable",0),
+                        Ingredient(ingredientId++,"딸기","딸기1개", R.drawable.strawberry,"vegetable",0),
+                        Ingredient(ingredientId++,"자몽","자몽1개", R.drawable.jamong,"vegetable",0),
+                        Ingredient(ingredientId++,"사과","사과1개", R.drawable.apple,"vegetable",0),
+                        Ingredient(ingredientId++,"트래비스","g", R.drawable.cucumber,"vegetable",0),
+                        Ingredient(ingredientId++,"무순","무순1봉", R.drawable.musun,"vegetable",0),
+                        Ingredient(ingredientId++,"녹두","녹두1컵", R.drawable.greenkong,"vegetable",0),
+                        Ingredient(ingredientId++,"쑥","g", R.drawable.ssuk,"vegetable",0),
+                        Ingredient(ingredientId++,"멥쌀","멥쌀1컵", R.drawable.mapssal,"vegetable",0),
+                        Ingredient(ingredientId++,"토란","g", R.drawable.toran,"vegetable",0),
+                        Ingredient(ingredientId++,"샐러리","샐러리1대", R.drawable.salary,"vegetable",0),
+                        Ingredient(ingredientId++,"완두콩","완두콩1컵", R.drawable.wandukong,"vegetable",0),
+                        Ingredient(ingredientId++,"누룽지","누룽지1조각", R.drawable.nurungji,"vegetable",0),
+                        Ingredient(ingredientId++,"찬밥","찬밥1공기", R.drawable.chanbab,"vegetable",0),
+                        Ingredient(ingredientId++,"고구마줄기","g", R.drawable.gogumajulgi,"vegetable",0),
+                        Ingredient(ingredientId++,"곶감","곶감1개", R.drawable.gotgam,"vegetable",0),
+                        Ingredient(ingredientId++,"취나물","g", R.drawable.qunamul,"vegetable",0),
+                        Ingredient(ingredientId++,"겨자잎","g", R.drawable.gyeja,"vegetable",0),
+                        Ingredient(ingredientId++,"달래","g", R.drawable.dalrae,"vegetable",0),
+                        Ingredient(ingredientId++,"봄동","g", R.drawable.bomdong,"vegetable",0),
+                        Ingredient(ingredientId++,"호두","호두1알", R.drawable.hodu,"vegetable",0),
+                        Ingredient(ingredientId++,"레몬","레몬1개", R.drawable.lemon,"vegetable",0),
+                        Ingredient(ingredientId++,"고구마","고구마1개", R.drawable.sweetpotato,"vegetable",0),
+
+                        Ingredient(ingredientId++,"오곡곡물","오곡곡물1컵", R.drawable.okock,"vegetable",0),
+                        Ingredient(ingredientId++,"호박","g", R.drawable.pumpkin,"vegetable",0),
+                        Ingredient(ingredientId++,"실고추","실고추1큰술", R.drawable.silgochu,"vegetable",0),
+                        Ingredient(ingredientId++,"두릅","g", R.drawable.dureb,"vegetable",0),
+
+
+
+                        Ingredient(ingredientId++,"참나물","g", R.drawable.cucumber,"vegetable",0),
+
+
+
+                        Ingredient(ingredientId++,"아스파라거스","아스파라거스1개", R.drawable.aspragus,"vegetable",0),
+                        Ingredient(ingredientId++,"풋마늘","풋마늘1대", R.drawable.putgarlic,"vegetable",0),
+                        Ingredient(ingredientId++,"체리","g", R.drawable.cherry,"vegetable",0),
+                        Ingredient(ingredientId++,"아욱","g", R.drawable.ayuk,"vegetable",0),
+                        Ingredient(ingredientId++,"새송이버섯","g", R.drawable.songyi,"vegetable",0),
+                        Ingredient(ingredientId++,"파래","g", R.drawable.parae,"vegetable",0),
+
+                        Ingredient(ingredientId++,"오레가노","g", R.drawable.oraegano,"vegetable",0),
+                        Ingredient(ingredientId++,"홀토마토","홀토마토1컵", R.drawable.holltomato,"vegetable",0),
+                        Ingredient(ingredientId++,"키위","키위1개", R.drawable.kiwi,"vegetable",0),
+
+
+
+                        Ingredient(ingredientId++,"해초","g", R.drawable.cucumber,"vegetable",0),
+
+
+
+                        Ingredient(ingredientId++,"조","g", R.drawable.jo,"vegetable",0),
+                        Ingredient(ingredientId++,"초생강","g", R.drawable.chosenggang,"vegetable",0),
+                        Ingredient(ingredientId++,"바나나","바나나1개", R.drawable.banana,"vegetable",0),
+                        Ingredient(ingredientId++,"우묵","g", R.drawable.umuck,"vegetable",0),
+
+
+                        Ingredient(ingredientId++,"해초","g", R.drawable.cucumber,"vegetable",0)
+
+
+                ))
     }
 }
