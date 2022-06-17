@@ -35,9 +35,9 @@ class MainActivity : AppCompatActivity() {
         prefs = PreferenceUtil(applicationContext)
         db = Room.databaseBuilder(
             applicationContext,
-            TestDatabase::class.java, "test.db21"
+            TestDatabase::class.java, "test.db22"
         ).allowMainThreadQueries().build()
-        if(prefs.getString("version39","0") == "0") {
+        if(prefs.getString("version40","0") == "0") {
             var testDao1: IngredientDAO = db.testDao()
             testDao1.insertGramOfUnitList(GramOfUnitCons().getData())
             testDao1.insertIngredientList(IngredientsCons().getData())
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                 jsonParser()
             } catch (e: JSONException) {
             }
-            prefs.setString("version39","1")
+            prefs.setString("version40","1")
             testDao1.updateRemainGramOfIngredient(600,"돼지갈비")
             testDao1.updateRemainGramOfIngredient(600,"소고기")
             testDao1.updateRemainGramOfIngredient(600,"돼지고기")

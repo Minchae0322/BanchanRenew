@@ -227,44 +227,120 @@ class IngredientsCons {
                         Ingredient(ingredientId++,"호두","호두1알", R.drawable.hodu,"vegetable",0),
                         Ingredient(ingredientId++,"레몬","레몬1개", R.drawable.lemon,"vegetable",0),
                         Ingredient(ingredientId++,"고구마","고구마1개", R.drawable.sweetpotato,"vegetable",0),
-
                         Ingredient(ingredientId++,"오곡곡물","오곡곡물1컵", R.drawable.okock,"vegetable",0),
                         Ingredient(ingredientId++,"호박","g", R.drawable.pumpkin,"vegetable",0),
                         Ingredient(ingredientId++,"실고추","실고추1큰술", R.drawable.silgochu,"vegetable",0),
                         Ingredient(ingredientId++,"두릅","g", R.drawable.dureb,"vegetable",0),
-
-
-
                         Ingredient(ingredientId++,"참나물","g", R.drawable.cucumber,"vegetable",0),
-
-
-
                         Ingredient(ingredientId++,"아스파라거스","아스파라거스1개", R.drawable.aspragus,"vegetable",0),
                         Ingredient(ingredientId++,"풋마늘","풋마늘1대", R.drawable.putgarlic,"vegetable",0),
                         Ingredient(ingredientId++,"체리","g", R.drawable.cherry,"vegetable",0),
                         Ingredient(ingredientId++,"아욱","g", R.drawable.ayuk,"vegetable",0),
                         Ingredient(ingredientId++,"새송이버섯","g", R.drawable.songyi,"vegetable",0),
                         Ingredient(ingredientId++,"파래","g", R.drawable.parae,"vegetable",0),
-
                         Ingredient(ingredientId++,"오레가노","g", R.drawable.oraegano,"vegetable",0),
                         Ingredient(ingredientId++,"홀토마토","홀토마토1컵", R.drawable.holltomato,"vegetable",0),
                         Ingredient(ingredientId++,"키위","키위1개", R.drawable.kiwi,"vegetable",0),
-
-
-
                         Ingredient(ingredientId++,"해초","g", R.drawable.cucumber,"vegetable",0),
-
-
-
                         Ingredient(ingredientId++,"조","g", R.drawable.jo,"vegetable",0),
                         Ingredient(ingredientId++,"초생강","g", R.drawable.chosenggang,"vegetable",0),
                         Ingredient(ingredientId++,"바나나","바나나1개", R.drawable.banana,"vegetable",0),
                         Ingredient(ingredientId++,"우묵","g", R.drawable.umuck,"vegetable",0),
+                        Ingredient(ingredientId++,"해초","g", R.drawable.cucumber,"vegetable",0),
+
+                Ingredient(ingredientId++,"진간장","큰술", R.drawable.jinganjang,"source",0),
+                Ingredient(ingredientId++,"고춧가루","큰술", R.drawable.gochugaru,"source",0),
+                Ingredient(ingredientId++,"흑설탕","컵", R.drawable.blacksuger,"source",0),
+                Ingredient(ingredientId++,"계피가루","큰술", R.drawable.gaepi,"source",0),
+                Ingredient(ingredientId++,"물엿","큰술", R.drawable.mulsuger,"source",0),
+                Ingredient(ingredientId++,"간장","큰술", R.drawable.ganjang,"source",0),
+                Ingredient(ingredientId++,"카레가루","큰술", R.drawable.currygaru,"source",0),
+                Ingredient(ingredientId++,"식초","큰술", R.drawable.siccho,"source",0),
+                Ingredient(ingredientId++,"국간장","큰술", R.drawable.gukganjang,"source",0),
+                Ingredient(ingredientId++,"찹쌀가루","큰술", R.drawable.chapssalgaru,"source",0),
+                Ingredient(ingredientId++,"후춧가루","큰술", R.drawable.huchugaru,"source",0),
+                Ingredient(ingredientId++,"깨소금","큰술", R.drawable.ggaesalt,"source",0),
+                Ingredient(ingredientId++,"올리브유","큰술", R.drawable.oliveoil,"source",0),
+                Ingredient(ingredientId++,"식용유","큰술", R.drawable.sikyongoil,"source",0),
+                Ingredient(ingredientId++,"설탕","큰술", R.drawable.suger,"source",0),
+                Ingredient(ingredientId++,"소금","큰술", R.drawable.salt,"source",0),
+                Ingredient(ingredientId++,"케첩","큰술", R.drawable.ketchup,"source",0),
+                Ingredient(ingredientId++,"고추장","큰술", R.drawable.gochujang,"source",0),
+                Ingredient(ingredientId++,"다진파","큰술", R.drawable.dajinpa,"source",0),
+                Ingredient(ingredientId++,"다진마늘","큰술", R.drawable.dajinmanel,"source",0),
+                Ingredient(ingredientId++,"생강즙","큰술", R.drawable.saegangjep,"source",0),
+                Ingredient(ingredientId++,"참기름","큰술", R.drawable.chamgirem,"source",0),
+                Ingredient(ingredientId++,"녹말가루","큰술", R.drawable.nokmalgaru,"source",0),
+                Ingredient(ingredientId++,"배즙","큰술", R.drawable.baejep,"source",0),
+                Ingredient(ingredientId++,"청주","큰술", R.drawable.chengju,"source",0),
+                Ingredient(ingredientId++,"새우젓","큰술", R.drawable.saewujet,"source",0),
+                Ingredient(ingredientId++,"밀가루","컵", R.drawable.milgaru,"source",0),
+                Ingredient(ingredientId++,"빵가루","컵", R.drawable.bbanggaru,"source",0),
+                Ingredient(ingredientId++,"파슬리","큰술", R.drawable.paseli,"source",0),
+                Ingredient(ingredientId++,"청국장","큰술", R.drawable.chenggukjang,"source",0),
+                Ingredient(ingredientId++,"멸치젓","컵", R.drawable.myeolchijeot,"source",0),
+                Ingredient(ingredientId++,"콩가루","컵", R.drawable.konggaru,"source",0),
+                Ingredient(ingredientId++,"된장","큰술", R.drawable.deonjang,"source",0),
+                Ingredient(ingredientId++,"깨","큰술", R.drawable.ggae,"source",0),
+                Ingredient(ingredientId++,"까나리액젓","큰술", R.drawable.gganri,"source",0),
+                Ingredient(ingredientId++,"통깨","큰술", R.drawable.tonggae,"source",0),
+                Ingredient(ingredientId++,"고추냉이","큰술", R.drawable.wasabi,"source",0),
+                Ingredient(ingredientId++,"버터","큰술", R.drawable.butter,"source",0),
+                Ingredient(ingredientId++,"화이트와인","큰술", R.drawable.whitewine,"source",0),
+                Ingredient(ingredientId++,"생크림","컵", R.drawable.saengcream,"source",0),
+                Ingredient(ingredientId++,"겨자","큰술", R.drawable.gyejasource,"source",0),
+                Ingredient(ingredientId++,"레몬즙","큰술", R.drawable.lemonzep,"source",0),
+                Ingredient(ingredientId++,"마요네즈","큰술", R.drawable.mayonez,"source",0),
+                Ingredient(ingredientId++,"머스타드","큰술", R.drawable.mustard,"source",0),
+                Ingredient(ingredientId++,"검은깨","큰술", R.drawable.blackggae,"source",0),
+                Ingredient(ingredientId++,"건포도","큰술", R.drawable.gunpodo,"source",0),
+                Ingredient(ingredientId++,"오렌지마멀레이드","큰술", R.drawable.orangemamal,"source",0),
+                Ingredient(ingredientId++,"강력분","g", R.drawable.strongmilgaru,"source",0),
+                Ingredient(ingredientId++,"꿀","큰술", R.drawable.honey,"source",0),
+                Ingredient(ingredientId++,"포도씨유","큰술", R.drawable.podooil,"source",0),
+                Ingredient(ingredientId++,"튀김가루","큰술", R.drawable.tuigimgaru,"source",0),
+                Ingredient(ingredientId++,"쌀가루","큰술", R.drawable.ricegaru,"source",0),
+                Ingredient(ingredientId++,"아몬드가루","큰술", R.drawable.amondgaru,"source",0),
+                Ingredient(ingredientId++,"슈가파우더","큰술", R.drawable.sugerpauder,"source",0),
+                Ingredient(ingredientId++,"들기름","큰술", R.drawable.deloil,"source",0),
+                Ingredient(ingredientId++,"감자전분","큰술", R.drawable.gamjajunben,"source",0),
+                Ingredient(ingredientId++,"정종","큰술", R.drawable.jungjong,"source",0),
+                Ingredient(ingredientId++,"굴소스","큰술", R.drawable.gulsource,"source",0),
+                Ingredient(ingredientId++,"건새우가루","큰술", R.drawable.gunsaewugaru,"source",0),
+                Ingredient(ingredientId++,"정향","개", R.drawable.junghyang,"source",0),
+                Ingredient(ingredientId++,"통계피","g", R.drawable.tonggaepi,"source",0),
+                Ingredient(ingredientId++,"맛술","큰술", R.drawable.matsul,"source",0),
+                Ingredient(ingredientId++,"통후추","알", R.drawable.tonghuchu,"source",0),
+                Ingredient(ingredientId++,"다진양파","큰술", R.drawable.dajinyangpa,"source",0),
+                Ingredient(ingredientId++,"녹차분말","큰술", R.drawable.greengaru,"source",0),
+                Ingredient(ingredientId++,"양파즙","큰술", R.drawable.yangpazep,"source",0),
+                Ingredient(ingredientId++,"홍차티백","개", R.drawable.hongchateebag,"source",0),
+                Ingredient(ingredientId++,"무즙","큰술", R.drawable.cucumber,"source",0),
+                Ingredient(ingredientId++,"피쉬소스","큰술", R.drawable.fishsource,"source",0),
+                Ingredient(ingredientId++,"겨자가루","큰술", R.drawable.gyejagaru,"source",0),
+                Ingredient(ingredientId++,"들깨가루","큰술", R.drawable.delggaegaru,"source",0),
+                Ingredient(ingredientId++,"땅콩버터","큰술", R.drawable.ddangkongbutter,"source",0),
+                Ingredient(ingredientId++,"조청","큰술", R.drawable.honey,"source",0),
+                Ingredient(ingredientId++,"당근즙","큰술", R.drawable.danggenzep,"source",0),
+                Ingredient(ingredientId++,"시금치즙","큰술", R.drawable.sigemqi,"source",0),
+                Ingredient(ingredientId++,"우스터소스","큰술", R.drawable.wustersource,"source",0),
+                Ingredient(ingredientId++,"땅콩가루","큰술", R.drawable.ddangkonggaru,"source",0),
+                Ingredient(ingredientId++,"핫소스","큰술", R.drawable.hotsource,"source",0),
+                Ingredient(ingredientId++,"크림수프","큰술", R.drawable.creamsoup1,"source",0),
+                Ingredient(ingredientId++,"이스트","큰술", R.drawable.east,"source",0),
+                Ingredient(ingredientId++,"두반장","큰술", R.drawable.dubanjang,"source",0),
+                Ingredient(ingredientId++,"조림간장" ,"큰술", R.drawable.jorimganjang,"source",0),
+                Ingredient(ingredientId++,"레드와인" ,"큰술", R.drawable.redwine,"source",0),
+                Ingredient(ingredientId++,"토마토페이스트" ,"큰술", R.drawable.tomatopaste,"source",0),
+                Ingredient(ingredientId++,"일본된장(미소)" ,"큰술", R.drawable.miso,"source",0),
+                Ingredient(ingredientId++,"산초가루" ,"큰술", R.drawable.sanchogaru,"source",0),
+                Ingredient(ingredientId++,"간수" ,"큰술", R.drawable.gansu,"source",0)
 
 
-                        Ingredient(ingredientId++,"해초","g", R.drawable.cucumber,"vegetable",0)
 
 
-                ))
+
+
+            ))
     }
 }
