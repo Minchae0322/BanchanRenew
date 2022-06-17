@@ -13,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Adapter
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.banchanrenew.MainActivity.Companion.DISPLAY_HEIGHT
 import com.example.banchanrenew.MainActivity.Companion.DISPLAY_WITH
@@ -68,6 +69,7 @@ class IngredientModificationDialog(val context: Context, var ingredient: Ingredi
             updateRemain()
             db.recipeDao().updateRemainOfIngredient(remain,ingredient.id)
             adapter.updateDataListFromDB(ingredient.dataType)
+            Toast.makeText(context,"변경사항이 적용되었습니다",Toast.LENGTH_SHORT).show()
             dialog.dismiss()
         }
     }

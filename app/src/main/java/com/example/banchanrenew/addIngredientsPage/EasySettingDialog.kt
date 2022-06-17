@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
@@ -53,6 +54,7 @@ class EasySettingDialog(val context: Context, private val addIngredientsAdapter:
         binding.tvEasySettingOk.setOnClickListener {
             easySettingToDB()
             addIngredientsAdapter.updateDataListFromDB(dataType)
+            Toast.makeText(context,"변경사항이 적용되었습니다", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
         }
         binding.tvEasySettingCancel.setOnClickListener {

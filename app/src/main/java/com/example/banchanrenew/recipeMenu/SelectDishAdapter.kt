@@ -24,8 +24,21 @@ class SelectDishAdapter(val list: List<Int>): RecyclerView.Adapter<SelectDishAda
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.imageView.setImageResource(list[position])
-        holder.textView.text = list[position].toString()
-        holder.textView.setOnClickListener {
+        holder.textView.text = when(position) {
+            0 -> {
+                "모든 레시피"
+            }
+            1 -> {
+                "메인재료로 만들 수 있는 레시피"
+            }
+            2 -> {
+                "즐겨찾기 레시피"
+            }
+            else -> {
+                null
+            }
+        }
+        holder.itemView.setOnClickListener {
             when(position) {
                 0 -> {
                     val intent = Intent(holder.itemView.context, RecipeActivity::class.java)
