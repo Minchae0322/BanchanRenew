@@ -1,6 +1,7 @@
 package com.example.banchanrenew.addIngredientsPage
 
 import android.content.Intent
+import android.graphics.pdf.PdfDocument
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -63,13 +64,13 @@ class AddIngredientsActivity :Fragment() {
         override fun createFragment(position: Int): Fragment {
             return when(position) {
                 0 -> {
-                    MeatPagerFragment()
+                    PagerFragment("meat")
                 }
                 1 -> {
-                    VegetablePagerFragment()
+                    PagerFragment("vegetable")
                 }
                 else -> {
-                    SourcePagerFragment()
+                    PagerFragment("source")
                 }
             }
 

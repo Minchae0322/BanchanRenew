@@ -11,10 +11,10 @@ import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
 import com.example.banchanrenew.databinding.DialogEasysettingBinding
 
-class EasySettingDialog(val context: Context, private val addIngredientsAdapter: AddIngredientsAdapter, val dataType: String) {
+class EasySettingDialog(val context: Context, private val addIngredientsAdapter: UpdateAdapterImpl, val dataType: String) {
     private val dialog = Dialog(context)
     private lateinit var binding: DialogEasysettingBinding
-    private val adapter = EasySettingAdapter(db.testDao().selectIngredientWhereDataType(dataType))
+    private val adapter = EasySettingRecyclerViewAdapter(db.testDao().selectIngredientWhereDataType(dataType))
 
     fun showDialog() {
         binding = DialogEasysettingBinding.bind(LayoutInflater.from(context).inflate(R.layout.dialog_easysetting, null))
@@ -52,7 +52,7 @@ class EasySettingDialog(val context: Context, private val addIngredientsAdapter:
     private fun bindViews() {
         binding.tvEasySettingOk.setOnClickListener {
             easySettingToDB()
-            addIngredientsAdapter.update(dataType)
+            addIngredientsAdapter.updateDataListFromDB(dataType)
             dialog.dismiss()
         }
         binding.tvEasySettingCancel.setOnClickListener {

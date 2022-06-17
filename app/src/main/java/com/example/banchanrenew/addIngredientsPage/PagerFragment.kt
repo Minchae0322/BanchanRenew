@@ -10,42 +10,43 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.banchanrenew.MainActivity
 import com.example.banchanrenew.MainActivity.Companion.db
-import com.example.banchanrenew.relation.Ingredient
 import com.example.banchanrenew.databinding.FragmentPagerBinding
+import com.example.banchanrenew.relation.Ingredient
 
-class MeatPagerFragment(): Fragment() {
+class PagerFragment(val dataType: String): Fragment() {
     private lateinit var binding: FragmentPagerBinding
-    private val dataList: MutableList<Ingredient> = db.testDao().selectIngredientWhereDataType("meat")
-    private lateinit var adapter: AddIngredientsAdapter
+    private val dataList: MutableList<Ingredient> = db.testDao().selectIngredientWhereDataType(dataType)
+    private lateinit var adapter: IngredientRecyclerViewAdapter
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentPagerBinding.inflate(inflater, container, false)
         initRecyclerView()
         initEditText()
         context
-        Log.d("onCreateView","MeatPager")
         bindViews()
         return binding.root
     }
 
     private fun bindViews() {
         binding.layoutEasySetting.setOnClickListener {
-            val easySettingDialog = EasySettingDialog(this.requireContext(), adapter, "meat")
+            val easySettingDialog = EasySettingDialog(this.requireContext(), adapter, dataType)
             easySettingDialog.showDialog()
         }
         binding.textViewSearch.setOnClickListener {
-            val easySettingDialog = EasySettingDialog(this.requireContext(), adapter, "meat")
+            val easySettingDialog = EasySettingDialog(this.requireContext(), adapter, dataType)
             easySettingDialog.showDialog()
         }
     }
 
     override fun onResume() {
         super.onResume()
-        adapter.update("meat")
+        adapter.updateDataListFromDB(dataType)
         Log.d("onResume","MeatPager")
     }
 
@@ -60,11 +61,10 @@ class MeatPagerFragment(): Fragment() {
             @SuppressLint("NotifyDataSetChanged")
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 if(p0?.length == 0) {
-                    adapter.list = dataList
+                    adapter.updateDataListFromDB(dataType)
                 } else {
-                    adapter.list = findListWithText(p0.toString())
+                    adapter.updateDataList(findListWithText(p0.toString()))
                 }
-                adapter.notifyDataSetChanged()
             }
             override fun afterTextChanged(p0: Editable?) {}
 
@@ -85,11 +85,8 @@ class MeatPagerFragment(): Fragment() {
         binding.pagerRecyclerView.layoutManager = GridLayoutManager(this.context,4)
         binding.pagerRecyclerView.setHasFixedSize(true)
         dataList.sortByDescending { it.remainGram }
-        adapter= AddIngredientsAdapter(dataList)
+        adapter = IngredientRecyclerViewAdapter(dataList)
         binding.pagerRecyclerView.adapter = adapter
 
     }
-
-
-
 }

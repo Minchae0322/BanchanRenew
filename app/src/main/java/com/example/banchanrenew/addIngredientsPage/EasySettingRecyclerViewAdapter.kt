@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.banchanrenew.R
 import com.example.banchanrenew.relation.Ingredient
 
-class EasySettingAdapter(val list: List<Ingredient>) : RecyclerView.Adapter<EasySettingAdapter.ViewHolder>() {
+class EasySettingRecyclerViewAdapter(val list: List<Ingredient>) : RecyclerView.Adapter<EasySettingRecyclerViewAdapter.ViewHolder>() {
     lateinit var context: Context
     var isCheckedList: Array<Int> = Array(list.size) { 0 }
 

@@ -8,15 +8,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.banchanrenew.MainActivity
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
 import com.example.banchanrenew.addIngredientsPage.IngredientModificationDialog
 import com.example.banchanrenew.addIngredientsPage.UpdateAdapterImpl
 import com.example.banchanrenew.relation.Ingredient
 
-class FridgeAdapter(var list: MutableList<Ingredient>):
-    RecyclerView.Adapter<FridgeAdapter.ViewHolder>(), UpdateAdapterImpl {
+class FridgeRecyclerViewAdapter(var list: MutableList<Ingredient>):
+    RecyclerView.Adapter<FridgeRecyclerViewAdapter.ViewHolder>(), UpdateAdapterImpl {
     private lateinit var context: Context
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -48,9 +47,19 @@ class FridgeAdapter(var list: MutableList<Ingredient>):
         return list.size
     }
 
+
     @SuppressLint("NotifyDataSetChanged")
-    override fun update(dataType: String) {
-        list = db.testDao().getIngredientMoreThanZeroGram()
+    override fun update() {
         notifyDataSetChanged()
+    }
+
+    override fun updateDataListFromDB(dataType: String) {
+        list = db.testDao().getIngredientMoreThanZeroGram()
+        update()
+    }
+
+    override fun updateDataList(dataList: MutableList<Ingredient>) {
+        list = dataList
+        update()
     }
 }

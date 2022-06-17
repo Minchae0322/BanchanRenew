@@ -67,7 +67,7 @@ class IngredientModificationDialog(val context: Context, var ingredient: Ingredi
         binding.tvAddDialogOk.setOnClickListener {
             updateRemain()
             db.recipeDao().updateRemainOfIngredient(remain,ingredient.id)
-            adapter.update(ingredient.dataType)
+            adapter.updateDataListFromDB(ingredient.dataType)
             dialog.dismiss()
         }
     }
