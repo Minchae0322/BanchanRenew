@@ -75,7 +75,7 @@ class Test2 {
                 Log.d("number", row.toString())
 
             }
-            testDao.insertRecipeList(list)
+            testDao.insertRecipeDescriptionList(list)
         }
 
 
@@ -129,7 +129,7 @@ class Test2 {
                 val jsonRecipeObject = jArray.getJSONObject(row)
                 list.add(RecipeDescription(jsonRecipeObject.getInt("RECIPE_ID"),jsonRecipeObject.getInt("COOKING_NO"), jsonRecipeObject.getString("COOKING_DC")))
             }
-            testDao.insertRecipeList(list)
+            testDao.insertRecipeDescriptionList(list)
         }
 
         val jsonDCObjectList: MutableList<JSONObject> = mutableListOf()

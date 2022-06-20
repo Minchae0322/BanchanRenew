@@ -11,9 +11,9 @@ interface IngredientDAO {
     @Query("SELECT * FROM Ingredient")
     fun find(): List<Ingredient>
 
-    @Insert fun insertRecipe(recipeDescription: RecipeDescription)
+    @Query("SELECT * FROM essential")
+    fun getMainIngredientList(): List<EssentialIngredients>
 
-    @Insert fun insertRecipeList(recipeDescription: MutableList<RecipeDescription>)
     //test
     @Insert fun insertIngredient(ingredient: Ingredient)
 
@@ -60,8 +60,8 @@ interface IngredientDAO {
 
     @Insert fun insertGramOfUnitList(list: List<GramOfUnit>)
 
-    @Query("SELECT * FROM ingredient WHERE remainGram > 0")
-    fun getIngredientMoreThanZeroGram(): MutableList<Ingredient>
+    @Query("SELECT * FROM ingredient WHERE remainGram > 0")//0 그램 보다 많이 보유한 재료들을 가져온다
+    fun getIngredientListMoreThanZeroGram(): MutableList<Ingredient>
 
     @Query("SELECT * From Dish")
     fun selectAllFromDish(): List<Recipe>

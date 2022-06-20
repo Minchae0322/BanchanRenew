@@ -54,7 +54,7 @@ class FridgeRecyclerViewAdapter(var list: MutableList<Ingredient>):
     }
 
     override fun updateDataListFromDB(dataType: String) {
-        list = db.testDao().getIngredientMoreThanZeroGram()
+        list = db.testDao().getIngredientListMoreThanZeroGram()
         update()
     }
 

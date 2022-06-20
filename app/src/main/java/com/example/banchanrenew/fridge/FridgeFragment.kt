@@ -15,7 +15,7 @@ import com.example.banchanrenew.relation.Ingredient
 
 class FridgeFragment: Fragment() {
     private lateinit var binding: ActivityFridgeBinding
-    private val ingredientList: MutableList<Ingredient> = db.testDao().getIngredientMoreThanZeroGram()
+    private val ingredientList: MutableList<Ingredient> = db.testDao().getIngredientListMoreThanZeroGram()
     private var ingredientListWithText: MutableList<Ingredient> = mutableListOf()
     private val fridgeAdapter: FridgeRecyclerViewAdapter = FridgeRecyclerViewAdapter(ingredientList)
 

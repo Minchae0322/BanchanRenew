@@ -11,13 +11,13 @@ class RecipeListFactory {
                 return getDishList(db.recipeDao().getRecipeListIncludingMainIngredientsHave())
             }
             "all" -> {
-                return db.recipeDao().getDishList()
+                return db.recipeDao().getRecipeList()
             }
             "bookMark" -> {
                 return db.recipeDao().getBookMarkedRecipeList(1)
             }
             else -> {
-                return db.recipeDao().getDishList()
+                return db.recipeDao().getRecipeList()
             }
         }
     }

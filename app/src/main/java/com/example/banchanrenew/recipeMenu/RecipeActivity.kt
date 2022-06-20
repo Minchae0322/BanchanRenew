@@ -71,7 +71,7 @@ class RecipeActivity: AppCompatActivity() {
             }
             1 -> {
                 for(dish in this.recipeList) {
-                    var essentialList: MutableList<EssentialIngredients> = db.recipeDao().getEssentialListWhereDishID(dish.recipeID)
+                    var essentialList: MutableList<EssentialIngredients> = db.recipeDao().getMainIngredientListWithRecipeID(dish.recipeID)
                     for(essential in essentialList) {
                         if(essential.essential_name.contains(charText)) {
                             dishListWithText.add(dish)

@@ -62,7 +62,7 @@ class IngredientModificationDialog(val context: Context, var ingredient: Ingredi
         }
         binding.tvAddDialogOk.setOnClickListener {
             updateRemain()
-            db.recipeDao().updateRemainGramOfIngredient(remain,ingredient.id)
+            db.testDao().updateRemainGramOfIngredient(remain,ingredient.id)
             adapter.updateDataListFromDB(ingredient.dataType)
             Toast.makeText(context,"변경사항이 적용되었습니다",Toast.LENGTH_SHORT).show()
             dialog.dismiss()
