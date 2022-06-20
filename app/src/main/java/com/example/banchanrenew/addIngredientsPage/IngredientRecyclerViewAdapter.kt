@@ -57,7 +57,7 @@ class IngredientRecyclerViewAdapter(var list: MutableList<Ingredient>):
         update()
     }
 
-    override fun updateDataList(dataList: MutableList<Ingredient>) {
+    override fun updateIngredientDataList(dataList: MutableList<Ingredient>) {
         list = dataList
         update()
     }

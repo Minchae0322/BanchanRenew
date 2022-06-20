@@ -50,7 +50,7 @@ class FridgeFragment: Fragment() {
                     fridgeAdapter.updateDataListFromDB("dd")
                 } else {
                     findIngredientListWithText(p0.toString())
-                    fridgeAdapter.updateDataList(ingredientListWithText)
+                    fridgeAdapter.updateIngredientDataList(ingredientListWithText)
                 }
             }
 

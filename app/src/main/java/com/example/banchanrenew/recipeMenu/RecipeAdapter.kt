@@ -1,5 +1,6 @@
 package com.example.banchanrenew.recipeMenu
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -9,11 +10,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
+import com.example.banchanrenew.addIngredientsPage.UpdateAdapterImpl
 import com.example.banchanrenew.relation.Dish
+import com.example.banchanrenew.relation.Ingredient
 import com.example.banchanrenew.relation.IngredientDC
 import com.ramotion.foldingcell.FoldingCell
 
-class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
+class RecipeAdapter(var list: List<Dish>):
+    RecyclerView.Adapter<RecipeAdapter.ViewHolder>(), UpdateAdapterImpl {
     private var isFavorite = false
     private val dao: RecipeDAO = db.recipeDao()
     lateinit var context: Context
@@ -106,5 +110,20 @@ class RecipeAdapter(var list: List<Dish>): RecyclerView.Adapter<RecipeAdapter.Vi
             return text
         }
 
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    override fun update() {
+        notifyDataSetChanged()
+    }
+
+    override fun updateDataListFromDB(dataType: String) {
+        list = RecipeListFactory().getRecipeList(dataType)
+        update()
+    }
+
+    override fun updateRecipeDataList(dataList: MutableList<Dish>) {
+        list = dataList
+        update()
     }
 }

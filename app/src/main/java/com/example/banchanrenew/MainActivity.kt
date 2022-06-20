@@ -56,6 +56,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         var list = ArrayList<Ingredient>()
+        bindViews()
         initTabLayout()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, SelectDishFragment())
@@ -67,15 +68,15 @@ class MainActivity : AppCompatActivity() {
             when(fragmentRunningNum) {
                 0 -> {
                     binding.ivTabChangeToRecipeActivity.setImageResource(R.drawable.recipe_unclicked)
-                    binding.tvTabChangeToRecipeActivity.setTextColor(Color.parseColor("#919191"))
+                    binding.tvTabChangeToRecipeActivity.setTextColor(Color.parseColor("#5C5C5C"))
                 }
                 1 -> {
                     binding.ivTabChangeToAddIngredientActivity.setImageResource(R.drawable.ingrdtfinal_uncliked)
-                    binding.tvTabChangeToAddIngredientActivity.setTextColor(Color.parseColor("#919191"))
+                    binding.tvTabChangeToAddIngredientActivity.setTextColor(Color.parseColor("#5C5C5C"))
                 }
                 2 -> {
                     binding.ivTabChangeToFridgeActivity.setImageResource(R.drawable.fridge_uncliked)
-                    binding.tvTabChangeToFridgeActivity.setTextColor(Color.parseColor("#919191"))
+                    binding.tvTabChangeToFridgeActivity.setTextColor(Color.parseColor("#5C5C5C"))
                 }
             }
         }
@@ -98,6 +99,15 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun bindViews() {
+        binding.ivTabChangeToRecipeActivity.setImageResource(R.drawable.recipe2222)
+        binding.tvTabChangeToRecipeActivity.setTextColor(Color.parseColor("#FFFF4444"))
+        binding.ivTabChangeToAddIngredientActivity.setImageResource(R.drawable.ingrdtfinal_uncliked)
+        binding.tvTabChangeToAddIngredientActivity.setTextColor(Color.parseColor("#5C5C5C"))
+        binding.ivTabChangeToFridgeActivity.setImageResource(R.drawable.fridge_uncliked)
+        binding.tvTabChangeToFridgeActivity.setTextColor(Color.parseColor("#5C5C5C"))
     }
 
     private fun initTabLayout() {

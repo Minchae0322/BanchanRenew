@@ -1,6 +1,7 @@
 package com.example.banchanrenew.recipeMenu
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -16,17 +17,22 @@ import com.example.banchanrenew.relation.EssentialIngredients
 
 class RecipeActivity: AppCompatActivity() {
     private lateinit var binding: ActivityRecipeBinding
+    private lateinit var recipeType: String
     private var spinnerNum: Int = 0
-    private var dishList: List<Dish> = db.recipeDao().getDishList()
-    private var dishListWithText: MutableList<Dish> = mutableListOf()
-    private val recipeAdapter: RecipeAdapter = RecipeAdapter(dishList)
+    private lateinit var recipeList: List<Dish>
+    private lateinit var recipeAdapter: RecipeAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRecipeBinding.inflate(layoutInflater)
+        recipeType = intent.getStringExtra("recipeType").toString()
+        recipeList = RecipeListFactory().getRecipeList(recipeType)
         setContentView(binding.root)
         initRecyclerView()
         initSpinner()
+
+
 
         binding.editTextSearch.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
@@ -35,12 +41,9 @@ class RecipeActivity: AppCompatActivity() {
             @SuppressLint("NotifyDataSetChanged")
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 if(p0?.length == 0) {
-                    recipeAdapter.list = dishList
-                    recipeAdapter.notifyDataSetChanged()
+                    recipeAdapter.updateDataListFromDB(recipeType)
                 } else {
-                    findDishListWithText(p0.toString())
-                    recipeAdapter.list = dishListWithText
-                    recipeAdapter.notifyDataSetChanged()
+                    recipeAdapter.updateRecipeDataList(findDishListWithText(p0.toString()))
                 }
             }
 
@@ -53,21 +56,22 @@ class RecipeActivity: AppCompatActivity() {
     private fun initRecyclerView() {
         binding.recyclerViewSelected.layoutManager = LinearLayoutManager(applicationContext)
         binding.recyclerViewSelected.setHasFixedSize(true)
+        recipeAdapter = RecipeAdapter(recipeList)
         binding.recyclerViewSelected.adapter = recipeAdapter
     }
 
-    private fun findDishListWithText(charText: String) {
-        dishListWithText.clear()
+    private fun findDishListWithText(charText: String): MutableList<Dish> {
+        val dishListWithText: MutableList<Dish> = mutableListOf()
         when(spinnerNum) {
             0 -> {
-                for(dish in dishList) {
+                for(dish in this.recipeList) {
                     if(dish.recipeName.contains(charText)) {
                         dishListWithText.add(dish)
                     }
                 }
             }
             1 -> {
-                for(dish in dishList) {
+                for(dish in this.recipeList) {
                     var essentialList: MutableList<EssentialIngredients> = db.recipeDao().getEssentialListWhereDishID(dish.recipeID)
                     for(essential in essentialList) {
                         if(essential.essential_name.contains(charText)) {
@@ -78,6 +82,7 @@ class RecipeActivity: AppCompatActivity() {
                 }
             }
         }
+        return dishListWithText
     }
 
     private fun initSpinner() {

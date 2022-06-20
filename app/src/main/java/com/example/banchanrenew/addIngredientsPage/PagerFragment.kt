@@ -10,8 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.banchanrenew.MainActivity
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.databinding.FragmentPagerBinding
 import com.example.banchanrenew.relation.Ingredient
@@ -63,7 +61,7 @@ class PagerFragment(val dataType: String): Fragment() {
                 if(p0?.length == 0) {
                     adapter.updateDataListFromDB(dataType)
                 } else {
-                    adapter.updateDataList(findListWithText(p0.toString()))
+                    adapter.updateIngredientDataList(findListWithText(p0.toString()))
                 }
             }
             override fun afterTextChanged(p0: Editable?) {}

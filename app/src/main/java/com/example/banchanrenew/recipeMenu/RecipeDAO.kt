@@ -31,7 +31,7 @@ interface RecipeDAO {
     fun getEssentialListWhereDishID(dishId: Int): MutableList<EssentialIngredients>
 
     @Query("SELECT * FROM Dish WHERE bookMark = :oneIsTrueZeroFalse")
-    fun getRecipeWithBookMarkList(oneIsTrueZeroFalse: Int): List<Dish>
+    fun getRecipeListWithBookMark(oneIsTrueZeroFalse: Int): List<Dish>
 
     @Query(
         "SELECT e.recipeID  FROM " +

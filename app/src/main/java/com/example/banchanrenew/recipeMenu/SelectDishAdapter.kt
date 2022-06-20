@@ -24,7 +24,7 @@ class SelectDishAdapter(val list: List<Int>): RecyclerView.Adapter<SelectDishAda
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.imageView.setImageResource(list[position])
-        holder.textView.text = when(position) {
+        holder.textView.text = when (position) {
             0 -> {
                 "모든 레시피"
             }
@@ -39,18 +39,21 @@ class SelectDishAdapter(val list: List<Int>): RecyclerView.Adapter<SelectDishAda
             }
         }
         holder.itemView.setOnClickListener {
-            when(position) {
+            when (position) {
                 0 -> {
                     val intent = Intent(holder.itemView.context, RecipeActivity::class.java)
+                    intent.putExtra("recipeType", "all")
                     startActivity(holder.itemView.context, intent, null)
                 }
 
                 1 -> {
-                    val intent = Intent(holder.itemView.context, RecipeWithMainIngredientsActivity::class.java)
+                    val intent = Intent(holder.itemView.context, RecipeActivity::class.java)
+                    intent.putExtra("recipeType", "main")
                     startActivity(holder.itemView.context, intent, null)
                 }
                 2 -> {
-                    val intent = Intent(holder.itemView.context, RecipeWithBookMarkActivity::class.java)
+                    val intent = Intent(holder.itemView.context, RecipeActivity::class.java)
+                    intent.putExtra("recipeType", "bookMark")
                     startActivity(holder.itemView.context, intent, null)
                 }
             }
@@ -61,5 +64,4 @@ class SelectDishAdapter(val list: List<Int>): RecyclerView.Adapter<SelectDishAda
     override fun getItemCount(): Int {
         return list.size
     }
-
 }
