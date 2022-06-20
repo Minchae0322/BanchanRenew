@@ -9,8 +9,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="step 1"
-        android:fontFamily="@font/coookie1"
-        android:textSize="15sp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="17sp"
         android:padding="10dp"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,8 +20,8 @@
 
 
     <TextView
-        android:textSize="18sp"
-        android:fontFamily="@font/coookie1"
+        android:textSize="17sp"
+        android:fontFamily="sans-serif"
         android:paddingHorizontal="10dp"
         android:id="@+id/tv_dialog_recipe_description"
         android:layout_width="match_parent"

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.banchanrenew.R
 import com.example.banchanrenew.relation.RecipeDescription
 
-class RecipeDialogAdapter(val list: MutableList<RecipeDescription>): RecyclerView.Adapter<RecipeDialogAdapter.ViewHolder>() {
+class RecipeDCDialogAdapter(val list: MutableList<RecipeDescription>): RecyclerView.Adapter<RecipeDCDialogAdapter.ViewHolder>() {
     private lateinit var context:Context
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -29,7 +29,7 @@ class RecipeDialogAdapter(val list: MutableList<RecipeDescription>): RecyclerVie
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.textViewStep.text = "STEP  " + list[position].cookingNum
-        holder.textViewDescription.text = list[position].cookingDC
+        holder.textViewDescription.text = list[position].cookingDC + "\n"
     }
 
     override fun getItemCount(): Int {

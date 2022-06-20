@@ -87,7 +87,7 @@ class RecipeAdapter(var list: List<Recipe>):
             holder.textViewContentSub.text = parseIngredientDCToString(position, "양념")
             holder.foldingCell.toggle(true)
             holder.textViewContentRecipeMenu.setOnClickListener {
-                val dialog = RecipeDialog(context, dao.getRecipeInformation(list[position].recipeID), list[position].recipeName)
+                val dialog = RecipeDCDialog(context, dao.getRecipeInformation(list[position].recipeID), list[position].recipeName)
                 dialog.showDialog()
             }
         }
