@@ -27,7 +27,7 @@ class FridgeRecyclerViewAdapter(var list: MutableList<Ingredient>):
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_fridge, parent, false)
+            .inflate(R.layout.item_viewpager, parent, false)
         context = parent.context
         return ViewHolder(view)
     }

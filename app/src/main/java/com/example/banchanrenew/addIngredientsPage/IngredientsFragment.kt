@@ -1,22 +1,19 @@
 package com.example.banchanrenew.addIngredientsPage
 
-import android.content.Intent
-import android.graphics.pdf.PdfDocument
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
+
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.banchanrenew.databinding.ActivityAddingredientBinding
-import com.example.banchanrenew.fridge.FridgeFragment
-import com.example.banchanrenew.recipeMenu.RecipeActivity
+
 import com.google.android.material.tabs.TabLayoutMediator
 
 private const val NUM_PAGES = 3
 
-class AddIngredientsActivity :Fragment() {
+class IngredientsFragment: Fragment() {
 
     /**
      * The pager widget, which handles animation and allows swiping horizontally to access previous

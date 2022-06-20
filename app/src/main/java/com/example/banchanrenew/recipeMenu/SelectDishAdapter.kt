@@ -29,7 +29,7 @@ class SelectDishAdapter(val list: List<Int>): RecyclerView.Adapter<SelectDishAda
                 "모든 레시피"
             }
             1 -> {
-                "메인재료로 만들 수 있는 레시피"
+                "냉장고 재료로 만들기"
             }
             2 -> {
                 "즐겨찾기 레시피"

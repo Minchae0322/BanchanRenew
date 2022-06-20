@@ -6,7 +6,7 @@ import android.graphics.Point
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
-import com.example.banchanrenew.addIngredientsPage.AddIngredientsActivity
+import com.example.banchanrenew.addIngredientsPage.IngredientsFragment
 import com.example.banchanrenew.databinding.ActivityMainBinding
 import com.example.banchanrenew.fridge.FridgeFragment
 import com.example.banchanrenew.recipeMenu.SelectDishFragment
@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.constraintLayoutAddIngredient.setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, AddIngredientsActivity())
+                .replace(R.id.fragment_container, IngredientsFragment())
                 .commit()
             updateUnClicked(1)
             updateClicked(1)
