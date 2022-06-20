@@ -1,4 +1,4 @@
-package com.example.banchanrenew.addIngredientsPage
+package com.example.banchanrenew.Ingredient
 
 import android.os.Bundle
 import android.view.LayoutInflater

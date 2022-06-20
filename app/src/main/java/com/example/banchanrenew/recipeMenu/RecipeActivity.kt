@@ -1,7 +1,6 @@
 package com.example.banchanrenew.recipeMenu
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,14 +11,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.databinding.ActivityRecipeBinding
-import com.example.banchanrenew.relation.Dish
+import com.example.banchanrenew.relation.Recipe
 import com.example.banchanrenew.relation.EssentialIngredients
 
 class RecipeActivity: AppCompatActivity() {
     private lateinit var binding: ActivityRecipeBinding
     private lateinit var recipeType: String
     private var spinnerNum: Int = 0
-    private lateinit var recipeList: List<Dish>
+    private lateinit var recipeList: List<Recipe>
     private lateinit var recipeAdapter: RecipeAdapter
 
 
@@ -60,8 +59,8 @@ class RecipeActivity: AppCompatActivity() {
         binding.recyclerViewSelected.adapter = recipeAdapter
     }
 
-    private fun findDishListWithText(charText: String): MutableList<Dish> {
-        val dishListWithText: MutableList<Dish> = mutableListOf()
+    private fun findDishListWithText(charText: String): MutableList<Recipe> {
+        val dishListWithText: MutableList<Recipe> = mutableListOf()
         when(spinnerNum) {
             0 -> {
                 for(dish in this.recipeList) {

@@ -1,6 +1,6 @@
 package com.example.banchanrenew.relation
 
-class GramOfUnitCons {
+class GramOfUnitData {
     fun getData(): List<GramOfUnit> {
         return ArrayList(listOf(
             GramOfUnit("근", 600),

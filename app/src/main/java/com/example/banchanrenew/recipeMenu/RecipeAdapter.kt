@@ -10,13 +10,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
-import com.example.banchanrenew.addIngredientsPage.UpdateAdapterImpl
-import com.example.banchanrenew.relation.Dish
-import com.example.banchanrenew.relation.Ingredient
+import com.example.banchanrenew.Ingredient.UpdateAdapterImpl
+import com.example.banchanrenew.dao.RecipeDAO
+import com.example.banchanrenew.relation.Recipe
 import com.example.banchanrenew.relation.IngredientDC
 import com.ramotion.foldingcell.FoldingCell
 
-class RecipeAdapter(var list: List<Dish>):
+class RecipeAdapter(var list: List<Recipe>):
     RecyclerView.Adapter<RecipeAdapter.ViewHolder>(), UpdateAdapterImpl {
     private var isFavorite = false
     private val dao: RecipeDAO = db.recipeDao()
@@ -64,11 +64,11 @@ class RecipeAdapter(var list: List<Dish>):
         holder.imageViewStar.setOnClickListener {
             if(isFavorite) {
                 holder.imageViewStar.setImageResource(R.drawable.emptystar)
-                dao.updateBookMark(list[position].recipeID, 0)
+                dao.updateBookMarkOfRecipe(list[position].recipeID, 0)
                 isFavorite = false
             } else {
                 holder.imageViewStar.setImageResource(R.drawable.star)
-                dao.updateBookMark(list[position].recipeID, 1)
+                dao.updateBookMarkOfRecipe(list[position].recipeID, 1)
                 isFavorite = true
             }
         }
@@ -122,7 +122,7 @@ class RecipeAdapter(var list: List<Dish>):
         update()
     }
 
-    override fun updateRecipeDataList(dataList: MutableList<Dish>) {
+    override fun updateRecipeDataList(dataList: MutableList<Recipe>) {
         list = dataList
         update()
     }

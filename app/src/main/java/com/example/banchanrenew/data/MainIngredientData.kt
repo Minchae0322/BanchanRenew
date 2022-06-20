@@ -1,6 +1,6 @@
 package com.example.banchanrenew.relation
 
-class EssentialCons {
+class MainIngredientData {
     fun getData(): List<EssentialIngredients> {
         return ArrayList(
             listOf(

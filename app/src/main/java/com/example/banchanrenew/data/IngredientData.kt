@@ -4,7 +4,7 @@ import com.example.banchanrenew.R
 import java.util.*
 import kotlin.collections.ArrayList
 
-class IngredientsCons {
+class IngredientData {
     companion object {
         var ingredientId : Int = 0
     }

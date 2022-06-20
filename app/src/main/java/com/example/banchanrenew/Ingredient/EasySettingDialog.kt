@@ -1,4 +1,4 @@
-package com.example.banchanrenew.addIngredientsPage
+package com.example.banchanrenew.Ingredient
 
 import android.app.Dialog
 import android.content.Context

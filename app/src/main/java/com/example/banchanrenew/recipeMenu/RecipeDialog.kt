@@ -10,9 +10,9 @@ import android.view.WindowManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.banchanrenew.R
 import com.example.banchanrenew.databinding.DialogRecipeBinding
-import com.example.banchanrenew.relation.Recipe
+import com.example.banchanrenew.relation.RecipeDescription
 
-class RecipeDialog(val context: Context, private val recipeList: MutableList<Recipe>,private val recipeName: String) {
+class RecipeDialog(val context: Context, private val recipeDescriptionList: MutableList<RecipeDescription>, private val recipeName: String) {
     private val dialog = Dialog(context)
     private lateinit var binding: DialogRecipeBinding
 
@@ -40,7 +40,7 @@ class RecipeDialog(val context: Context, private val recipeList: MutableList<Rec
     private fun initRecyclerView() {
         binding.rvRecipe.layoutManager = LinearLayoutManager(context)
         binding.rvRecipe.setHasFixedSize(true)
-        recipeList.sortedBy { it.cookingNum }
-        binding.rvRecipe.adapter = RecipeDialogAdapter(recipeList)
+        recipeDescriptionList.sortedBy { it.cookingNum }
+        binding.rvRecipe.adapter = RecipeDialogAdapter(recipeDescriptionList)
     }
 }

@@ -1,4 +1,4 @@
-package com.example.banchanrenew.addIngredientsPage
+package com.example.banchanrenew.Ingredient
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -10,13 +10,8 @@ import android.text.InputFilter
 import android.text.Spanned
 import android.text.TextWatcher
 import android.view.LayoutInflater
-import android.view.Window
 import android.view.WindowManager
-import android.widget.Adapter
 import android.widget.Toast
-import androidx.recyclerview.widget.RecyclerView
-import com.example.banchanrenew.MainActivity.Companion.DISPLAY_HEIGHT
-import com.example.banchanrenew.MainActivity.Companion.DISPLAY_WITH
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
 import com.example.banchanrenew.databinding.DialogAddBinding
@@ -67,7 +62,7 @@ class IngredientModificationDialog(val context: Context, var ingredient: Ingredi
         }
         binding.tvAddDialogOk.setOnClickListener {
             updateRemain()
-            db.recipeDao().updateRemainOfIngredient(remain,ingredient.id)
+            db.recipeDao().updateRemainGramOfIngredient(remain,ingredient.id)
             adapter.updateDataListFromDB(ingredient.dataType)
             Toast.makeText(context,"변경사항이 적용되었습니다",Toast.LENGTH_SHORT).show()
             dialog.dismiss()

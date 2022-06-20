@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.banchanrenew.R
-import com.example.banchanrenew.relation.Recipe
+import com.example.banchanrenew.relation.RecipeDescription
 
-class RecipeDialogAdapter(val list: MutableList<Recipe>): RecyclerView.Adapter<RecipeDialogAdapter.ViewHolder>() {
+class RecipeDialogAdapter(val list: MutableList<RecipeDescription>): RecyclerView.Adapter<RecipeDialogAdapter.ViewHolder>() {
     private lateinit var context:Context
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -1,9 +1,8 @@
-package com.example.banchanrenew
+package com.example.banchanrenew.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import androidx.room.Update
 import com.example.banchanrenew.relation.*
 
 @Dao
@@ -12,9 +11,9 @@ interface IngredientDAO {
     @Query("SELECT * FROM Ingredient")
     fun find(): List<Ingredient>
 
-    @Insert fun insertRecipe(recipe: Recipe)
+    @Insert fun insertRecipe(recipeDescription: RecipeDescription)
 
-    @Insert fun insertRecipeList(recipe: MutableList<Recipe>)
+    @Insert fun insertRecipeList(recipeDescription: MutableList<RecipeDescription>)
     //test
     @Insert fun insertIngredient(ingredient: Ingredient)
 
@@ -54,7 +53,7 @@ interface IngredientDAO {
     @Query("SELECT remainGram From ingredient WHERE name = :name")
     fun eee2(name: String): Int
 
-    @Insert fun insertDishList(list: List<Dish>)
+    @Insert fun insertDishList(list: List<Recipe>)
 
     @Query("SELECT * From Ingredient WHERE dataType = :dataType")
     fun selectIngredientWhereDataType(dataType: String): MutableList<Ingredient>
@@ -65,7 +64,7 @@ interface IngredientDAO {
     fun getIngredientMoreThanZeroGram(): MutableList<Ingredient>
 
     @Query("SELECT * From Dish")
-    fun selectAllFromDish(): List<Dish>
+    fun selectAllFromDish(): List<Recipe>
 
     @Query("SELECT id From Ingredient WHERE id = :id")
     fun selectIdFromIngredientWhereId(id: Int): Int

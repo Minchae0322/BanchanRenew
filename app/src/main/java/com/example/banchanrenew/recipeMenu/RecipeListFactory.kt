@@ -1,20 +1,20 @@
 package com.example.banchanrenew.recipeMenu
 
 import com.example.banchanrenew.MainActivity.Companion.db
-import com.example.banchanrenew.relation.Dish
+import com.example.banchanrenew.relation.Recipe
 
 class RecipeListFactory {
 
-    fun getRecipeList(recipeType: String): List<Dish> {
+    fun getRecipeList(recipeType: String): List<Recipe> {
         when(recipeType) {
             "main" -> {
-                return getDishList(db.recipeDao().getDishListWithMainIngredients())
+                return getDishList(db.recipeDao().getRecipeListIncludingMainIngredientsHave())
             }
             "all" -> {
                 return db.recipeDao().getDishList()
             }
             "bookMark" -> {
-                return db.recipeDao().getRecipeListWithBookMark(1)
+                return db.recipeDao().getBookMarkedRecipeList(1)
             }
             else -> {
                 return db.recipeDao().getDishList()
@@ -22,10 +22,10 @@ class RecipeListFactory {
         }
     }
 
-    private fun getDishList(list: List<Int>): List<Dish> {
-        var dishList = mutableListOf<Dish>()
+    private fun getDishList(list: List<Int>): List<Recipe> {
+        var dishList = mutableListOf<Recipe>()
         for(dishId in list) {
-            dishList.add(db.recipeDao().getDishWhereId(dishId))
+            dishList.add(db.recipeDao().getRecipeWithID(dishId))
         }
 
         return dishList

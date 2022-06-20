@@ -6,7 +6,8 @@ import android.graphics.Point
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
-import com.example.banchanrenew.addIngredientsPage.IngredientsFragment
+import com.example.banchanrenew.Ingredient.IngredientsFragment
+import com.example.banchanrenew.dao.IngredientDAO
 import com.example.banchanrenew.databinding.ActivityMainBinding
 import com.example.banchanrenew.fridge.FridgeFragment
 import com.example.banchanrenew.recipeMenu.SelectDishFragment
@@ -35,19 +36,19 @@ class MainActivity : AppCompatActivity() {
         prefs = PreferenceUtil(applicationContext)
         db = Room.databaseBuilder(
             applicationContext,
-            TestDatabase::class.java, "test.db24"
+            TestDatabase::class.java, "test.db25"
         ).allowMainThreadQueries().build()
-        if(prefs.getString("version42","0") == "0") {
+        if(prefs.getString("version43","0") == "0") {
             var testDao1: IngredientDAO = db.testDao()
-            testDao1.insertGramOfUnitList(GramOfUnitCons().getData())
-            testDao1.insertIngredientList(IngredientsCons().getData())
-            testDao1.insertDishList(DishCons().getData())
-            testDao1.insertEssentialList(EssentialCons().getData())
+            testDao1.insertGramOfUnitList(GramOfUnitData().getData())
+            testDao1.insertIngredientList(IngredientData().getData())
+            testDao1.insertDishList(RecipeData().getData())
+            testDao1.insertEssentialList(MainIngredientData().getData())
             try {
                 jsonParser()
             } catch (e: JSONException) {
             }
-            prefs.setString("version42","1")
+            prefs.setString("version43","1")
             testDao1.updateRemainGramOfIngredient(600,"돼지갈비")
             testDao1.updateRemainGramOfIngredient(600,"소고기")
             testDao1.updateRemainGramOfIngredient(600,"돼지고기")
@@ -168,11 +169,11 @@ class MainActivity : AppCompatActivity() {
          jsonRecipeObjectList.add(jsonFileToJsonObject("recipe2994_","Grid_20150827000000000228_1"))
 
          for(jsonFileObject in jsonRecipeObjectList) {
-             val list: MutableList<Recipe> = mutableListOf()
+             val list: MutableList<RecipeDescription> = mutableListOf()
              val jArray = jsonObjectToJsonArray(jsonFileObject,"row")
              for(row in 0 until jArray.length()) {
                  val jsonRecipeObject = jArray.getJSONObject(row)
-                 list.add(Recipe(jsonRecipeObject.getInt("RECIPE_ID"),jsonRecipeObject.getInt("COOKING_NO"), jsonRecipeObject.getString("COOKING_DC")))
+                 list.add(RecipeDescription(jsonRecipeObject.getInt("RECIPE_ID"),jsonRecipeObject.getInt("COOKING_NO"), jsonRecipeObject.getString("COOKING_DC")))
              }
              db.testDao().insertRecipeList(list)
          }

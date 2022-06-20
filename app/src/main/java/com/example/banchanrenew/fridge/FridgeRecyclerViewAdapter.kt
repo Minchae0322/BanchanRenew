@@ -10,8 +10,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
-import com.example.banchanrenew.addIngredientsPage.IngredientModificationDialog
-import com.example.banchanrenew.addIngredientsPage.UpdateAdapterImpl
+import com.example.banchanrenew.Ingredient.IngredientModificationDialog
+import com.example.banchanrenew.Ingredient.UpdateAdapterImpl
 import com.example.banchanrenew.relation.Ingredient
 
 class FridgeRecyclerViewAdapter(var list: MutableList<Ingredient>):

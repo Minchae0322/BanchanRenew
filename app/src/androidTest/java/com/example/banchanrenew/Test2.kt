@@ -5,7 +5,8 @@ import android.util.Log
 import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.banchanrenew.recipeMenu.RecipeDAO
+import com.example.banchanrenew.dao.IngredientDAO
+import com.example.banchanrenew.dao.RecipeDAO
 import com.example.banchanrenew.relation.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -43,18 +44,18 @@ class Test2 {
         testDao.delete4()
         testDao.delete5()
         testDao.delete6()
-        val list = GramOfUnitCons().getData()
+        val list = GramOfUnitData().getData()
         for(i in list) {
             val k = i.unit
         }
-        testDao.insertGramOfUnitList(GramOfUnitCons().getData())
+        testDao.insertGramOfUnitList(GramOfUnitData().getData())
 
-        val list2 = IngredientsCons().getData()
+        val list2 = IngredientData().getData()
         Log.d("id",list2.size.toString())
 
-        testDao.insertIngredientList(IngredientsCons().getData())
-        testDao.insertDishList(DishCons().getData())
-        testDao.insertEssentialList(EssentialCons().getData())
+        testDao.insertIngredientList(IngredientData().getData())
+        testDao.insertDishList(RecipeData().getData())
+        testDao.insertEssentialList(MainIngredientData().getData())
 
 
     }
@@ -66,11 +67,11 @@ class Test2 {
 
 
         for(jsonFileObject in jsonRecipeObjectList) {
-            val list: MutableList<Recipe> = mutableListOf()
+            val list: MutableList<RecipeDescription> = mutableListOf()
             val jArray = jsonObjectToJsonArray(jsonFileObject,"row")
             for(row in 0 until jArray.length()) {
                 val jsonRecipeObject = jArray.getJSONObject(row)
-                list.add(Recipe(jsonRecipeObject.getInt("RECIPE_ID"),jsonRecipeObject.getInt("COOKING_NO"), jsonRecipeObject.getString("COOKING_DC")))
+                list.add(RecipeDescription(jsonRecipeObject.getInt("RECIPE_ID"),jsonRecipeObject.getInt("COOKING_NO"), jsonRecipeObject.getString("COOKING_DC")))
                 Log.d("number", row.toString())
 
             }
@@ -86,7 +87,7 @@ class Test2 {
         testDao.updateRemainGramOfIngredient(600,"돼지갈비")
         assertEquals("돼지갈비",testDao.selectUnitFromIngredientName("돼지갈비"))
         assertEquals(600,testDao.eee2("돼지갈비"))
-        assertEquals(449, recipeDAO.getDishListWithMainIngredients()[1])
+        assertEquals(449, recipeDAO.getRecipeListIncludingMainIngredientsHave()[1])
     }
 
     @Test
@@ -122,11 +123,11 @@ class Test2 {
         jsonRecipeObjectList.add(jsonFileToJsonObject("recipe2994_","Grid_20150827000000000228_1"))
 
         for(jsonFileObject in jsonRecipeObjectList) {
-            val list: MutableList<Recipe> = mutableListOf()
+            val list: MutableList<RecipeDescription> = mutableListOf()
             val jArray = jsonObjectToJsonArray(jsonFileObject,"row")
             for(row in 0 until jArray.length()) {
                 val jsonRecipeObject = jArray.getJSONObject(row)
-                list.add(Recipe(jsonRecipeObject.getInt("RECIPE_ID"),jsonRecipeObject.getInt("COOKING_NO"), jsonRecipeObject.getString("COOKING_DC")))
+                list.add(RecipeDescription(jsonRecipeObject.getInt("RECIPE_ID"),jsonRecipeObject.getInt("COOKING_NO"), jsonRecipeObject.getString("COOKING_DC")))
             }
             testDao.insertRecipeList(list)
         }
