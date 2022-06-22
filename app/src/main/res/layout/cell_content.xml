@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF">
+        android:background="#F9F2ED">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout3"
@@ -288,7 +288,6 @@
             android:id="@+id/tv_cell_content_seasoning"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="20dp"
             android:background="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/tv3" />
 
@@ -296,9 +295,9 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+
             android:background="@color/white"
             app:layout_constraintTop_toBottomOf="@id/tv_cell_content_seasoning"
             app:layout_constraintBottom_toBottomOf="parent"
