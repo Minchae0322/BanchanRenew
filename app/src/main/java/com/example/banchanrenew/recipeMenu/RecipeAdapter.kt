@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.R
@@ -30,6 +32,7 @@ class RecipeAdapter(var list: List<Recipe>):
         val imageViewStar: ImageView = itemView.findViewById(R.id.iv_cell_title_star)
 
     //content
+        val textViewSeasoningTitle: TextView = itemView.findViewById(R.id.tv3)
         val imageViewContent: ImageView = itemView.findViewById(R.id.iv_cell_content_dishImage)
         val textViewContentMain: TextView = itemView.findViewById(R.id.tv_cell_content_main)
         val textViewContentNation: TextView = itemView.findViewById(R.id.tv_cell_content_nationIs)
@@ -83,8 +86,9 @@ class RecipeAdapter(var list: List<Recipe>):
             holder.textViewContentKind.text = list[position].type
             holder.textViewContentCalorie.text = list[position].calorie
             holder.textViewContentMain.text = parseIngredientDCToString(position, "주재료")
-            holder.textViewContentSeasoning.text = parseIngredientDCToString(position, "부재료")
+            holder.textViewContentSeasoning.text =parseIngredientDCToString(position, "부재료")
             holder.textViewContentSub.text = parseIngredientDCToString(position, "양념")
+            setTextViewInvisible(holder, parseIngredientDCToString(position, "양념"))
             holder.foldingCell.toggle(true)
             holder.textViewContentRecipeMenu.setOnClickListener {
                 val dialog = RecipeDCDialog(context, dao.getRecipeInformation(list[position].recipeID), list[position].recipeName)
@@ -98,6 +102,12 @@ class RecipeAdapter(var list: List<Recipe>):
        return list.size
     }
 
+    private fun setTextViewInvisible(holder: ViewHolder, text: String) {
+        holder.textViewContentSeasoning.isVisible = text != ""
+        holder.textViewSeasoningTitle.isVisible = text != ""
+
+    }
+
     private fun parseIngredientDCToString(position: Int, type: String): String {
         val iDC: List<IngredientDC> = dao.getIngredientDCList(list[position].recipeID, type)
         var text = ""
@@ -109,7 +119,6 @@ class RecipeAdapter(var list: List<Recipe>):
         } else {
             return text
         }
-
     }
 
     @SuppressLint("NotifyDataSetChanged")
