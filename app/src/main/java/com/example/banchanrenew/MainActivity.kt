@@ -69,15 +69,15 @@ class MainActivity : AppCompatActivity() {
             when(fragmentRunningNum) {
                 0 -> {
                     binding.ivTabChangeToRecipeActivity.setImageResource(R.drawable.recipe_unclicked)
-                    binding.tvTabChangeToRecipeActivity.setTextColor(Color.parseColor("#5C5C5C"))
+                    binding.tvTabChangeToRecipeActivity.setTextColor(Color.parseColor("#8C8C8C"))
                 }
                 1 -> {
                     binding.ivTabChangeToAddIngredientActivity.setImageResource(R.drawable.ingrdtfinal_uncliked)
-                    binding.tvTabChangeToAddIngredientActivity.setTextColor(Color.parseColor("#5C5C5C"))
+                    binding.tvTabChangeToAddIngredientActivity.setTextColor(Color.parseColor("#8C8C8C"))
                 }
                 2 -> {
                     binding.ivTabChangeToFridgeActivity.setImageResource(R.drawable.fridge_uncliked)
-                    binding.tvTabChangeToFridgeActivity.setTextColor(Color.parseColor("#5C5C5C"))
+                    binding.tvTabChangeToFridgeActivity.setTextColor(Color.parseColor("#8C8C8C"))
                 }
             }
         }
@@ -88,15 +88,15 @@ class MainActivity : AppCompatActivity() {
             when(clickedFragmentNum) {
                 0 -> {
                     binding.ivTabChangeToRecipeActivity.setImageResource(R.drawable.recipe2222)
-                    binding.tvTabChangeToRecipeActivity.setTextColor(Color.parseColor("#FFFF4444"))
+                    binding.tvTabChangeToRecipeActivity.setTextColor(Color.parseColor("#CD1818"))
                 }
                 1 -> {
                     binding.ivTabChangeToAddIngredientActivity.setImageResource(R.drawable.ingrdtfinal)
-                    binding.tvTabChangeToAddIngredientActivity.setTextColor(Color.parseColor("#FFFF4444"))
+                    binding.tvTabChangeToAddIngredientActivity.setTextColor(Color.parseColor("#CD1818"))
                 }
                 2 -> {
                     binding.ivTabChangeToFridgeActivity.setImageResource(R.drawable.fridge)
-                    binding.tvTabChangeToFridgeActivity.setTextColor(Color.parseColor("#FFFF4444"))
+                    binding.tvTabChangeToFridgeActivity.setTextColor(Color.parseColor("#CD1818"))
                 }
             }
         }
@@ -104,11 +104,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun bindViews() {
         binding.ivTabChangeToRecipeActivity.setImageResource(R.drawable.recipe2222)
-        binding.tvTabChangeToRecipeActivity.setTextColor(Color.parseColor("#FFFF4444"))
+        binding.tvTabChangeToRecipeActivity.setTextColor(Color.parseColor("#CD1818"))
         binding.ivTabChangeToAddIngredientActivity.setImageResource(R.drawable.ingrdtfinal_uncliked)
-        binding.tvTabChangeToAddIngredientActivity.setTextColor(Color.parseColor("#5C5C5C"))
+        binding.tvTabChangeToAddIngredientActivity.setTextColor(Color.parseColor("#8C8C8C"))
         binding.ivTabChangeToFridgeActivity.setImageResource(R.drawable.fridge_uncliked)
-        binding.tvTabChangeToFridgeActivity.setTextColor(Color.parseColor("#5C5C5C"))
+        binding.tvTabChangeToFridgeActivity.setTextColor(Color.parseColor("#8C8C8C"))
     }
 
     private fun initTabLayout() {

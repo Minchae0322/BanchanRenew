@@ -55,19 +55,19 @@ class RecipeAdapter(var list: List<Recipe>):
         holder.imageViewTitle.clipToOutline = true
         holder.textViewTitleExplain.text = list[position].explain
         if(list[position].bookMark == 1) {
-            holder.imageViewStar.setImageResource(R.drawable.star)
+            holder.imageViewStar.setImageResource(R.drawable.bookmark)
             isFavorite = true
         } else {
-            holder.imageViewStar.setImageResource(R.drawable.emptystar)
+            holder.imageViewStar.setImageResource(R.drawable.bookmark_empty)
             isFavorite = false
         }
         holder.imageViewStar.setOnClickListener {
             if(isFavorite) {
-                holder.imageViewStar.setImageResource(R.drawable.emptystar)
+                holder.imageViewStar.setImageResource(R.drawable.bookmark_empty)
                 dao.updateBookMarkOfRecipe(list[position].recipeID, 0)
                 isFavorite = false
             } else {
-                holder.imageViewStar.setImageResource(R.drawable.star)
+                holder.imageViewStar.setImageResource(R.drawable.bookmark)
                 dao.updateBookMarkOfRecipe(list[position].recipeID, 1)
                 isFavorite = true
             }

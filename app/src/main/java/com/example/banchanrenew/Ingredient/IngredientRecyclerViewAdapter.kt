@@ -34,7 +34,7 @@ class IngredientRecyclerViewAdapter(var list: MutableList<Ingredient>):
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.imageViewAddIngredients.setImageResource(list[position].image)
         holder.textViewAddIngredientsTitle.text = list[position].name
-        holder.textViewAddIngredientsRemain.text = list[position].remainGram.toString() + "g"
+        holder.textViewAddIngredientsRemain.text = "보유: " + list[position].remainGram.toString() + "g"
         holder.itemView.setOnClickListener {
             val dialog = IngredientModificationDialog(context, list[position], this)
             dialog.showDialog()

@@ -33,6 +33,7 @@
             android:id="@+id/rv_easySetting"
             android:layout_width="match_parent"
             android:layout_height="500dp"
+            android:background="#F5F4F4F4"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

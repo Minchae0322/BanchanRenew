@@ -4,33 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#9EA4C5AF"
+    android:background="#FB9935"
     android:orientation="vertical">
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            app:layout_constraintHeight_percent="0.06"
-            app:layout_constraintVertical_bias="0"
-            android:gravity="center"
-            android:fontFamily="@font/title"
-            android:text="반찬 뭐 먹지"
-            app:layout_constraintBottom_toTopOf="@id/tablayout"
-            android:id="@+id/banchan"
-            android:textColor="@android:color/holo_red_light"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+    <TextView
+        android:id="@+id/banchan"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fontFamily="@font/title"
+        android:gravity="center"
+        android:text="반찬 뭐 먹지"
+        android:textColor="#D51919"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/tablayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0">
 
-        </TextView>
+    </TextView>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-
+        app:tabIndicatorColor="@color/white"
+        app:tabSelectedTextColor="@color/white"
         app:layout_constraintHeight_percent="0.06"
         app:layout_constraintBottom_toTopOf="@+id/viewPager_addIngredients"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:background="#FFFFFF"
+       android:background="#F9F2ED"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:orientation="horizontal"

@@ -12,7 +12,7 @@
         android:fontFamily="sans-serif-black"
         android:textSize="17sp"
         android:padding="10dp"
-        android:textColor="@color/black"
+        android:textColor="@color/main_red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/tv_dialog_recipe_description"
@@ -26,10 +26,19 @@
         android:id="@+id/tv_dialog_recipe_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#222222"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_dialog_recipe_step"
          />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#606060"
+        android:id="@+id/line"
+        app:layout_constraintTop_toBottomOf="@id/tv_dialog_recipe_description"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
