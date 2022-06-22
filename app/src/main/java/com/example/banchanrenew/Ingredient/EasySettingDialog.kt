@@ -15,7 +15,7 @@ import com.example.banchanrenew.databinding.DialogEasysettingBinding
 class EasySettingDialog(val context: Context, private val addIngredientsAdapter: UpdateAdapterImpl, val dataType: String) {
     private val dialog = Dialog(context)
     private lateinit var binding: DialogEasysettingBinding
-    private val adapter = EasySettingRecyclerViewAdapter(db.testDao().selectIngredientWhereDataType(dataType))
+    private val adapter = EasySettingRecyclerViewAdapter(db.ingredientDAO().selectIngredientWhereDataType(dataType))
 
     fun showDialog() {
         binding = DialogEasysettingBinding.bind(LayoutInflater.from(context).inflate(R.layout.dialog_easysetting, null))
@@ -44,8 +44,8 @@ class EasySettingDialog(val context: Context, private val addIngredientsAdapter:
     private fun easySettingToDB() {
         for(id in adapter.isCheckedList) {
             if(id != 0) {
-                val remain = db.testDao().getRemainGramOfIngredient(id)
-                db.testDao().updateRemainGramOfIngredient(remain + 500, id)
+                val remain = db.ingredientDAO().getRemainGramOfIngredient(id)
+                db.ingredientDAO().updateRemainGramOfIngredient(remain + 500, id)
             }
         }
     }

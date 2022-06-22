@@ -30,7 +30,7 @@ class ExampleInstrumentedTest {
             TestDatabase::class.java,
             "TestDB7"
         ).build()
-        testDao = db.testDao()
+        testDao = db.ingredientDAO()
         testDao.delete()
         testDao.delete2()
         testDao.insertGramOfUnitList(GramOfUnitData().getData())

@@ -8,6 +8,6 @@ import com.example.banchanrenew.relation.*
 
 @Database(entities = [IngredientDC::class, RecipeDescription::class ,Ingredient::class, GramOfUnit::class, Recipe::class, EssentialIngredients::class, NotEssentialIngredients:: class],  version = 9, exportSchema = true)
 abstract class MainDatabase: RoomDatabase() {
-    abstract fun databaseDao() : IngredientDAO
+    abstract fun ingredientDao() : IngredientDAO
     abstract fun recipeDao(): RecipeDAO
 }

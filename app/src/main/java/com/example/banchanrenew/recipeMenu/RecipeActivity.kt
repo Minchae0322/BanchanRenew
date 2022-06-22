@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.banchanrenew.MainActivity.Companion.db
 import com.example.banchanrenew.databinding.ActivityRecipeBinding
@@ -44,6 +45,7 @@ class RecipeActivity: AppCompatActivity() {
                 } else {
                     recipeAdapter.updateRecipeDataList(findDishListWithText(p0.toString()))
                 }
+                checkTextViewVisible()
             }
 
             override fun afterTextChanged(p0: Editable?) {
@@ -52,10 +54,15 @@ class RecipeActivity: AppCompatActivity() {
         })
     }
 
+    private fun checkTextViewVisible() {
+        binding.tvNoRecipe.isVisible = recipeAdapter.list.isEmpty()
+    }
+
     private fun initRecyclerView() {
         binding.recyclerViewSelected.layoutManager = LinearLayoutManager(applicationContext)
         binding.recyclerViewSelected.setHasFixedSize(true)
         recipeAdapter = RecipeAdapter(recipeList)
+        checkTextViewVisible()
         binding.recyclerViewSelected.adapter = recipeAdapter
     }
 

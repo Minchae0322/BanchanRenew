@@ -16,7 +16,7 @@ import com.example.banchanrenew.relation.Ingredient
 
 class PagerFragment(val dataType: String): Fragment() {
     private lateinit var binding: FragmentPagerBinding
-    private val dataList: MutableList<Ingredient> = db.testDao().selectIngredientWhereDataType(dataType)
+    private val dataList: MutableList<Ingredient> = db.ingredientDAO().selectIngredientWhereDataType(dataType)
     private lateinit var adapter: IngredientRecyclerViewAdapter
 
     override fun onCreateView(inflater: LayoutInflater,

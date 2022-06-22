@@ -14,8 +14,9 @@
         android:gravity="center"
         android:fontFamily="@font/title"
         android:text="반찬 뭐 먹지"
+        android:background="#8F5FB0D5"
         android:id="@+id/banchan"
-        android:textColor="@android:color/holo_red_light"
+        android:textColor="@color/main_red"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,10 +28,14 @@
     <TextView
         android:id="@+id/tv_myFridge"
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:text=" - 나의 냉장고 -"
-        android:fontFamily="sans-serif-black"
-        android:textSize="18sp"
+        android:gravity="center_vertical"
+        android:text="내가 보유한 재료"
+        android:paddingStart="20dp"
+        android:textColor="#222222"
+        android:fontFamily="@font/coookie1"
+        android:textSize="16sp"
+
+        android:background="#8F5FB0D5"
         app:layout_constraintHeight_percent="0.06"
         app:layout_constraintBottom_toTopOf="@id/constraintLayout5"
         app:layout_constraintTop_toBottomOf="@id/banchan"
@@ -43,7 +48,7 @@
         android:layout_height="0dp"
         android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@id/tv_myFridge"
-        app:layout_constraintBottom_toTopOf="@+id/rv_fridge"
+        app:layout_constraintBottom_toTopOf="@+id/frame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.06"
         app:layout_constraintStart_toStartOf="parent">
@@ -55,6 +60,7 @@
             android:background="@android:color/transparent"
             android:fontFamily="@font/coookie1"
             android:hint="재료를 입력하세요"
+            android:textSize="14sp"
             android:paddingLeft="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -64,16 +70,33 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_fridge"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#F9F2ED"
+        android:id="@+id/frame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/constraintLayout5">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <TextView
+            android:id="@+id/tv_noRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="재료를 추가해주세요"
+            android:textAlignment="center"
+            android:visibility="invisible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_fridge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F9F2ED">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </FrameLayout>
+
 
 
 

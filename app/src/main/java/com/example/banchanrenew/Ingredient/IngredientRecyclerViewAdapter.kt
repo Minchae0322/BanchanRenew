@@ -52,7 +52,7 @@ class IngredientRecyclerViewAdapter(var list: MutableList<Ingredient>):
     }
 
     override fun updateDataListFromDB(dataType: String) {
-        list = db.testDao().selectIngredientWhereDataType(dataType)
+        list = db.ingredientDAO().selectIngredientWhereDataType(dataType)
         list.sortByDescending { it.remainGram }
         update()
     }

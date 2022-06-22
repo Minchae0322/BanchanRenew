@@ -8,6 +8,6 @@ import com.example.banchanrenew.dao.RecipeDAO
 
 @Database(entities = [IngredientDC::class, RecipeDescription::class ,Ingredient::class, GramOfUnit::class, Recipe::class, EssentialIngredients::class],  version = 9, exportSchema = true)
 abstract class TestDatabase : RoomDatabase() {
-    abstract fun testDao() : IngredientDAO
+    abstract fun ingredientDAO() : IngredientDAO
     abstract fun recipeDao(): RecipeDAO
 }

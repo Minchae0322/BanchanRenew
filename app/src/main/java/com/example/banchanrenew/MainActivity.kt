@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var fragmentRunningNum: Int = 0
     companion object {
-        lateinit var db: TestDatabase
+        lateinit var db: ReleaseDB
         lateinit var prefs: PreferenceUtil
         var DISPLAY_WITH = 0
         var DISPLAY_HEIGHT = 0
@@ -36,10 +36,10 @@ class MainActivity : AppCompatActivity() {
         prefs = PreferenceUtil(applicationContext)
         db = Room.databaseBuilder(
             applicationContext,
-            TestDatabase::class.java, "test.db25"
+            ReleaseDB::class.java, "release1.1"
         ).allowMainThreadQueries().build()
-        if(prefs.getString("version43","0") == "0") {
-            var testDao1: IngredientDAO = db.testDao()
+        if(prefs.getString("release2","0") == "0") {
+            var testDao1: IngredientDAO = db.ingredientDAO()
             testDao1.insertGramOfUnitList(GramOfUnitData().getData())
             testDao1.insertIngredientList(IngredientData().getData())
             testDao1.insertDishList(RecipeData().getData())
@@ -48,15 +48,8 @@ class MainActivity : AppCompatActivity() {
                 jsonParser()
             } catch (e: JSONException) {
             }
-            prefs.setString("version43","1")
-            testDao1.updateRemainGramOfIngredient(600,"돼지갈비")
-            testDao1.updateRemainGramOfIngredient(600,"소고기")
-            testDao1.updateRemainGramOfIngredient(600,"돼지고기")
-            testDao1.updateRemainGramOfIngredient(600,"양고기")
-            testDao1.updateRemainGramOfIngredient(600,"소세지")
+            prefs.setString("release2","1")
         }
-
-        var list = ArrayList<Ingredient>()
         bindViews()
         initTabLayout()
         supportFragmentManager.beginTransaction()
@@ -197,7 +190,7 @@ class MainActivity : AppCompatActivity() {
                      jsonDCObject.getInt("IRDNT_SN"),jsonDCObject.getString("IRDNT_NM"),
                      jsonDCObject.getString("IRDNT_CPCTY"), jsonDCObject.getString("IRDNT_TY_NM")))
              }
-             db.testDao().insertIngredientDCList(list)
+             db.ingredientDAO().insertIngredientDCList(list)
          }
     }
 

@@ -33,10 +33,10 @@ class Test2 {
     fun createDB() {
         val db = Room.databaseBuilder(
             appContext,
-            TestDatabase::class.java,
+            ReleaseDB::class.java,
             "TestDB22"
         ).build()
-        testDao = db.testDao()
+        testDao = db.ingredientDAO()
         recipeDAO = db.recipeDao()
         testDao.delete()
         testDao.delete2()
@@ -75,7 +75,7 @@ class Test2 {
                 Log.d("number", row.toString())
 
             }
-            testDao.insertRecipeDescriptionList(list)
+            recipeDAO.insertRecipeDCList(list)
         }
 
 
@@ -129,7 +129,7 @@ class Test2 {
                 val jsonRecipeObject = jArray.getJSONObject(row)
                 list.add(RecipeDescription(jsonRecipeObject.getInt("RECIPE_ID"),jsonRecipeObject.getInt("COOKING_NO"), jsonRecipeObject.getString("COOKING_DC")))
             }
-            testDao.insertRecipeDescriptionList(list)
+            recipeDAO.insertRecipeDCList(list)
         }
 
         val jsonDCObjectList: MutableList<JSONObject> = mutableListOf()
