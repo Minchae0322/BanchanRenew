@@ -78,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="만들 수 있는 요리가 없습니다.\n 재료를 추가하여주세요"
+            android:text="만들 수 있는 요리가 없습니다.\n 재료를 추가해주세요!"
             android:textAlignment="center"
             android:visibility="invisible" />
 

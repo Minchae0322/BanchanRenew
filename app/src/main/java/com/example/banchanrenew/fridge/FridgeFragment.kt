@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,6 +41,11 @@ class FridgeFragment: Fragment() {
 
     private fun checkTextViewVisible() {
         binding.tvNoRecipe.isVisible = fridgeAdapter.list.size == 0
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("resume","resume")
     }
 
 
