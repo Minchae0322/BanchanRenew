@@ -240,12 +240,12 @@
                         android:layout_height="wrap_content"
                         android:padding="10dp"
 
-                        android:fontFamily="sans-serif-black"
+                        android:fontFamily="sans-serif"
                         android:gravity="center_vertical"
                         android:paddingLeft="10dp"
                         android:text="주재료"
                         android:textColor="@color/black"
-                        android:textSize="22sp"
+                        android:textSize="20sp"
                         app:layout_constraintBottom_toTopOf="@+id/tv_cell_content_main"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -255,10 +255,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
-                        android:fontFamily="sans-serif"
+                        android:fontFamily="sans-serif-black"
                         android:paddingLeft="15dp"
                         android:paddingBottom="15dp"
-                        android:textColor="#656565"
+                        android:textColor="#878787"
                         android:textSize="15sp"
                         app:layout_constraintBottom_toTopOf="@id/tv2"
                         app:layout_constraintTop_toBottomOf="@id/tv1" />
@@ -268,13 +268,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
-                        android:fontFamily="sans-serif-black"
+                        android:fontFamily="sans-serif"
                         android:gravity="center_vertical"
                         android:paddingLeft="10dp"
                         android:text="부재료"
                         android:padding="10dp"
                         android:textColor="@color/black"
-                        android:textSize="22sp"
+                        android:textSize="20sp"
                         app:layout_constraintBottom_toTopOf="@id/tv_cell_content_sub"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -286,10 +286,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
-                        android:fontFamily="sans-serif"
+                        android:fontFamily="sans-serif-black"
                         android:paddingLeft="15dp"
                         android:paddingBottom="10dp"
-                        android:textColor="#656565"
+                        android:textColor="#878787"
                         android:textSize="15sp"
                         app:layout_constraintBottom_toTopOf="@id/tv3"
                         app:layout_constraintTop_toBottomOf="@+id/tv2" />
@@ -300,13 +300,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
-                        android:fontFamily="sans-serif-black"
+                        android:fontFamily="sans-serif"
                         android:gravity="center_vertical"
                         android:paddingLeft="10dp"
                         android:text="양념"
                         android:padding="10dp"
                         android:textColor="@color/black"
-                        android:textSize="22sp"
+                        android:textSize="20sp"
                         app:layout_constraintBottom_toTopOf="@id/tv_cell_content_seasoning"
                         app:layout_constraintTop_toBottomOf="@+id/tv_cell_content_sub" />
 
@@ -316,9 +316,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="없음"
-                        android:fontFamily="sans-serif"
+                        android:fontFamily="sans-serif-black"
                         android:paddingLeft="15dp"
-                        android:textColor="#656565"
+                        android:textColor="#878787"
                         android:textSize="15sp"
                         android:paddingBottom="10dp"
                         app:layout_constraintBottom_toBottomOf="parent"
