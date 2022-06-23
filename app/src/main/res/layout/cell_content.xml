@@ -225,7 +225,7 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:fontFamily="sans-serif-black"
-
+            android:paddingBottom="15dp"
             app:layout_constraintBottom_toTopOf="@id/tv2"
             android:textColor="#7E7E7E"
             android:paddingLeft="10dp"
@@ -243,7 +243,6 @@
             android:text="부재료"
             android:textColor="@color/black"
             android:textSize="22sp"
-            android:layout_marginTop="15dp"
             app:layout_constraintBottom_toTopOf="@id/tv_cell_content_sub"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -258,7 +257,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#7E7E7E"
-            android:paddingLeft="10dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="10dp"
             app:layout_constraintBottom_toTopOf="@id/tv3"
             app:layout_constraintTop_toBottomOf="@+id/tv2" />
 
@@ -271,7 +271,6 @@
             android:gravity="center_vertical"
             android:paddingLeft="10dp"
             android:text="양념"
-            android:layout_marginTop="15dp"
             android:textColor="@color/black"
             android:textSize="22sp"
             android:background="@color/white"
@@ -283,7 +282,8 @@
             android:fontFamily="sans-serif-black"
             android:textSize="15sp"
             android:textColor="#7E7E7E"
-            android:paddingLeft="10dp"
+            android:paddingLeft="15dp"
+
             app:layout_constraintBottom_toTopOf="@id/constraintLayout"
             android:id="@+id/tv_cell_content_seasoning"
             android:layout_width="match_parent"

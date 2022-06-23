@@ -112,7 +112,7 @@ class RecipeAdapter(var list: List<Recipe>):
         val iDC: List<IngredientDC> = dao.getIngredientDCList(list[position].recipeID, type)
         var text = ""
         for(index in iDC) {
-            text += index.ingredientDCName + ":  " + index.ingredientDCCapacity + ",    "
+            text += index.ingredientDCName + " - " + index.ingredientDCCapacity + ",    "
         }
         if(text.length >= 5) {
             return text.substring(0, text.length - 5)

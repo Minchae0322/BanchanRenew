@@ -39,7 +39,7 @@ class FridgeFragment: Fragment() {
     }
 
     private fun checkTextViewVisible() {
-        binding.tvNoRecipe.isVisible = fridgeAdapter.list.isEmpty()
+        binding.tvNoRecipe.isVisible = fridgeAdapter.list.size == 0
     }
 
 

@@ -93,7 +93,7 @@ class RecipeActivity: AppCompatActivity() {
 
     private fun initSpinner() {
         val spinnerList: List<String> = ArrayList(listOf("레시피로 찾기", "주재료로 찾기"))
-        binding.spinnerSearch.adapter = ArrayAdapter(applicationContext,android.R.layout.simple_spinner_item, spinnerList)
+        binding.spinnerSearch.adapter = ArrayAdapter(applicationContext,android.R.layout.simple_spinner_dropdown_item ,spinnerList)
         binding.spinnerSearch.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 spinnerNum = p2

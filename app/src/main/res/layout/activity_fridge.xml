@@ -82,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="재료를 추가해주세요"
+            android:text="재료를 추가해주세요!"
             android:textAlignment="center"
             android:visibility="invisible" />
 
@@ -90,7 +90,7 @@
             android:id="@+id/rv_fridge"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#F9F2ED">
+            >
 
         </androidx.recyclerview.widget.RecyclerView>
 
