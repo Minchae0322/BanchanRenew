@@ -1,5 +1,6 @@
 package com.example.banchanrenew.Ingredient
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -28,10 +29,11 @@ class EasySettingRecyclerViewAdapter(val list: List<Ingredient>) : RecyclerView.
         return ViewHolder(view)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.imageViewAddIngredients.setImageResource(list[position].image)
         holder.textViewAddIngredientsTitle.text = list[position].name
-        holder.textViewAddIngredientsRemain.text = list[position].remainGram.toString() + "g"
+        holder.textViewAddIngredientsRemain.text = "보유: " + list[position].remainGram.toString() + "g"
         holder.itemView.setOnClickListener {
             if(isCheckedList[position] != 0) {
                 holder.itemView.setBackgroundResource(R.drawable.background_stroke)
