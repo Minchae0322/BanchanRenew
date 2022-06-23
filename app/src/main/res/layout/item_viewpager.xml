@@ -34,7 +34,7 @@
                 <TextView
                     android:id="@+id/tv_fridgeName"
                     android:layout_width="0dp"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
                     android:textColor="#433F3F"
                     android:textSize="14sp"
