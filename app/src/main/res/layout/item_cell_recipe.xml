@@ -258,7 +258,7 @@
                         android:fontFamily="sans-serif-black"
                         android:paddingLeft="15dp"
                         android:paddingBottom="15dp"
-                        android:textColor="#878787"
+                        android:textColor="#222222"
                         android:textSize="15sp"
                         app:layout_constraintBottom_toTopOf="@id/tv2"
                         app:layout_constraintTop_toBottomOf="@id/tv1" />
@@ -289,7 +289,7 @@
                         android:fontFamily="sans-serif-black"
                         android:paddingLeft="15dp"
                         android:paddingBottom="10dp"
-                        android:textColor="#878787"
+                        android:textColor="#222222"
                         android:textSize="15sp"
                         app:layout_constraintBottom_toTopOf="@id/tv3"
                         app:layout_constraintTop_toBottomOf="@+id/tv2" />
@@ -318,7 +318,7 @@
                         android:text="없음"
                         android:fontFamily="sans-serif-black"
                         android:paddingLeft="15dp"
-                        android:textColor="#878787"
+                        android:textColor="#222222"
                         android:textSize="15sp"
                         android:paddingBottom="10dp"
                         app:layout_constraintBottom_toBottomOf="parent"
